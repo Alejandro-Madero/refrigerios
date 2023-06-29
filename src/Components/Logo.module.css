@@ -1,0 +1,10 @@
+.logo {
+  font-family: "Dancing Script", cursive;
+  color: var(--color-primary-400);
+  font-size: 5rem;
+  text-align: center;
+  transform: rotate(-8deg);
+  margin-bottom: 3rem;
+  width: 90%;
+  justify-self: center;
+}

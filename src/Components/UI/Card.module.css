@@ -1,0 +1,7 @@
+.card {
+  background-color: var(--color-neutral-700);
+  width: 95%;
+  justify-self: center;
+  border-radius: 5px;
+  padding: 0.25rem;
+}

@@ -1,0 +1,56 @@
+.form {
+  justify-self: center;
+  width: 100%;
+  margin-top: 1rem;
+  color: var(--color-primary-200);
+  font-size: 1rem;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  background-color: var(--color-neutral-800);
+  color: var(--color-primary-200);
+  border: var(--color-primary-200) 2px solid;
+  outline: none;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.months {
+  background-color: var(--color-neutral-800);
+  outline: none;
+  border-radius: 5px;
+  color: var(--color-primary-200);
+  border: var(--color-primary-200) 2px solid;
+  max-width: 100%;
+}
+
+.months-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.shifts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.shifts {
+  display: flex;
+  gap: 1rem;
+}
+
+.holidays-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.holidays {
+  display: flex;
+  gap: 0.5rem;
+}
