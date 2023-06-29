@@ -2,16 +2,17 @@
   justify-self: center;
   width: 100%;
   margin-top: 1rem;
-  color: var(--color-primary-200);
+  color: var(--color-primary-100);
   font-size: 1rem;
   gap: 2rem;
   display: flex;
   flex-direction: column;
+  padding: 1rem 0;
 }
 
 .input {
   background-color: var(--color-neutral-800);
-  color: var(--color-primary-200);
+  color: var(--color-primary-100);
   border: var(--color-primary-200) 2px solid;
   outline: none;
   text-align: center;
@@ -37,7 +38,7 @@
   content: "";
   width: 100%;
   margin: 0 auto;
-  height: 1px;
+  height: 0.25px;
   transform: translateY(1rem);
   background-color: rgba(255, 255, 255, 0.15);
 }
@@ -53,7 +54,7 @@
 
   width: 100%;
   margin: 0 auto;
-  height: 1px;
+  height: 0.5px;
   transform: translateY(1rem);
   background-color: rgba(255, 255, 255, 0.15);
 }
@@ -72,4 +73,14 @@
 .holidays {
   display: flex;
   gap: 0.5rem;
+}
+
+.holidays-container::after {
+  content: "";
+
+  width: 100%;
+  margin: 0 auto;
+  height: 0.5px;
+  transform: translateY(1rem);
+  background-color: rgba(255, 255, 255, 0.15);
 }

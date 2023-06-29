@@ -5,13 +5,11 @@ import Form from "./Components/Form";
 
 const App = () => {
   return (
-    <>
-      <Wrapper>
-        <Logo />
-        <Header />
-        <Form />
-      </Wrapper>
-    </>
+    <Wrapper>
+      <Logo />
+      <Header />
+      <Form />
+    </Wrapper>
   );
 };
 

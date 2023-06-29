@@ -1,12 +1,13 @@
 import styles from "./Form.module.css";
 import Card from "./UI/Card";
-import { useState } from "react";
-import { getPaymentMonth } from "../Utils/logic";
+import { useState, useRef } from "react";
+import { getPaymentMonth, calculatePayment } from "../Utils/logic";
 import Button from "./UI/Button";
 
 const Form = () => {
   const [paymentMonth, setPaymentMonth] = useState(null);
   const [workedHolidays, setWorkedHolidays] = useState(false);
+  const monthRef = useRef(null);
 
   const handleSelectedMonth = (e) => {
     if (!e.target.value) {
@@ -28,7 +29,8 @@ const Form = () => {
     e.preventDefault();
     console.log(e.target);
     const data = [...new FormData(e.target)];
-    console.log(Object.fromEntries(data));
+    console.log(monthRef.current.value);
+    calculatePayment(data);
   };
   return (
     <Card>
@@ -42,6 +44,7 @@ const Form = () => {
             name="months"
             id="months"
             onChange={handleSelectedMonth}
+            ref={monthRef}
           >
             <option value="">Seleccione un mes</option>
             <option value="enero">enero</option>
@@ -51,11 +54,21 @@ const Form = () => {
             <option value="mayo">mayo</option>
             <option value="junio">junio</option>
             <option value="julio">julio</option>
-            <option value="agosto">agosto</option>
-            <option value="septiembre">septiembre</option>
-            <option value="octubre">octubre</option>
-            <option value="noviembre">noviembre</option>
-            <option value="diciembre">diciembre</option>
+            <option value="agosto" disabled>
+              agosto
+            </option>
+            <option value="septiembre" disabled>
+              septiembre
+            </option>
+            <option value="octubre" disabled>
+              octubre
+            </option>
+            <option value="noviembre" disabled>
+              noviembre
+            </option>
+            <option value="diciembre" disabled>
+              diciembre
+            </option>
           </select>
           <p>que se cobra en</p>
           {paymentMonth && <p>{paymentMonth}.</p>}
@@ -117,7 +130,6 @@ const Form = () => {
                   type="number"
                   min={0}
                   max={31}
-                  defaultValue={0}
                   placeholder="0"
                 ></input>
                 <label htmlFor="feriados">Feriados</label>
@@ -128,7 +140,6 @@ const Form = () => {
                   type="number"
                   min={0}
                   max={31}
-                  defaultValue={0}
                   placeholder="0"
                 ></input>
               </div>
