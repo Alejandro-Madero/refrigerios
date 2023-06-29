@@ -33,10 +33,29 @@
   gap: 0.25rem;
 }
 
+.months-container::after {
+  content: "";
+  width: 100%;
+  margin: 0 auto;
+  height: 1px;
+  transform: translateY(1rem);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
 .shifts-container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.shifts-container::after {
+  content: "";
+
+  width: 100%;
+  margin: 0 auto;
+  height: 1px;
+  transform: translateY(1rem);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .shifts {

@@ -23,9 +23,16 @@ const Form = () => {
     console.log(e.target.value);
     setWorkedHolidays(workedHolidays);
   };
+
+  const handleForm = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+    const data = [...new FormData(e.target)];
+    console.log(Object.fromEntries(data));
+  };
   return (
     <Card>
-      <form className={styles.form}>
+      <form onSubmit={handleForm} className={styles.form}>
         <div className={styles["months-container"]}>
           <label htmlFor="months">
             Quiero calcular el refrigerio compuesto del mes de
@@ -50,7 +57,7 @@ const Form = () => {
             <option value="noviembre">noviembre</option>
             <option value="diciembre">diciembre</option>
           </select>
-          <p>que se cobran en</p>
+          <p>que se cobra en</p>
           {paymentMonth && <p>{paymentMonth}.</p>}
         </div>
         <div className={styles["shifts-container"]}>
@@ -59,6 +66,7 @@ const Form = () => {
             <label htmlFor="mañana">Mañana / tarde</label>
             <input
               id="mañana"
+              name="mañana"
               className={styles.input}
               type="number"
               min={0}
@@ -68,6 +76,7 @@ const Form = () => {
             <label htmlFor="noche">Noche</label>
             <input
               id="noche"
+              name="noche"
               className={styles.input}
               type="number"
               min={0}
@@ -103,19 +112,23 @@ const Form = () => {
                 <label htmlFor="domingos">Domingos</label>
                 <input
                   id="domingos"
+                  name="domingos"
                   className={styles.input}
                   type="number"
                   min={0}
                   max={31}
+                  defaultValue={0}
                   placeholder="0"
                 ></input>
                 <label htmlFor="feriados">Feriados</label>
                 <input
                   id="feriados"
+                  name="feriados"
                   className={styles.input}
                   type="number"
                   min={0}
                   max={31}
+                  defaultValue={0}
                   placeholder="0"
                 ></input>
               </div>
