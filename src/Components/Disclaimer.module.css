@@ -33,11 +33,6 @@
 @media (min-width: 1500px) {
   .disclaimer {
     width: 50%;
-  }
-}
-
-@media (min-width: 1700px) {
-  .disclaimer {
-    width: 40%;
+    max-width: 700px;
   }
 }
