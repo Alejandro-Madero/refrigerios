@@ -5,6 +5,7 @@ import Wrapper from "./Components/UI/Wrapper";
 import Form from "./Components/Form";
 import Result from "./Components/Result";
 import Button from "./Components/UI/Button";
+import Disclaimer from "./Components/Disclaimer";
 import { calculatePayment } from "./Utils/logic";
 
 const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
           paymentMonth={result.paymentMonth}
         />
       )}
+      <Disclaimer />
     </Wrapper>
   );
 };
