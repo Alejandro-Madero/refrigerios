@@ -23,3 +23,9 @@
     margin-bottom: 2rem;
   }
 }
+
+@media (min-width: 1500px) {
+  .logo {
+    font-size: 7.5rem;
+  }
+}
