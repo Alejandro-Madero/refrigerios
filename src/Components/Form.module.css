@@ -22,14 +22,17 @@
   border-radius: 5px;
   width: 100%;
   max-width: 80px;
+  transition: all 0.3s ease;
 }
 
-.error {
-  color: rgb(236, 60, 60);
-  font-weight: 500;
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  letter-spacing: 0.1rem;
+.input:focus {
+  transform: scale(1.15);
+}
+
+.input.error {
+  outline: magenta;
+  border: 2.5px solid var(--color-warning);
+  transition: all 0.5s;
 }
 
 .months-container {
@@ -70,4 +73,27 @@
   display: flex;
   gap: 0.5rem;
   align-items: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.form-btns {
+  border: 2px solid var(--color-neutral-900);
+  background-color: var(--color-primary-200);
+  color: var(--color-neutral-900);
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 0.5rem 0.25rem;
+  width: 50%;
+  min-width: 100px;
+}
+
+.form-btns:hover {
+  background-color: var(--color-neutral-800);
+  color: var(--color-primary-200);
+  border: 2px solid var(--color-primary-200);
 }

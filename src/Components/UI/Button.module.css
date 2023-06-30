@@ -1,11 +1,5 @@
 .btn {
   border-radius: 5px;
   outline: transparent;
-  border: 2px solid var(--color-neutral-900);
-  background-color: var(--color-primary-200);
-  color: var(--color-neutral-900);
-  font-size: 1.25rem;
-  font-weight: 500;
-  padding: 0.5rem 0;
   cursor: pointer;
 }

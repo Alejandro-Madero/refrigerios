@@ -11,7 +11,7 @@ const Months = ({ onSelectMonth, id }) => {
       id={id}
       onChange={(e) => onSelectMonth(e)}
     >
-      <option value="">Seleccione un mes</option>
+      <option value="">Seleccioná un mes</option>
       {MONTHS.map((month) => {
         return (
           <Month key={month} value={month}>

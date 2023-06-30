@@ -1,0 +1,18 @@
+.result-container {
+  background-color: var(--color-neutral-700);
+  border-radius: 10px;
+
+  margin-bottom: 1rem;
+  color: #fff;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-header {
+  font-size: 1rem;
+}
