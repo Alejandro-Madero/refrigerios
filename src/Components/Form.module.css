@@ -92,8 +92,8 @@
   min-width: 100px;
 }
 
-.form-btns:hover {
+/* .form-btns:hover {
   background-color: var(--color-neutral-800);
   color: var(--color-primary-200);
   border: 2px solid var(--color-primary-200);
-}
+} */
