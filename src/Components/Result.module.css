@@ -46,3 +46,9 @@
     width: 50%;
   }
 }
+
+@media (min-width: 1700px) {
+  .result-container {
+    width: 40%;
+  }
+}

@@ -36,3 +36,9 @@
     width: 50%;
   }
 }
+
+@media (min-width: 1700px) {
+  .card {
+    width: 40%;
+  }
+}

@@ -25,7 +25,7 @@ const initialErrors = {
 const Form = ({ onSubmmitedForm, onReset }) => {
   const [formValues, setFormValues] = useState(initialFormValues);
   const [errors, setErrors] = useState(initialErrors);
-
+  console.log(formValues);
   const formRef = useRef(null);
 
   const handleForm = (e) => {
@@ -65,6 +65,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
       }
 
       case "option": {
+        console.log("entraste aca");
         if (e.target.value === "0") setErrors({ ...errors, holidays: [] });
         return setFormValues({
           ...formValues,
@@ -83,7 +84,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
   };
 
   const handleFormReset = () => {
-    formRef.current.reset();
+    // formRef.current.reset();
     setFormValues(initialFormValues);
     setErrors(initialErrors);
     onReset();
@@ -150,6 +151,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
               name="option"
               type="radio"
               onChange={handleFormChange}
+              checked={!formValues.workedHolidays}
             />
             <label htmlFor="yes">Sí</label>
             <input
@@ -158,6 +160,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
               name="option"
               type="radio"
               onChange={handleFormChange}
+              checked={formValues.workedHolidays}
             />
           </div>
 
