@@ -1,5 +1,9 @@
 const Month = ({ value, children }) => {
-  return <option value={value}>{children}</option>;
+  return (
+    <option key={value} value={value}>
+      {children}
+    </option>
+  );
 };
 
 export default Month;

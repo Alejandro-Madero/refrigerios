@@ -25,7 +25,7 @@ export const validateForm = function (form) {
         if (+value > 31)
           errors.shifts.push(
             <ErrorMessage key={1}>
-              ⛔ No se puede hacer {+value} turnos mañana/tarde en un mes.
+              ⛔ No se puede trabajar {+value} turnos mañana/tarde en un mes.
             </ErrorMessage>
           );
 
@@ -44,7 +44,7 @@ export const validateForm = function (form) {
         if (+value > 31)
           errors.shifts.push(
             <ErrorMessage key={3}>
-              ⛔ No se puede hacer {+value} turnos noche en un mes.
+              ⛔ No se puede trabajar {+value} turnos noche en un mes.
             </ErrorMessage>
           );
 
@@ -55,7 +55,7 @@ export const validateForm = function (form) {
       case "month": {
         if (value === "")
           errors.month.push(
-            <ErrorMessage key={4}>⛔ Debes seleccionar un mes.</ErrorMessage>
+            <ErrorMessage key={4}>⛔ Debés seleccionar un mes.</ErrorMessage>
           );
         break;
       }
@@ -74,24 +74,16 @@ export const validateForm = function (form) {
     }
   }
 
-  if (form.workedHolidays && totalHolidays === 0) {
-    errors.holidays.push(
-      <ErrorMessage key={5}>
-        ⛔ Si trabajaste algún domingo o feriado debés seleccionar la cantidad.
-      </ErrorMessage>
-    );
-  }
-
   if (totalShifts > 31)
     errors.shifts.push(
-      <ErrorMessage key={6}>
-        ⛔ No se puede hacer {totalShifts} turnos en un mes.
+      <ErrorMessage key={5}>
+        ⛔ No se puede trabajar {totalShifts} turnos en un mes.
       </ErrorMessage>
     );
 
   if (totalShifts < 1) {
     errors.shifts.push(
-      <ErrorMessage key={7}>
+      <ErrorMessage key={6}>
         ⛔ ¿No trabajaste ningún día y estás calculando refrigerios? 😂.
       </ErrorMessage>
     );
@@ -100,8 +92,8 @@ export const validateForm = function (form) {
   if (totalHolidays > totalShifts) {
     errors.holidays.push(
       <ErrorMessage key={8}>
-        ⛔ El número de domingos y feriados no puede ser mayor al de turnos
-        totales.
+        ⛔ La suma de domingos y feriados no puede ser mayor a la cantidad de
+        turnos totales.
       </ErrorMessage>
     );
   }

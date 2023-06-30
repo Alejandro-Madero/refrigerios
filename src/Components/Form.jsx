@@ -10,7 +10,6 @@ const initialFormValues = {
   month: "",
   morning: "",
   night: "",
-  workedHolidays: false,
   paymentMonth: "",
   sundays: "",
   holidays: "",
@@ -64,15 +63,6 @@ const Form = ({ onSubmmitedForm, onReset }) => {
         return setFormValues({ ...formValues, paymentMonth: nextMonth, month });
       }
 
-      case "option": {
-        console.log("entraste aca");
-        if (e.target.value === "0") setErrors({ ...errors, holidays: [] });
-        return setFormValues({
-          ...formValues,
-          workedHolidays: Boolean(+e.target.value),
-        });
-      }
-
       case "sundays":
         setErrors({ ...errors, holidays: [] });
         return setFormValues({ ...formValues, sundays: e.target.value });
@@ -84,7 +74,6 @@ const Form = ({ onSubmmitedForm, onReset }) => {
   };
 
   const handleFormReset = () => {
-    // formRef.current.reset();
     setFormValues(initialFormValues);
     setErrors(initialErrors);
     onReset();
@@ -109,9 +98,11 @@ const Form = ({ onSubmmitedForm, onReset }) => {
         </div>
 
         <div className={styles["input-container"]}>
-          <p className={styles["form-question"]}>¿Cúantos turnos trabajaste?</p>
+          <p className={styles["form-question"]}>
+            ¿Cúantos turnos trabajaste en el mes?
+          </p>
           <div className={styles.shifts}>
-            <label htmlFor="morning">Mañana/tarde</label>
+            <label htmlFor="morning">Mañana / tarde</label>
             <input
               id="morning"
               name="morning"
@@ -141,57 +132,35 @@ const Form = ({ onSubmmitedForm, onReset }) => {
 
         <div className={styles["input-container"]}>
           <p className={styles["form-question"]}>
-            De esos turnos, ¿alguno fue domingo o feriado?
+            De esos turnos, ¿Cúantos fueron domingos o feriados?
           </p>
           <div className={styles.shifts}>
-            <label htmlFor="no">No</label>
+            <label htmlFor="sundays">Domingos</label>
             <input
-              id="no"
-              value={0}
-              name="option"
-              type="radio"
+              id="sundays"
+              name="sundays"
+              className={`${styles.input} ${
+                errors.holidays.length > 0 ? styles.error : ""
+              }`}
+              type="number"
+              min={0}
               onChange={handleFormChange}
-              checked={!formValues.workedHolidays}
-            />
-            <label htmlFor="yes">Sí</label>
+              placeholder="0"
+            ></input>
+            <label htmlFor="holidays">Feriados</label>
             <input
-              id="yes"
-              value={1}
-              name="option"
-              type="radio"
+              id="holidays"
+              name="holidays"
+              className={`${styles.input} ${
+                errors.holidays.length > 0 ? styles.error : ""
+              }`}
+              type="number"
+              min={0}
               onChange={handleFormChange}
-              checked={formValues.workedHolidays}
-            />
+              placeholder="0"
+            ></input>
           </div>
 
-          {formValues.workedHolidays && (
-            <div className={styles.shifts}>
-              <label htmlFor="sundays">Domingos</label>
-              <input
-                id="sundays"
-                name="sundays"
-                className={`${styles.input} ${
-                  errors.holidays.length > 0 ? styles.error : ""
-                }`}
-                type="number"
-                min={0}
-                onChange={handleFormChange}
-                placeholder="0"
-              ></input>
-              <label htmlFor="holidays">Feriados</label>
-              <input
-                id="holidays"
-                name="holidays"
-                className={`${styles.input} ${
-                  errors.holidays.length > 0 ? styles.error : ""
-                }`}
-                type="number"
-                min={0}
-                onChange={handleFormChange}
-                placeholder="0"
-              ></input>
-            </div>
-          )}
           {errors.holidays.length !== 0 && errors.holidays.map((err) => err)}
         </div>
         <div className={styles["button-container"]}>
