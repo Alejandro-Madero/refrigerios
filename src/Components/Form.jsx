@@ -97,8 +97,13 @@ const Form = ({ onSubmmitedForm, onReset }) => {
             Quiero calcular el refrigerio compuesto del mes de :
           </label>
           <Months id="months" onSelectMonth={handleFormChange} />
-          <span>que se cobra en</span>
-          {formValues.paymentMonth && <span>{formValues.paymentMonth}.</span>}
+          <span>
+            que se cobra en
+            {formValues.paymentMonth && (
+              <span> {formValues.paymentMonth}.</span>
+            )}
+          </span>
+
           {errors.month?.length !== 0 && errors.month?.map((err) => err)}
         </div>
 

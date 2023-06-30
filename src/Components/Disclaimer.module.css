@@ -11,3 +11,27 @@
   line-height: 1.15;
   font-size: 0.75rem;
 }
+
+@media (min-width: 750px) {
+  .disclaimer {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .disclaimer {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1250px) {
+  .disclaimer {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .disclaimer {
+    width: 50%;
+  }
+}
