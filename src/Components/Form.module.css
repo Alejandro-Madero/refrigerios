@@ -9,6 +9,9 @@
   flex-direction: column;
   padding: 1rem 0;
 }
+.form-question {
+  font-weight: 500;
+}
 
 .input {
   background-color: var(--color-neutral-800);
@@ -17,21 +20,24 @@
   outline: none;
   text-align: center;
   border-radius: 5px;
+  width: 100%;
+  max-width: 80px;
 }
 
-.months {
-  background-color: var(--color-neutral-800);
-  outline: none;
-  border-radius: 5px;
-  color: var(--color-primary-200);
-  border: var(--color-primary-200) 2px solid;
-  max-width: 100%;
+.error {
+  color: rgb(236, 60, 60);
+  font-weight: 500;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
 }
 
 .months-container {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
+  align-items: center;
+  padding: 0 0.25rem;
 }
 
 .months-container::after {
@@ -43,15 +49,16 @@
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-.shifts-container {
+.input-container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0 0.25rem;
 }
 
-.shifts-container::after {
+.input-container::after {
   content: "";
-
   width: 100%;
   margin: 0 auto;
   height: 0.5px;
@@ -61,26 +68,6 @@
 
 .shifts {
   display: flex;
-  gap: 1rem;
-}
-
-.holidays-container {
-  display: flex;
-  flex-direction: column;
   gap: 0.5rem;
-}
-
-.holidays {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.holidays-container::after {
-  content: "";
-
-  width: 100%;
-  margin: 0 auto;
-  height: 0.5px;
-  transform: translateY(1rem);
-  background-color: rgba(255, 255, 255, 0.15);
+  align-items: center;
 }

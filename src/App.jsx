@@ -8,7 +8,7 @@ const App = () => {
     <Wrapper>
       <Logo />
       <Header />
-      <Form />
+      <Form onCalculatedPayment={1} />
     </Wrapper>
   );
 };

@@ -1,0 +1,8 @@
+.months {
+  background-color: var(--color-neutral-800);
+  outline: none;
+  border-radius: 5px;
+  color: var(--color-primary-200);
+  border: var(--color-primary-200) 2px solid;
+  padding: 0.1rem 0.5rem;
+}

@@ -10,49 +10,17 @@ export const getPaymentMonth = function (month) {
 };
 
 export const calculatePayment = function (form) {
-  console.log(form);
+  const REFRIGERIO = PRICES2023[form.month].refrigerio;
+  const MOVILIDAD = PRICES2023[form.month].movilidad;
 
-  const curedData = form.reduce(
-    (acc, field) => {
-      console.log(field);
+  const mornings = Number(form.morning);
+  const nights = Number(form.night);
+  const totalShifts = nights + mornings;
+  const holidays = Number(form.sundays) + Number(form.holidays);
 
-      switch (field[0]) {
-        case "months": {
-          acc.month = field[1];
-          return acc;
-        }
+  const movilityPayment = MOVILIDAD * totalShifts;
+  const holidayPayment = REFRIGERIO * holidays;
+  const shiftsPayment = REFRIGERIO * mornings + REFRIGERIO * 2 * nights;
 
-        case "mañana": {
-          acc.shifts = acc.shifts + Number(field[1]);
-          acc.movility = acc.movility + Number(field[1]);
-          return acc;
-        }
-
-        case "noche": {
-          acc.shifts = acc.shifts + Number(field[1]) * 2;
-          acc.movility = acc.movility + Number(field[1]);
-          return acc;
-        }
-
-        case "domingos": {
-          acc.shifts = acc.shifts + Number(field[1]);
-          return acc;
-        }
-
-        case "feriados": {
-          acc.shifts = acc.shifts + Number(field[1]);
-          return acc;
-        }
-
-        default:
-          return acc;
-      }
-    },
-    { month: null, shifts: 0, movility: 0 }
-  );
-  const payment =
-    curedData.shifts * PRICES2023[curedData.month].refrigerio +
-    curedData.movility * PRICES2023[curedData.month].movilidad;
-  console.log(payment);
-  return payment;
+  return movilityPayment + holidayPayment + shiftsPayment;
 };
