@@ -164,15 +164,15 @@ const Form = ({ onSubmmitedForm, onReset }) => {
           {errors.holidays.length !== 0 && errors.holidays.map((err) => err)}
         </div>
         <div className={styles["button-container"]}>
-          <Button type={"submit"} classes={styles["form-btns"]}>
-            Calcular!
-          </Button>
           <Button
             type={"reset"}
             classes={styles["form-btns"]}
             onClick={handleFormReset}
           >
             Reset
+          </Button>
+          <Button type={"submit"} classes={styles["form-btns"]}>
+            Calcular!
           </Button>
         </div>
       </form>
