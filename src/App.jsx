@@ -11,16 +11,13 @@ import { calculatePayment } from "./Utils/logic";
 const App = () => {
   const [calculationDone, setCalculationDone] = useState(false);
   const [result, setResult] = useState();
-  const handleFormSubmission = (form) => {
-    console.log(form);
 
+  const handleFormSubmission = (form) => {
     const totalPayment = calculatePayment(form);
     console.log(totalPayment);
-    console.log(form);
+
     setResult({
-      money: totalPayment,
-      month: form.month,
-      paymentMonth: form.paymentMonth,
+      ...totalPayment,
     });
     setCalculationDone(true);
   };
@@ -35,13 +32,7 @@ const App = () => {
       <Logo />
       <Header />
       <Form onSubmmitedForm={handleFormSubmission} onReset={handleReset} />
-      {calculationDone && (
-        <Result
-          money={result.money}
-          month={result.month}
-          paymentMonth={result.paymentMonth}
-        />
-      )}
+      {calculationDone && <Result results={result} />}
       <Disclaimer />
     </Wrapper>
   );

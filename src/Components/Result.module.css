@@ -3,10 +3,11 @@
   border-radius: 10px;
   margin-bottom: 1rem;
   color: #fff;
+  border: 2px solid #000;
   width: 95%;
-  margin: 0 auto;
+  justify-self: center;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   font-size: 2.5rem;
   display: flex;
   flex-direction: column;
@@ -14,12 +15,37 @@
 }
 
 .result-header {
+  padding: 0.5rem 0.2rem 0rem 0.2rem;
   font-size: 1rem;
+  text-align: center;
+}
+
+.result-payment {
+  margin-bottom: 1rem;
+}
+.details-btn {
+  font-size: 1rem;
+  justify-self: center;
+  transform: translateY(-50%);
+  border: 2px solid var(--color-neutral-900);
+  background-color: var(--color-primary-200);
+  color: var(--color-neutral-900);
+  font-size: 0.85rem;
+  max-width: 100px;
+  font-weight: 500;
+  padding: 0.15rem 0.25rem;
+  width: 40%;
+  transition: background-color 0.3s ease;
 }
 
 @media (min-width: 450px) {
   .result-container {
     width: 90%;
+  }
+  .details-btn:hover {
+    background-color: var(--color-neutral-800);
+    color: var(--color-primary-200);
+    border: 2px solid var(--color-primary-200);
   }
 }
 
