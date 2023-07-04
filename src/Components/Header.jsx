@@ -1,6 +1,6 @@
 import styles from "./Header.module.css";
 import { ReactComponent as Fingers } from "../assets/fingers.svg";
-import { ReactComponent as Refri } from "../assets/refrigerios.svg";
+
 const Header = () => {
   return (
     <header className={styles.header}>
