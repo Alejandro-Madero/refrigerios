@@ -82,9 +82,9 @@ const Form = ({ onSubmmitedForm, onReset }) => {
     <Card>
       <form className={styles.form} onSubmit={handleForm} ref={formRef}>
         <div className={styles["months-container"]}>
-          <label htmlFor="months">
+          <p className={styles["form-question"]}>
             Quiero calcular el refrigerio compuesto del mes de :
-          </label>
+          </p>
           <Months id="months" onSelectMonth={handleFormChange} />
           <span>
             que se cobra en
@@ -95,16 +95,14 @@ const Form = ({ onSubmmitedForm, onReset }) => {
               </span>
             )}
           </span>
-
           {errors.month?.length !== 0 && errors.month?.map((err) => err)}
         </div>
-
         <div className={styles["input-container"]}>
           <p className={styles["form-question"]}>
             ¿Cúantos turnos trabajaste en el mes?
           </p>
           <div className={styles.shifts}>
-            <label htmlFor="morning">Mañana / tarde</label>
+            <label htmlFor="morning">Mañana / Tarde</label>
             <input
               id="morning"
               name="morning"

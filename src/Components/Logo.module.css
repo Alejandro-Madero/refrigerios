@@ -18,14 +18,13 @@
 @media (min-width: 1000px) {
   .logo {
     width: 70%;
-    margin-bottom: 1rem;
     font-size: 6rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 }
 
 @media (min-width: 1500px) {
   .logo {
-    font-size: 7.5rem;
+    font-size: 6.5rem;
   }
 }

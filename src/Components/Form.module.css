@@ -5,17 +5,21 @@
   width: 100%;
   color: var(--color-primary-100);
   font-size: 1rem;
-  gap: 2rem;
+  gap: 1rem;
   display: flex;
   flex-direction: column;
   padding: 1rem 0;
 }
 .form-question {
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 500;
   font-style: italic;
 }
 
+.form label {
+  font-size: 1.05rem;
+  color: var(--color-primary-100);
+}
 /* INPUTS */
 
 .input {
@@ -85,7 +89,7 @@
   width: 100%;
   margin: 0 auto;
   height: 0.5px;
-  transform: translateY(1rem);
+  transform: translateY(0.5rem);
   background-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -103,7 +107,7 @@
   width: 100%;
   margin: 0 auto;
   height: 0.25px;
-  transform: translateY(1rem);
+  transform: translateY(0.5rem);
   background-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -114,7 +118,6 @@
 
 .shifts {
   display: grid;
-  margin-top: 1rem;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
 }
@@ -157,5 +160,14 @@
     padding: 1rem 1rem;
     font-size: 1.15rem;
     width: 95%;
+    gap: 1.5rem;
+  }
+
+  .input-container::after {
+    transform: translateY(0.75rem);
+  }
+
+  .months-container::after {
+    transform: translateY(0.75rem);
   }
 }
