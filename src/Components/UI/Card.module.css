@@ -5,7 +5,7 @@
   border-radius: 10px;
   padding: 0.25rem;
   display: grid;
-  border: 2px solid #111;
+  border: 2px solid #000;
 }
 
 @media (min-width: 450px) {
@@ -29,6 +29,7 @@
 @media (min-width: 1250px) {
   .card {
     width: 60%;
+    max-width: 700px;
   }
 }
 

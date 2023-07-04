@@ -89,7 +89,10 @@ const Form = ({ onSubmmitedForm, onReset }) => {
           <span>
             que se cobra en
             {formValues.paymentMonth && (
-              <span> {formValues.paymentMonth}.</span>
+              <span className={styles["months-payment"]}>
+                {" "}
+                {formValues.paymentMonth}.
+              </span>
             )}
           </span>
 

@@ -14,7 +14,6 @@ const App = () => {
 
   const handleFormSubmission = (form) => {
     const totalPayment = calculatePayment(form);
-    console.log(totalPayment);
 
     setResult({
       ...totalPayment,

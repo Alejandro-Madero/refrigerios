@@ -1,26 +1,41 @@
 import styles from "./ResultDetails.module.css";
 import Detail from "./Detail";
+import { formatNumber } from "../Utils/formatNumber";
 
-const ResultDetails = ({ details, refrigerio, movility }) => {
+const ResultDetails = ({ details, classes }) => {
   const curedDetails = Object.entries(details).filter((detail) => {
     return detail[1].total > 0;
   });
-  console.log(details);
+
+  const [formattedRefrigerio, formattedMovility] = formatNumber(
+    details.REFRIGERIO,
+    details.MOVILIDAD
+  );
+
   return (
-    <ul className={styles.details}>
-      {curedDetails.map((detail) => {
-        return (
-          <Detail
-            key={detail[0]}
-            type={detail[0]}
-            total={detail[1].total}
-            units={detail[1].units}
-            refrigerio={refrigerio}
-            movility={movility}
-          />
-        );
-      })}
-    </ul>
+    <div className={`${styles["details-container"]} ${classes}`}>
+      <ul className={styles.details}>
+        {curedDetails.map((detail) => {
+          return (
+            <Detail
+              key={detail[0]}
+              type={detail[0]}
+              total={detail[1].total}
+              units={detail[1].units}
+              refrigerio={formattedRefrigerio}
+              movility={formattedMovility}
+            />
+          );
+        })}
+        <div className={styles["detail-values--container"]}>
+          <li className={styles["detail-values"]}>
+            Valores de referencia {details.month}
+            <span>Refrigerio simple: {formattedRefrigerio}</span>
+            <span>Movilidad: {formattedMovility}</span>
+          </li>
+        </div>
+      </ul>
+    </div>
   );
 };
 

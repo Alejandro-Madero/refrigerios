@@ -12,7 +12,7 @@ export const getPaymentMonth = function (month) {
 export const calculatePayment = function (form) {
   const REFRIGERIO = PRICES2023[form.month].refrigerio;
   const MOVILIDAD = PRICES2023[form.month].movilidad;
-  console.log(form);
+
   const mornings = Number(form.morning);
   const nights = Number(form.night);
   const sundays = Number(form.sundays);
