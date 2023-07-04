@@ -3,7 +3,7 @@ import { ReactComponent as Fingers } from "../assets/fingers.svg";
 const Header = () => {
   return (
     <header className={styles.header}>
-      <h2 className={styles.title}>¿Cúanto voy a cobrar?</h2>
+      <h2 className={styles.title}>¿Qué miras boba?</h2>
       <Fingers className={styles.fingers} />
     </header>
   );
