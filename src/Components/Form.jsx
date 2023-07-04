@@ -3,6 +3,7 @@ import Card from "./UI/Card";
 import { useState, useRef } from "react";
 import { getPaymentMonth } from "../Utils/logic";
 import { validateForm } from "../Utils/validateForm";
+import { fixNumber } from "../Utils/fixNumber";
 import Button from "./UI/Button";
 import Months from "./Months";
 
@@ -28,6 +29,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
 
   const handleForm = (e) => {
     e.preventDefault();
+
     const formErrors = validateForm(formValues);
     const hasErrors = Object.entries(formErrors).some(
       (err) => err[1].length !== 0
@@ -39,36 +41,61 @@ const Form = ({ onSubmmitedForm, onReset }) => {
   };
 
   const handleFormChange = (e) => {
+    const value =
+      e.target.value.startsWith("0") && e.target.value.length > 1
+        ? fixNumber(e.target.value)
+        : e.target.value;
+
     switch (e.target.name) {
       case "morning":
-        setErrors({ ...errors, shifts: [] });
-        return setFormValues({ ...formValues, morning: e.target.value });
+        setErrors((prevErr) => {
+          return { ...prevErr, shifts: [] };
+        });
+        return setFormValues((prevValues) => {
+          return { ...prevValues, morning: value };
+        });
 
       case "night":
         setErrors({ ...errors, shifts: [] });
-        return setFormValues({ ...formValues, night: e.target.value });
+        return setFormValues((prevValues) => {
+          return { ...prevValues, night: value };
+        });
 
       case "months": {
-        const month = e.target.value;
+        const month = value;
         if (!month) {
-          return setFormValues({
-            ...formValues,
-            paymentMonth: null,
-            month: "",
+          return setFormValues((prevValues) => {
+            return {
+              ...prevValues,
+              paymentMonth: "",
+              month: "",
+            };
           });
         }
-        setErrors({ ...errors, month: [] });
+        setErrors((prevErr) => {
+          return { ...prevErr, month: [] };
+        });
         const nextMonth = getPaymentMonth(month);
-        return setFormValues({ ...formValues, paymentMonth: nextMonth, month });
+        return setFormValues((prevValues) => {
+          return { ...prevValues, paymentMonth: nextMonth, month };
+        });
       }
 
       case "sundays":
-        setErrors({ ...errors, holidays: [] });
-        return setFormValues({ ...formValues, sundays: e.target.value });
+        setErrors((prevErr) => {
+          return { ...prevErr, holidays: [] };
+        });
+        return setFormValues((prevValues) => {
+          return { ...prevValues, sundays: value };
+        });
 
       case "holidays":
-        setErrors({ ...errors, holidays: [] });
-        return setFormValues({ ...formValues, holidays: e.target.value });
+        setErrors((prevErr) => {
+          return { ...prevErr, holidays: [] };
+        });
+        return setFormValues((prevValues) => {
+          return { ...prevValues, holidays: value };
+        });
     }
   };
 
@@ -110,6 +137,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
                 errors.shifts.length > 0 ? styles.error : ""
               } `}
               type="number"
+              value={formValues.morning}
               min={0}
               onChange={handleFormChange}
               placeholder="0"
@@ -122,6 +150,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
                 errors.shifts.length > 0 ? styles.error : ""
               } `}
               type="number"
+              value={formValues.night}
               min={0}
               onChange={handleFormChange}
               placeholder="0"
@@ -143,6 +172,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
                 errors.holidays.length > 0 ? styles.error : ""
               }`}
               type="number"
+              value={formValues.sundays}
               min={0}
               onChange={handleFormChange}
               placeholder="0"
@@ -155,6 +185,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
                 errors.holidays.length > 0 ? styles.error : ""
               }`}
               type="number"
+              value={formValues.holidays}
               min={0}
               onChange={handleFormChange}
               placeholder="0"

@@ -1,9 +1,9 @@
 .logo-container {
   margin-top: 1rem;
-  width: 90%;
+  width: 80%;
   place-self: center;
   display: grid;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .logo {
@@ -11,6 +11,12 @@
   width: 100%;
   fill: var(--color-primary-400);
   transform: rotate(-8deg);
+}
+
+@media (min-width: 450px) {
+  .logo-container {
+    margin-bottom: 3rem;
+  }
 }
 
 @media (min-width: 750px) {

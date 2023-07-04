@@ -8,14 +8,24 @@
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--color-primary-200);
   font-weight: 400;
 }
 
 .fingers {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+@media (min-width: 350px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .fingers {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 }
 
 @media (min-width: 450px) {
