@@ -5,4 +5,5 @@
   color: var(--color-primary-200);
   border: var(--color-primary-200) 2px solid;
   padding: 0.1rem 0.5rem;
+  cursor: pointer;
 }
