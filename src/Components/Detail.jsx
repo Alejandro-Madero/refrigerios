@@ -14,9 +14,9 @@ const Detail = ({ total, units, type, refrigerio, movility }) => {
 
   return (
     <li>
-      ⚪{concept}: {formattedTotal}
+      ✅ {concept}: {formattedTotal}
       <span>
-        ✅ ({units} {units > 1 ? "unidades " : "unidad"} x{" "}
+        ⚪ ( {units} {units > 1 ? "unidades " : "unidad"} x{" "}
         {concept === "Movilidad" ? movility : refrigerio}
         {units > 1 ? " c/u " : ""} )
       </span>
