@@ -1,6 +1,5 @@
 import styles from "./Months.module.css";
-import { useRef } from "react";
-import { MONTHS } from "../Utils/constants";
+import { MONTHS } from "../../Utils/constants";
 import Month from "./Month";
 
 const Months = ({ onSelectMonth, id }) => {

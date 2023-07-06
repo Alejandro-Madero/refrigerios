@@ -1,11 +1,10 @@
 import { useState } from "react";
-import Logo from "./Components/Logo";
-import Header from "./Components/Header";
+import Logo from "./Components/Logo/Logo";
+import Header from "./Components/Header/Header";
 import Wrapper from "./Components/UI/Wrapper";
-import Form from "./Components/Form";
-import Result from "./Components/Result";
-import Button from "./Components/UI/Button";
-import Disclaimer from "./Components/Disclaimer";
+import Form from "./Components/Form/Form";
+import Result from "./Components/Result/Result";
+import Disclaimer from "./Components/Disclaimer/Disclaimer";
 import { calculatePayment } from "./Utils/logic";
 
 const App = () => {

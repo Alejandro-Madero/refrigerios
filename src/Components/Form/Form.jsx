@@ -1,11 +1,12 @@
 import styles from "./Form.module.css";
-import Card from "./UI/Card";
+import Card from "../UI/Card";
 import { useState, useRef } from "react";
-import { getPaymentMonth } from "../Utils/logic";
-import { validateForm } from "../Utils/validateForm";
-import { fixNumber } from "../Utils/fixNumber";
-import Button from "./UI/Button";
-import Months from "./Months";
+import { getPaymentMonth } from "../../Utils/logic";
+import { validateForm } from "../../Utils/validateForm";
+import { fixNumber } from "../../Utils/fixNumber";
+import Button from "../UI/Button";
+import Months from "../Months/Months";
+import Input from "../Input/Input";
 
 const initialFormValues = {
   month: "",
@@ -129,32 +130,30 @@ const Form = ({ onSubmmitedForm, onReset }) => {
             ¿Cúantos turnos trabajaste en el mes?
           </p>
           <div className={styles.shifts}>
-            <label htmlFor="morning">Mañana / Tarde</label>
-            <input
+            <Input
+              type="number"
               id="morning"
-              name="morning"
-              className={`${styles.input} ${
+              label="Mañana / Tarde"
+              classes={`${styles.input} ${
                 errors.shifts.length > 0 ? styles.error : ""
               } `}
-              type="number"
               value={formValues.morning}
               min={0}
               onChange={handleFormChange}
               placeholder="0"
-            ></input>
-            <label htmlFor="night">Noche</label>
-            <input
+            />
+            <Input
+              type="number"
               id="night"
-              name="night"
-              className={`${styles.input} ${
+              label="Noche"
+              classes={`${styles.input} ${
                 errors.shifts.length > 0 ? styles.error : ""
               } `}
-              type="number"
               value={formValues.night}
               min={0}
               onChange={handleFormChange}
               placeholder="0"
-            ></input>
+            />
           </div>
           {errors.shifts?.length !== 0 && errors.shifts?.map((err) => err)}
         </div>
@@ -164,34 +163,31 @@ const Form = ({ onSubmmitedForm, onReset }) => {
             De esos turnos, ¿Cúantos fueron domingos o feriados?
           </p>
           <div className={styles.shifts}>
-            <label htmlFor="sundays">Domingos</label>
-            <input
-              id="sundays"
-              name="sundays"
-              className={`${styles.input} ${
-                errors.holidays.length > 0 ? styles.error : ""
-              }`}
+            <Input
               type="number"
+              id="sundays"
+              label="Domingos"
+              classes={`${styles.input} ${
+                errors.holidays.length > 0 ? styles.error : ""
+              } `}
               value={formValues.sundays}
               min={0}
               onChange={handleFormChange}
               placeholder="0"
-            ></input>
-            <label htmlFor="holidays">Feriados</label>
-            <input
-              id="holidays"
-              name="holidays"
-              className={`${styles.input} ${
-                errors.holidays.length > 0 ? styles.error : ""
-              }`}
+            />
+            <Input
               type="number"
+              id="holidays"
+              label="Feriados"
+              classes={`${styles.input} ${
+                errors.holidays.length > 0 ? styles.error : ""
+              } `}
               value={formValues.holidays}
               min={0}
               onChange={handleFormChange}
               placeholder="0"
-            ></input>
+            />
           </div>
-
           {errors.holidays.length !== 0 && errors.holidays.map((err) => err)}
         </div>
         <div className={styles["button-container"]}>

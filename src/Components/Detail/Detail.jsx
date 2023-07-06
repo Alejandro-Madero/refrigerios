@@ -1,4 +1,4 @@
-import { formatNumber } from "../Utils/formatNumber";
+import { formatNumber } from "../../Utils/formatNumber";
 
 const concepts = new Map([
   ["shifts", "Refrigerio simple"],
