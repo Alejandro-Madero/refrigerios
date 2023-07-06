@@ -1,6 +1,6 @@
 import styles from "./ResultDetails.module.css";
-import Detail from "./Detail";
-import { formatNumber } from "../Utils/formatNumber";
+import Detail from "../Detail/Detail";
+import { formatNumber } from "../../Utils/formatNumber";
 
 const ResultDetails = ({ details, classes }) => {
   const curedDetails = Object.entries(details).filter((detail) => {

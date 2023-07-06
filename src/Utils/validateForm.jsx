@@ -1,4 +1,4 @@
-import ErrorMessage from "../Components/ErrorMessage";
+import ErrorMessage from "../Components/ErrorMessage/ErrorMessage";
 
 export const validateForm = function (form) {
   const errors = {

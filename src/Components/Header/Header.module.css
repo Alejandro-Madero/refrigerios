@@ -17,6 +17,29 @@
   width: 2rem;
   height: 2rem;
 }
+/* 
+@keyframes guienso {
+  0% {
+    transform-origin: bottom left;
+    transform: rotate(0deg);
+  }
+  25% {
+    transform-origin: bottom left;
+    transform: rotate(12deg);
+  }
+  50% {
+    transform-origin: bottom left;
+    transform: rotate(0deg);
+  }
+  75% {
+    transform-origin: bottom left;
+    transform: rotate(12deg);
+  }
+  100% {
+    transform-origin: bottom left;
+    transform: rotate(0deg);
+  }
+} */
 
 @media (min-width: 350px) {
   .title {
