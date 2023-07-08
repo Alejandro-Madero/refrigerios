@@ -36,13 +36,13 @@
 .details-btn {
   transform: translateY(-50%);
   font-size: 0.85rem;
+  font-weight: 700;
   justify-self: center;
   border: 2px solid var(--color-neutral-900);
   background-color: var(--color-primary-200);
   color: var(--color-neutral-900);
   min-width: 120px;
   max-width: 150px;
-  font-weight: 500;
   padding: 0.15rem 0.25rem;
   width: 40%;
   transition: background-color 0.3s ease;

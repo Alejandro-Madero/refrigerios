@@ -1,9 +1,11 @@
 .months {
+  font-size: 1.1rem;
+  font-weight: 500;
   background-color: var(--color-neutral-800);
-  outline: none;
+  outline: transparent;
   border-radius: 5px;
   color: var(--color-primary-200);
   border: var(--color-primary-200) 2px solid;
-  padding: 0.1rem 0.5rem;
+  padding: 0.2rem 0.5rem;
   cursor: pointer;
 }
