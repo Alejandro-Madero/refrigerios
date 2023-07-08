@@ -11,12 +11,12 @@
   padding: 1rem 0;
 }
 .form-question {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  font-style: italic;
 }
 
 .form label {
+  font-style: italic;
   font-size: 1.05rem;
   color: var(--color-primary-100);
 }
@@ -94,12 +94,16 @@
 }
 
 .months-container {
-  font-style: italic;
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   align-items: center;
   padding: 0 0.25rem;
+}
+
+.months-container span {
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .months-container::after {
@@ -111,9 +115,8 @@
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-.months-payment {
-  font-weight: 500;
-  font-style: normal;
+span > .months-payment {
+  font-weight: 700;
 }
 
 .shifts {
@@ -133,7 +136,7 @@
   background-color: var(--color-primary-200);
   color: var(--color-neutral-900);
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 700;
   padding: 0.5rem 0.25rem;
   width: 50%;
   min-width: 100px;

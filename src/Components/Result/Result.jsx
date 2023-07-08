@@ -5,7 +5,7 @@ import ResultDetails from "./ResultsDetails";
 import Button from "../UI/Button";
 import Card from "../UI/Card";
 
-const Result = ({ children, results }) => {
+const Result = ({ results }) => {
   const [showDetails, setShowDetails] = useState(false);
   const [formattedMoney] = formatNumber(results.total);
   const resultRef = useRef(null);

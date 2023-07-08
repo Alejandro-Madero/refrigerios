@@ -9,14 +9,16 @@
 
 .title {
   font-size: 1.25rem;
+  font-weight: 500;
+
   color: var(--color-primary-200);
-  font-weight: 400;
 }
 
 .fingers {
   width: 2rem;
   height: 2rem;
 }
+
 /* 
 @keyframes guienso {
   0% {
@@ -52,6 +54,11 @@
 }
 
 @media (min-width: 450px) {
+  .title {
+    letter-spacing: 0.15rem;
+    font-weight: 600;
+  }
+
   .header {
     justify-content: center;
     gap: 1.5rem;

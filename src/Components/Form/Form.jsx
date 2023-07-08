@@ -115,14 +115,14 @@ const Form = ({ onSubmmitedForm, onReset }) => {
           </p>
           <Months id="months" onSelectMonth={handleFormChange} />
           <span>
-            que se cobra en
+            que se cobra en{" "}
             {formValues.paymentMonth && (
               <span className={styles["months-payment"]}>
-                {" "}
                 {formValues.paymentMonth}.
               </span>
             )}
           </span>
+
           {errors.month?.length !== 0 && errors.month?.map((err) => err)}
         </div>
         <div className={styles["input-container"]}>
