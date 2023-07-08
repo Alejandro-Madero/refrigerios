@@ -11,32 +11,31 @@
   width: 100%;
   justify-self: center;
   list-style: none;
-  font-size: 1.05rem;
   display: grid;
   gap: 1rem;
 }
 
-.details li {
+.detail-values--container {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.detail-values--container > li {
+  font-size: 1.05rem;
   display: flex;
   flex-direction: column;
   font-weight: 500;
-}
-
-.details span {
-  font-size: 0.75rem;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.detail-values--container {
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  font-size: 1rem;
 }
 
 .detail-values {
   font-style: italic;
   font-weight: 600;
   margin-top: 0.5rem;
+}
+
+.detail-values > span {
+  font-size: 0.8rem;
+  font-weight: 400;
+  font-style: italic;
 }
 
 @media (min-width: 500px) {
@@ -53,21 +52,5 @@
 @media (min-width: 1000px) {
   .details-container {
     width: 90%;
-  }
-  .details li {
-    font-size: 1.05rem;
-  }
-  .details span {
-    font-size: 0.85rem;
-    font-weight: 300;
-    font-style: italic;
-  }
-
-  .detail-values--container li {
-    font-size: 1.05rem;
-  }
-
-  .detail-values--container span {
-    font-size: 0.85rem;
   }
 }
