@@ -1,0 +1,12 @@
+.detail-title {
+  font-size: 1.05rem;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.detail-description {
+  font-size: 0.8rem;
+  font-weight: 400;
+  font-style: italic;
+}

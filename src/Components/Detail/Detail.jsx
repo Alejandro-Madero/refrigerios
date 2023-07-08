@@ -1,4 +1,5 @@
 import { formatNumber } from "../../Utils/formatNumber";
+import styles from "./Detail.module.css";
 
 const concepts = new Map([
   ["shifts", "Refrigerio simple"],
@@ -13,9 +14,9 @@ const Detail = ({ total, units, type, refrigerio, movility }) => {
   const [formattedTotal] = formatNumber(total);
 
   return (
-    <li>
+    <li className={styles["detail-title"]}>
       ✅ {concept}: {formattedTotal}
-      <span>
+      <span className={styles["detail-description"]}>
         ⚪ ( {units} {units > 1 ? "unidades " : "unidad"} x{" "}
         {concept === "Movilidad" ? movility : refrigerio}
         {units > 1 ? " c/u " : ""} )
