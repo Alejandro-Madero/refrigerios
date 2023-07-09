@@ -11,13 +11,13 @@
   padding: 1rem 0;
 }
 .form-question {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 500;
 }
 
 .form label {
   font-style: italic;
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--color-primary-100);
 }
 /* INPUTS */
@@ -102,7 +102,7 @@
 }
 
 .months-container span {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 
@@ -136,7 +136,7 @@ span > .months-payment {
   background-color: var(--color-primary-200);
   color: var(--color-neutral-900);
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   padding: 0.5rem 0.25rem;
   width: 50%;
   min-width: 100px;
