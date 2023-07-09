@@ -37,7 +37,6 @@ const Form = ({ onSubmmitedForm, onReset }) => {
     );
 
     if (!hasErrors) return onSubmmitedForm(formValues);
-
     setErrors(formErrors);
   };
 

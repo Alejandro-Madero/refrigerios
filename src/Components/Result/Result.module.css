@@ -36,7 +36,7 @@
 .details-btn {
   transform: translateY(-50%);
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 600;
   justify-self: center;
   border: 2px solid var(--color-neutral-900);
   background-color: var(--color-primary-200);
