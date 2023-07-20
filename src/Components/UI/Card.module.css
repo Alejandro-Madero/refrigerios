@@ -1,6 +1,7 @@
 .card {
-  background-color: rgba(var(--color-neutral-800-rgb), 0.7);
+  background-color: rgba(var(--color-neutral-700-rgb), 0.7);
   box-shadow: 0 0 5px 1.75px rgba(0, 0, 0, 0.8);
+  width: 95%;
   max-width: 700px;
   justify-self: center;
   border-radius: 10px;
