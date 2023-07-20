@@ -84,7 +84,7 @@ export const validateForm = function (form) {
   if (totalShifts < 1) {
     errors.shifts.push(
       <ErrorMessage key={6}>
-        ⛔ Si no trabajaste ningún día en el mes, no vas a cobrar ningún
+        ⛔ Si no trabajaste ningún turno en el mes, no vas a cobrar ningún
         refrigerio.
       </ErrorMessage>
     );
