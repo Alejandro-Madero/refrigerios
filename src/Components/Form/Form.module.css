@@ -142,12 +142,23 @@ span > .months-payment {
   min-width: 100px;
   transition: background-color 0.3s ease;
 }
+.reset-btn {
+  background-color: var(--color-neutral-800);
+  color: var(--color-primary-200);
+  border-color: var(--color-primary-200);
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
 
 @media (min-width: 500px) {
   .form-btns:hover {
     background-color: var(--color-neutral-800);
-    color: var(--color-primary-300);
-    border: 2px solid var(--color-primary-500);
+    color: var(--color-primary-600);
+    border: 2px solid var(--color-primary-600);
+  }
+
+  .reset-btn:hover {
+    border-color: var(--color-primary-600);
+    color: var(--color-primary-600);
   }
 
   .shifts {

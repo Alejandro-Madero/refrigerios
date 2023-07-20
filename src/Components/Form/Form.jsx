@@ -192,7 +192,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
         <div className={styles["button-container"]}>
           <Button
             type={"reset"}
-            classes={styles["form-btns"]}
+            classes={`${styles["form-btns"]} ${styles["reset-btn"]}`}
             onClick={handleFormReset}
           >
             Reset
