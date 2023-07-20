@@ -1,12 +1,11 @@
 .card {
-  background-color: var(--color-neutral-700);
-  width: 95%;
+  background-color: rgba(var(--color-neutral-800-rgb), 0.7);
+  box-shadow: 0 0 5px 1.75px rgba(0, 0, 0, 0.8);
   max-width: 700px;
   justify-self: center;
   border-radius: 10px;
   padding: 0.25rem;
   display: grid;
-  border: 2px solid #000;
 }
 
 @media (min-width: 450px) {
