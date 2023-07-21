@@ -54,8 +54,8 @@
   }
   .details-btn:hover {
     background-color: var(--color-neutral-800);
-    color: var(--color-primary-200);
-    border: 2px solid var(--color-primary-200);
+    color: var(--color-primary-600);
+    border: 2px solid var(--color-primary-600);
   }
 }
 
