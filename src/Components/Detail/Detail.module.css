@@ -2,11 +2,29 @@
   font-size: 1.05rem;
   display: flex;
   flex-direction: column;
-  font-weight: 500;
 }
 
 .detail-description {
   font-size: 0.8rem;
-  font-weight: 400;
   font-style: italic;
+}
+
+.detail-title--light {
+  color: var(--color-neutral-900);
+  font-weight: 600;
+}
+
+.detail-title--dark {
+  color: var(--color-primary-200);
+  font-weight: 500;
+}
+
+.detail-description--light {
+  font-weight: 500;
+  color: var(--color-neutral-900);
+}
+
+.detail-description--dark {
+  font-weight: 400;
+  color: var(--color-primary-200);
 }

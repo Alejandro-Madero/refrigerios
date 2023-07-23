@@ -1,10 +1,17 @@
+import styles from "./Input.module.css";
+
 const Input = (props) => {
+  console.log(props.errors);
   return (
     <>
-      <label htmlFor={props.id}>{props.label}</label>
+      <label htmlFor={props.id} className={`${styles[`label-${props.theme}`]}`}>
+        {props.label}
+      </label>
       <input
         type={props.type}
-        className={props.classes}
+        className={`${styles.input} ${styles[`input-${props.theme}`]} ${
+          props.errors.length > 0 ? styles.error : ""
+        } `}
         id={props.id}
         name={props.id}
         value={props.value}

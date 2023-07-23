@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeProvider";
 import { formatNumber } from "../../Utils/formatNumber";
 import styles from "./Detail.module.css";
 
@@ -10,13 +12,22 @@ const concepts = new Map([
 ]);
 
 const Detail = ({ total, units, type, refrigerio, movility }) => {
+  const { theme } = useContext(ThemeContext);
   const concept = concepts.get(type);
   const [formattedTotal] = formatNumber(total);
 
   return (
-    <li className={styles["detail-title"]}>
+    <li
+      className={`${styles["detail-title"]} ${
+        styles[`detail-title--${theme}`]
+      }`}
+    >
       ✅ {concept}: {formattedTotal}
-      <span className={styles["detail-description"]}>
+      <span
+        className={`${styles["detail-description"]} ${
+          styles[`detail-description--${theme}`]
+        }`}
+      >
         ⚪ ( {units} {units > 1 ? "unidades " : "unidad"} x{" "}
         {concept === "Movilidad" ? movility : refrigerio}
         {units > 1 ? " c/u " : ""} )

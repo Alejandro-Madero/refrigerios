@@ -1,26 +1,35 @@
 .logo-container {
-  margin-top: 1rem;
-  width: 80%;
-  place-self: center;
-  display: grid;
-  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
+/*width="381.4" height="100" viewBox="0 0 381.4 100"*/
+/*26.21%* --> height / width */
+
 .logo {
-  place-self: center;
-  width: 100%;
+  --width: 10;
+  width: calc(1rem * var(--width));
+  height: calc(1rem * (var(--width) * 0.2621));
+}
+
+.logo-light {
+  fill: var(--color-neutral-900);
+}
+
+.logo-dark {
   fill: var(--color-primary-400);
-  transform: rotate(-8deg);
 }
 
 @media (min-width: 450px) {
-  .logo-container {
-    margin-bottom: 3rem;
+  .logo {
+    --width: 11;
   }
 }
 
 @media (min-width: 750px) {
-  .logo-container {
-    width: 80%;
+  .logo {
+    --width: 13;
   }
 }
