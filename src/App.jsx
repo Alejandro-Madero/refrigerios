@@ -6,6 +6,8 @@ import Form from "./Components/Form/Form";
 import Result from "./Components/Result/Result";
 import Disclaimer from "./Components/Disclaimer/Disclaimer";
 import { calculatePayment } from "./Utils/logic";
+import Navigation from "./Components/Navigation/Navigation";
+import ThemeProvider from "./context/ThemeProvider";
 
 const App = () => {
   const [calculationDone, setCalculationDone] = useState(false);
@@ -26,13 +28,16 @@ const App = () => {
   };
 
   return (
-    <Wrapper>
-      <Logo />
-      <Header />
-      <Form onSubmmitedForm={handleFormSubmission} onReset={handleReset} />
-      {calculationDone && <Result results={result} />}
-      <Disclaimer />
-    </Wrapper>
+    <ThemeProvider>
+      <Wrapper>
+        <Navigation />
+        {/* <Logo /> */}
+        <Header />
+        <Form onSubmmitedForm={handleFormSubmission} onReset={handleReset} />
+        {calculationDone && <Result results={result} />}
+        <Disclaimer />
+      </Wrapper>
+    </ThemeProvider>
   );
 };
 

@@ -1,11 +1,30 @@
 .months {
   font-size: 1rem;
   font-weight: 500;
-  background-color: var(--color-neutral-800);
   outline: transparent;
   border-radius: 5px;
-  color: var(--color-primary-200);
-  border: var(--color-primary-200) 2px solid;
   padding: 0.2rem 0.5rem;
   cursor: pointer;
+}
+
+.months-light {
+  color: var(--color-neutral-900);
+  background-color: var(--color-neutral-50);
+  border: var(--color-neutral-900) 2px solid;
+}
+
+.months-dark {
+  color: var(--color-primary-200);
+  background-color: var(--color-neutral-800);
+  border: var(--color-primary-200) 2px solid;
+}
+
+.option-light {
+  background-color: var(--color-neutral-50);
+  font-weight: 700;
+}
+
+.option-dark {
+  background-color: var(--color-neutral-900);
+  font-weight: 700;
 }

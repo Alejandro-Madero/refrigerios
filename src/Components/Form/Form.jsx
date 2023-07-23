@@ -1,6 +1,7 @@
 import styles from "./Form.module.css";
+import { ThemeContext } from "../../context/ThemeProvider";
 import Card from "../UI/Card";
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import { getPaymentMonth } from "../../Utils/logic";
 import { validateForm } from "../../Utils/validateForm";
 import { fixNumber } from "../../Utils/fixNumber";
@@ -24,6 +25,7 @@ const initialErrors = {
 };
 
 const Form = ({ onSubmmitedForm, onReset }) => {
+  const { theme } = useContext(ThemeContext);
   const [formValues, setFormValues] = useState(initialFormValues);
   const [errors, setErrors] = useState(initialErrors);
   const formRef = useRef(null);
@@ -107,12 +109,20 @@ const Form = ({ onSubmmitedForm, onReset }) => {
 
   return (
     <Card>
-      <form className={styles.form} onSubmit={handleForm} ref={formRef}>
-        <div className={styles["months-container"]}>
+      <form
+        className={`${styles.form} ${styles[`form-${theme}`]}`}
+        onSubmit={handleForm}
+        ref={formRef}
+      >
+        <div
+          className={`${styles["months-container"]} ${
+            styles[`months-container--${theme}`]
+          }`}
+        >
           <p className={styles["form-question"]}>
             Quiero calcular el refrigerio compuesto del mes de :
           </p>
-          <Months id="months" onSelectMonth={handleFormChange} />
+          <Months id="months" onSelectMonth={handleFormChange} theme={theme} />
           <span>
             que se cobra en{" "}
             {formValues.paymentMonth && (
@@ -124,7 +134,11 @@ const Form = ({ onSubmmitedForm, onReset }) => {
 
           {errors.month?.length !== 0 && errors.month?.map((err) => err)}
         </div>
-        <div className={styles["input-container"]}>
+        <div
+          className={`${styles["input-container"]} ${
+            styles[`input-container--${theme}`]
+          }`}
+        >
           <p className={styles["form-question"]}>
             ¿Cúantos turnos trabajaste en el mes?
           </p>
@@ -133,31 +147,33 @@ const Form = ({ onSubmmitedForm, onReset }) => {
               type="number"
               id="morning"
               label="Mañana / Tarde"
-              classes={`${styles.input} ${
-                errors.shifts.length > 0 ? styles.error : ""
-              } `}
               value={formValues.morning}
               min={0}
               onChange={handleFormChange}
               placeholder="0"
+              theme={theme}
+              errors={errors.shifts}
             />
             <Input
               type="number"
               id="night"
               label="Noche"
-              classes={`${styles.input} ${
-                errors.shifts.length > 0 ? styles.error : ""
-              } `}
               value={formValues.night}
               min={0}
               onChange={handleFormChange}
               placeholder="0"
+              theme={theme}
+              errors={errors.shifts}
             />
           </div>
           {errors.shifts?.length !== 0 && errors.shifts?.map((err) => err)}
         </div>
 
-        <div className={styles["input-container"]}>
+        <div
+          className={`${styles["input-container"]} ${
+            styles[`input-container--${theme}`]
+          }`}
+        >
           <p className={styles["form-question"]}>
             De esos turnos, ¿Cúantos fueron domingos o feriados?
           </p>
@@ -166,25 +182,23 @@ const Form = ({ onSubmmitedForm, onReset }) => {
               type="number"
               id="sundays"
               label="Domingos"
-              classes={`${styles.input} ${
-                errors.holidays.length > 0 ? styles.error : ""
-              } `}
               value={formValues.sundays}
               min={0}
               onChange={handleFormChange}
               placeholder="0"
+              theme={theme}
+              errors={errors.holidays}
             />
             <Input
               type="number"
               id="holidays"
               label="Feriados"
-              classes={`${styles.input} ${
-                errors.holidays.length > 0 ? styles.error : ""
-              } `}
               value={formValues.holidays}
               min={0}
               onChange={handleFormChange}
               placeholder="0"
+              theme={theme}
+              errors={errors.holidays}
             />
           </div>
           {errors.holidays.length !== 0 && errors.holidays.map((err) => err)}
@@ -192,12 +206,15 @@ const Form = ({ onSubmmitedForm, onReset }) => {
         <div className={styles["button-container"]}>
           <Button
             type={"reset"}
-            classes={`${styles["form-btns"]} ${styles["reset-btn"]}`}
+            classes={`${styles["form-btns"]} ${styles[`reset-btn--${theme}`]}`}
             onClick={handleFormReset}
           >
             Reset
           </Button>
-          <Button type={"submit"} classes={styles["form-btns"]}>
+          <Button
+            type={"submit"}
+            classes={`${styles["form-btns"]} ${styles[`form-btns--${theme}`]}`}
+          >
             Calcular!
           </Button>
         </div>

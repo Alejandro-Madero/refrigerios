@@ -5,20 +5,31 @@
   align-items: center;
   width: 90%;
   justify-self: center;
-  margin: 1rem 0;
+  margin: 2rem 0 1.5rem 0;
 }
 
 .title {
   font-size: 1.25rem;
-  font-weight: 600;
-  background-image: linear-gradient(
-    to top right,
-    var(--color-primary-300),
-    var(--color-primary-600)
-  );
+  font-weight: 700;
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
+}
+
+.title-light {
+  background-image: linear-gradient(
+    to right,
+    var(--color-neutral-700),
+    var(--color-neutral-1000)
+  );
+}
+
+.title-dark {
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-300),
+    var(--color-primary-600)
+  );
 }
 
 .fingers {
@@ -83,6 +94,7 @@
 
   .header {
     width: 80%;
+    margin: 3rem 0 2rem 0;
   }
 
   .fingers {

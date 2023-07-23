@@ -1,9 +1,12 @@
 .month-option {
   font-weight: 500;
-  background-color: var(--color-neutral-900);
   cursor: pointer;
 }
 
-.month-option::hover {
-  background-color: pink;
+.month-light {
+  background-color: var(--color-neutral-50);
+  font-weight: 600;
+}
+.month-dark {
+  background-color: var(--color-neutral-900);
 }
