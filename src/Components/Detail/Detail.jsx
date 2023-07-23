@@ -28,7 +28,8 @@ const Detail = ({ total, units, type, refrigerio, movility }) => {
           styles[`detail-description--${theme}`]
         }`}
       >
-        ⚪ ( {units} {units > 1 ? "unidades " : "unidad"} x{" "}
+        {theme === "dark" ? "⚪" : "🔵"} ( {units}{" "}
+        {units > 1 ? "unidades " : "unidad"} x{" "}
         {concept === "Movilidad" ? movility : refrigerio}
         {units > 1 ? " c/u " : ""} )
       </span>

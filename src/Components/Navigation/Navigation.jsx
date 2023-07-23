@@ -19,7 +19,9 @@ export default function Navigation() {
         <div
           className={styles["theme-container"]}
           onMouseEnter={handleShowTooltip}
+          onTouchStart={handleShowTooltip}
           onMouseLeave={handleHideTooltip}
+          onTouchEnd={handleHideTooltip}
         >
           {theme === "dark" && (
             <Sun
