@@ -17,8 +17,9 @@
   width: 100%;
   justify-self: center;
   list-style: none;
-  display: grid;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .detail-values-container {
@@ -48,10 +49,11 @@
   font-style: italic;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 550px) {
   .details {
-    gap: 0.5rem;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
 
   .detail-values--container {

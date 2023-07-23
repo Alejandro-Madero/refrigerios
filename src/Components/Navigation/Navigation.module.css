@@ -25,25 +25,32 @@
 }
 
 .theme-tooltip {
-  visibility: hidden;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-80%, 80%);
-  background-color: var(--color-neutral-25);
-  border-radius: 5px;
-  padding: 0.15rem 0.5rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  width: 100%;
-  min-width: 110px;
-  display: flex;
-  justify-content: center;
+  display: none;
 }
 
-.theme-tooltip p {
-  text-align: center;
+@media (hover: hover) {
+  .theme-tooltip {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-80%, 80%);
+    background-color: var(--color-neutral-25);
+    border-radius: 5px;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    width: 100%;
+    min-width: 110px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .theme-tooltip p {
+    text-align: center;
+  }
 }
+
 .theme-svg {
   width: 2.3rem;
   height: 2.3rem;
@@ -53,11 +60,13 @@
 .sun {
   stroke: var(--color-primary-400);
   opacity: 1;
+  animation: solcito 1s;
 }
 
 .moon {
   fill: var(--color-neutral-900);
   opacity: 0.9;
+  animation: lunita 1s;
 }
 
 @media (min-width: 450px) {
@@ -80,5 +89,33 @@
   }
   .nav {
     width: 95%;
+  }
+}
+
+@keyframes solcito {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  80% {
+    transform: rotate(210deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes lunita {
+  0% {
+    transform: rotate(90deg);
+  }
+
+  80% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
   }
 }

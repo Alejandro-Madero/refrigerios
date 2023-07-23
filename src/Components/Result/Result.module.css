@@ -50,9 +50,10 @@
   width: 40%;
   min-width: 120px;
   max-width: 160px;
+  max-height: 50px;
   padding: 0.15rem 0.25rem;
   transition: border-color 0.3s ease, color 0.3s ease,
-    background-color 0.3s ease;
+  background-color 0.3s ease;
 }
 
 .details-btn--light {
@@ -67,11 +68,7 @@
   border: 2px solid var(--color-neutral-900);
 }
 
-@media (min-width: 450px) {
-  .result-container {
-    width: 90%;
-  }
-
+@media (hover: hover){
   .details-btn--light:hover {
     color: var(--color-neutral-50);
     background-color: var(--color-primary-700);
@@ -83,6 +80,13 @@
     color: var(--color-primary-600);
     border-color: var(--color-primary-600);
   }
+}
+
+@media (min-width: 450px) {
+  .result-container {
+    width: 90%;
+  }
+  
 }
 
 @media (min-width: 750px) {
