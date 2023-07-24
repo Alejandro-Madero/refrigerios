@@ -31,10 +31,10 @@
   padding: 0 0.25rem;
 }
 
-.months-container span {
+/* .months-container span {
   font-size: 1rem;
   font-weight: 500;
-}
+} */
 
 span > .months-payment {
   font-weight: 700;

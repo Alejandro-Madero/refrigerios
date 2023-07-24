@@ -31,7 +31,6 @@ const App = () => {
     <ThemeProvider>
       <Wrapper>
         <Navigation />
-        {/* <Logo /> */}
         <Header />
         <Form onSubmmitedForm={handleFormSubmission} onReset={handleReset} />
         {calculationDone && <Result results={result} />}
