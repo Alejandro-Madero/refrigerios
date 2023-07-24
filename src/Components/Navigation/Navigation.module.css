@@ -35,7 +35,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-80%, 80%);
-    background-color: var(--color-neutral-25);
+    background-color: var(--color-neutral-600);
+    color: var(--color-neutral-25);
     border-radius: 5px;
     padding: 0.15rem 0.5rem;
     font-size: 0.85rem;
@@ -60,13 +61,13 @@
 .sun {
   stroke: var(--color-primary-400);
   opacity: 1;
-  animation: solcito 1s;
+  animation: solcito 0.5s;
 }
 
 .moon {
   fill: var(--color-neutral-900);
   opacity: 0.9;
-  animation: lunita 1s;
+  animation: lunita 0.5s;
 }
 
 @media (min-width: 450px) {
