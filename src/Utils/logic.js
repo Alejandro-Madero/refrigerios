@@ -15,12 +15,13 @@ export const calculatePayment = function (form) {
 
   const mornings = Number(form.morning);
   const nights = Number(form.night);
+  const saturdays = Number(form.saturdays);
   const sundays = Number(form.sundays);
   const holidays = Number(form.holidays);
   const totalShifts = nights + mornings;
 
   const movilityPayment = MOVILIDAD * totalShifts;
-  const sundayPayment = REFRIGERIO * sundays;
+  const sundayPayment = REFRIGERIO * sundays + REFRIGERIO * saturdays;
   const holidayPayment = REFRIGERIO * holidays;
   const nightsPayment = REFRIGERIO * nights;
   const daytimePayment = REFRIGERIO * mornings;
@@ -39,7 +40,7 @@ export const calculatePayment = function (form) {
     shifts: { total: shiftsPayment, units: totalShifts },
     movility: { total: movilityPayment, units: totalShifts },
     nights: { total: nightsPayment, units: nights },
-    sundays: { total: sundayPayment, units: sundays },
+    sundays: { total: sundayPayment, units: sundays + saturdays },
     holiday: { total: holidayPayment, units: holidays },
     REFRIGERIO,
     MOVILIDAD,

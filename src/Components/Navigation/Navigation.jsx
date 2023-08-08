@@ -1,9 +1,10 @@
-import { useContext, useState } from "react";
 import styles from "./Navigation.module.css";
-import Logo from "../Logo/Logo";
+import { useContext, useState } from "react";
+import { ThemeContext } from "../../context/ThemeProvider";
 import { ReactComponent as Sun } from "../../assets/sun.svg";
 import { ReactComponent as Moon } from "../../assets/moon.svg";
-import { ThemeContext } from "../../context/ThemeProvider";
+import Logo from "../Logo/Logo";
+import Tooltip from "../Tooltip/Tooltip";
 
 export default function Navigation() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -13,13 +14,13 @@ export default function Navigation() {
   const handleHideTooltip = () => setShowTooltip(false);
 
   return (
-    <header className={`${styles["nav-header"]} ${styles[`shadow-${theme}`]}`}>
+    <header className={styles["nav-header"]}>
       <nav className={styles.nav}>
         <Logo classes={styles.logo} />
         <div
           className={styles["theme-container"]}
-          onMouseEnter={handleShowTooltip}          
-          onMouseLeave={handleHideTooltip}         
+          onMouseEnter={handleShowTooltip}
+          onMouseLeave={handleHideTooltip}
         >
           {theme === "dark" && (
             <Sun
@@ -32,11 +33,11 @@ export default function Navigation() {
               className={`${styles.moon} ${styles["theme-svg"]}`}
               onClick={toggleTheme}
             />
-          )}{" "}
+          )}
           {showTooltip && (
-            <div className={styles["theme-tooltip"]}>
+            <Tooltip classes={styles["theme-tooltip"]}>
               <p>Modo {theme === "dark" ? "claro" : "oscuro"}</p>
-            </div>
+            </Tooltip>
           )}
         </div>
       </nav>

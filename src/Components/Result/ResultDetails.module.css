@@ -3,14 +3,7 @@
   place-self: center;
   display: grid;
   place-items: center;
-}
-
-.border-light {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.border-dark {
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid var(--form-separator);
 }
 
 .details {
@@ -23,6 +16,7 @@
 }
 
 .detail-values-container {
+  border-top: 1px solid var(--form-separator);
   grid-column: span 2;
 }
 
@@ -32,16 +26,8 @@
   flex-direction: column;
   font-style: italic;
   margin-top: 0.5rem;
-}
-
-.detail-values--light {
-  font-weight: 600;
-  color: var(--color-neutral-900);
-}
-
-.detail-values--dark {
-  font-weight: 500;
-  color: var(--color-primary-200);
+  color: var(--font-color);
+  font-weight: var(--fw-light-bold);
 }
 
 .detail-values > span {

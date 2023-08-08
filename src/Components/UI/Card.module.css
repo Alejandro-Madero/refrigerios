@@ -1,20 +1,12 @@
 .card {
   width: 95%;
-  max-width: 700px;
+  max-width: 750px;
   justify-self: center;
   border-radius: 10px;
   padding: 0.25rem;
   display: grid;
-}
-
-.card-light {
-  background-color: var(--color-neutral-50);
-  box-shadow: 0 0 5px 1.75px rgba(0, 0, 0, 0.15);
-}
-
-.card-dark {
-  background-color: rgba(var(--color-neutral-700-rgb), 0.7);
-  box-shadow: 0 0 5px 1.75px rgba(0, 0, 0, 0.8);
+  background-color: var(--card-bgcolor);
+  box-shadow: 0 0 5px 1.75px var(--card-shadow);
 }
 
 @media (min-width: 450px) {

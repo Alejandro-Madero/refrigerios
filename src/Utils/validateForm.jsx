@@ -14,6 +14,14 @@ export const validateForm = function (form) {
     const value = form[key];
 
     switch (key) {
+      case "month": {
+        if (value === "")
+          errors.month.push(
+            <ErrorMessage key={4}>⛔ Debés seleccionar un mes.</ErrorMessage>
+          );
+        break;
+      }
+
       case "morning": {
         if (+value < 0)
           errors.shifts.push(
@@ -52,20 +60,8 @@ export const validateForm = function (form) {
         break;
       }
 
-      case "month": {
-        if (value === "")
-          errors.month.push(
-            <ErrorMessage key={4}>⛔ Debés seleccionar un mes.</ErrorMessage>
-          );
-        break;
-      }
-
+      case "saturdays":
       case "sundays": {
-        totalHolidays += Number(value);
-        break;
-      }
-
-      case "holidays": {
         totalHolidays += Number(value);
         break;
       }

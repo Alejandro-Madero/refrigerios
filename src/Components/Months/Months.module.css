@@ -5,26 +5,13 @@
   border-radius: 5px;
   padding: 0.2rem 0.5rem;
   cursor: pointer;
+  color: var(--font-color);
+  background-color: var(--input-bgcolor);
+  border: 2px solid var(--input-border-color);
 }
 
-.months-light {
-  color: var(--color-neutral-900);
-  background-color: var(--color-neutral-50);
-  border: var(--color-neutral-900) 2px solid;
-}
-
-.months-dark {
-  color: var(--color-primary-200);
-  background-color: var(--color-neutral-800);
-  border: var(--color-primary-200) 2px solid;
-}
-
-.option-light {
-  background-color: var(--color-neutral-50);
+.option {
+  background-color: var(--month-option-bgcolor);
   font-weight: 700;
-}
-
-.option-dark {
-  background-color: var(--color-neutral-900);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
