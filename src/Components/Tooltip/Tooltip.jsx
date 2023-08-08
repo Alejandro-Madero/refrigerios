@@ -7,7 +7,7 @@ const tooltips = new Map([
   ],
   [
     "saturdays",
-    "En dependencias donde el turno inicie un sábado y finalice un domingo, se abonará un refrigerio simple adicional.",
+    "En dependencias donde el turno inicie un sábado y finalice un domingo, se abonará un refrigerio simple adicional en concepto de domingo.",
   ],
 ]);
 
