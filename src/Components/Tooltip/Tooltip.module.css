@@ -1,0 +1,15 @@
+.tooltip {
+  font-size: 0.85rem;
+  font-weight: var(--fw-light-bold);
+  justify-content: center;
+  color: var(--tooltip-fcolor);
+  background-color: var(--tooltip-bgcolor);
+  border-radius: 5px;
+  padding: 0.15rem 0.5rem;
+  width: 100%;
+  z-index: 10;
+}
+
+.tooltip p {
+  text-align: center;
+}

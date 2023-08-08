@@ -12,14 +12,7 @@
   --width: 10;
   width: calc(1rem * var(--width));
   height: calc(1rem * (var(--width) * 0.2621));
-}
-
-.logo-light {
-  fill: var(--color-neutral-900);
-}
-
-.logo-dark {
-  fill: var(--color-primary-400);
+  fill: var(--logo-fill-color);
 }
 
 @media (min-width: 450px) {

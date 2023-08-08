@@ -3,20 +3,5 @@
   width: 100%;
   min-width: 100%;
   min-height: 100vh;
-}
-
-.dark {
-  background: linear-gradient(
-    to bottom,
-    var(--color-neutral-1000),
-    var(--color-neutral-800)
-  );
-}
-
-.light {
-  background: linear-gradient(
-    to bottom,
-    var(--color-neutral-150),
-    var(--color-neutral-50)
-  );
+  background: var(--bg-gradient);
 }

@@ -17,17 +17,9 @@ const Detail = ({ total, units, type, refrigerio, movility }) => {
   const [formattedTotal] = formatNumber(total);
 
   return (
-    <li
-      className={`${styles["detail-title"]} ${
-        styles[`detail-title--${theme}`]
-      }`}
-    >
+    <li className={styles["detail-title"]}>
       ✅ {concept}: {formattedTotal}
-      <span
-        className={`${styles["detail-description"]} ${
-          styles[`detail-description--${theme}`]
-        }`}
-      >
+      <span className={styles["detail-description"]}>
         {theme === "dark" ? "⚪" : "🔵"} ( {units}{" "}
         {units > 1 ? "unidades " : "unidad"} x{" "}
         {concept === "Movilidad" ? movility : refrigerio}

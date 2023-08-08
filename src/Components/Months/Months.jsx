@@ -2,20 +2,20 @@ import styles from "./Months.module.css";
 import { MONTHS } from "../../Utils/constants";
 import Month from "./Month";
 
-const Months = ({ onSelectMonth, id, theme }) => {
+const Months = ({ onSelectMonth, id }) => {
   return (
     <select
-      className={`${styles.months} ${styles[`months-${theme}`]}`}
+      className={styles.months}
       name={id}
       id={id}
       onChange={(e) => onSelectMonth(e)}
     >
-      <option value="" className={`${styles[`option-${theme}`]}`}>
+      <option value="" className={styles.option}>
         Seleccioná un mes
       </option>
       {MONTHS.map((month) => {
         return (
-          <Month key={month} value={month} theme={theme}>
+          <Month key={month} value={month}>
             {month}
           </Month>
         );

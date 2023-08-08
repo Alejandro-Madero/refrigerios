@@ -1,10 +1,7 @@
-import { useContext } from "react";
-import { ThemeContext } from "../../context/ThemeProvider";
 import styles from "./Wrapper.module.css";
-const Wrapper = ({ children }) => {
-  const { theme } = useContext(ThemeContext);
 
-  return <div className={`${styles.wrapper} ${styles[theme]}`}>{children}</div>;
+const Wrapper = ({ children }) => {
+  return <div className={styles.wrapper}>{children}</div>;
 };
 
 export default Wrapper;

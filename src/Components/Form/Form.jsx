@@ -1,10 +1,9 @@
 import styles from "./Form.module.css";
-import { ThemeContext } from "../../context/ThemeProvider";
-import Card from "../UI/Card";
-import { useState, useRef, useContext } from "react";
+import { useState } from "react";
 import { getPaymentMonth } from "../../Utils/logic";
 import { validateForm } from "../../Utils/validateForm";
 import { fixNumber } from "../../Utils/fixNumber";
+import Card from "../UI/Card";
 import Button from "../UI/Button";
 import Months from "../Months/Months";
 import Input from "../Input/Input";
@@ -14,6 +13,7 @@ const initialFormValues = {
   morning: "",
   night: "",
   paymentMonth: "",
+  saturdays: "",
   sundays: "",
   holidays: "",
 };
@@ -25,10 +25,8 @@ const initialErrors = {
 };
 
 const Form = ({ onSubmmitedForm, onReset }) => {
-  const { theme } = useContext(ThemeContext);
   const [formValues, setFormValues] = useState(initialFormValues);
   const [errors, setErrors] = useState(initialErrors);
-  const formRef = useRef(null);
 
   const handleForm = (e) => {
     e.preventDefault();
@@ -49,20 +47,6 @@ const Form = ({ onSubmmitedForm, onReset }) => {
         : e.target.value;
 
     switch (e.target.name) {
-      case "morning":
-        setErrors((prevErr) => {
-          return { ...prevErr, shifts: [] };
-        });
-        return setFormValues((prevValues) => {
-          return { ...prevValues, morning: value };
-        });
-
-      case "night":
-        setErrors({ ...errors, shifts: [] });
-        return setFormValues((prevValues) => {
-          return { ...prevValues, night: value };
-        });
-
       case "months": {
         const month = value;
         if (!month) {
@@ -82,6 +66,28 @@ const Form = ({ onSubmmitedForm, onReset }) => {
           return { ...prevValues, paymentMonth: nextMonth, month };
         });
       }
+
+      case "morning":
+        setErrors((prevErr) => {
+          return { ...prevErr, shifts: [] };
+        });
+        return setFormValues((prevValues) => {
+          return { ...prevValues, morning: value };
+        });
+
+      case "night":
+        setErrors({ ...errors, shifts: [] });
+        return setFormValues((prevValues) => {
+          return { ...prevValues, night: value };
+        });
+
+      case "saturdays":
+        setErrors((prevErr) => {
+          return { ...prevErr, holidays: [] };
+        });
+        return setFormValues((prevValues) => {
+          return { ...prevValues, saturdays: value };
+        });
 
       case "sundays":
         setErrors((prevErr) => {
@@ -109,20 +115,12 @@ const Form = ({ onSubmmitedForm, onReset }) => {
 
   return (
     <Card>
-      <form
-        className={`${styles.form} ${styles[`form-${theme}`]}`}
-        onSubmit={handleForm}
-        ref={formRef}
-      >
-        <div
-          className={`${styles["months-container"]} ${
-            styles[`months-container--${theme}`]
-          }`}
-        >
+      <form className={styles.form} onSubmit={handleForm}>
+        <div className={styles["months-container"]}>
           <p className={styles["form-question"]}>
             Quiero calcular el refrigerio compuesto del mes de :
           </p>
-          <Months id="months" onSelectMonth={handleFormChange} theme={theme} />
+          <Months id="months" onSelectMonth={handleFormChange} />
           <span>
             que se cobra en{" "}
             {formValues.paymentMonth && (
@@ -131,14 +129,11 @@ const Form = ({ onSubmmitedForm, onReset }) => {
               </span>
             )}
           </span>
-
-          {errors.month?.length !== 0 && errors.month?.map((err) => err)}
+          <div>
+            {errors.month?.length !== 0 && errors.month?.map((err) => err)}
+          </div>
         </div>
-        <div
-          className={`${styles["input-container"]} ${
-            styles[`input-container--${theme}`]
-          }`}
-        >
+        <div className={styles["input-container"]}>
           <p className={styles["form-question"]}>
             ¿Cúantos turnos trabajaste en el mes?
           </p>
@@ -151,7 +146,6 @@ const Form = ({ onSubmmitedForm, onReset }) => {
               min={0}
               onChange={handleFormChange}
               placeholder="0"
-              theme={theme}
               errors={errors.shifts}
             />
             <Input
@@ -162,22 +156,30 @@ const Form = ({ onSubmmitedForm, onReset }) => {
               min={0}
               onChange={handleFormChange}
               placeholder="0"
-              theme={theme}
               errors={errors.shifts}
             />
           </div>
-          {errors.shifts?.length !== 0 && errors.shifts?.map((err) => err)}
+          <div>
+            {errors.shifts?.length !== 0 && errors.shifts?.map((err) => err)}
+          </div>
         </div>
 
-        <div
-          className={`${styles["input-container"]} ${
-            styles[`input-container--${theme}`]
-          }`}
-        >
+        <div className={styles["input-container"]}>
           <p className={styles["form-question"]}>
-            De esos turnos, ¿Cúantos fueron domingos o feriados?
+            De esos turnos, ¿Cúantos fueron sábados noche, domingos o feriados?
           </p>
           <div className={styles.shifts}>
+            <Input
+              type="number"
+              id="saturdays"
+              label="Sábados noche "
+              value={formValues.saturdays}
+              min={0}
+              onChange={handleFormChange}
+              placeholder="0"
+              hasTooltip={true}
+              errors={errors.holidays}
+            />
             <Input
               type="number"
               id="sundays"
@@ -186,7 +188,6 @@ const Form = ({ onSubmmitedForm, onReset }) => {
               min={0}
               onChange={handleFormChange}
               placeholder="0"
-              theme={theme}
               errors={errors.holidays}
             />
             <Input
@@ -197,7 +198,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
               min={0}
               onChange={handleFormChange}
               placeholder="0"
-              theme={theme}
+              hasTooltip={true}
               errors={errors.holidays}
             />
           </div>
@@ -206,15 +207,12 @@ const Form = ({ onSubmmitedForm, onReset }) => {
         <div className={styles["button-container"]}>
           <Button
             type={"reset"}
-            classes={`${styles["form-btns"]} ${styles[`reset-btn--${theme}`]}`}
+            classes={`${styles["form-btns"]} ${styles["reset-btn"]}`}
             onClick={handleFormReset}
           >
             Reset
           </Button>
-          <Button
-            type={"submit"}
-            classes={`${styles["form-btns"]} ${styles[`form-btns--${theme}`]}`}
-          >
+          <Button type={"submit"} classes={styles["form-btns"]}>
             Calcular!
           </Button>
         </div>

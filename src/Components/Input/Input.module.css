@@ -1,57 +1,57 @@
 .label {
+  position: relative;
   font-style: italic;
   font-size: 1rem;
+  color: var(--font-color);
+  font-weight: var(--fw-light-bold);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-width: 155px;
 }
 
-.label-light {
-  font-weight: 600;
-  color: var(--color-neutral-900);
-}
-
-.label-dark {
-  color: var(--color-primary-100);
+.info {
+  fill: var(--inputsvg-info-fill);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  opacity: 0.9;
 }
 
 /* INPUTS */
 
 .input {
-  border: var(--color-primary-200) 2px solid;
-  outline: none;
+  place-self: center;
+  color: var(--font-color);
+  font-weight: var(--fw-light-bold);
   text-align: center;
-  border-radius: 5px;
+  background-color: var(--input-bgcolor);
   width: 100%;
   max-width: 80px;
-  transition: transform 0.2s ease;
+  outline: none;
+  border: 2px solid var(--input-border-color);
+  border-radius: 5px;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.input-light {
-  background-color: var(--color-neutral-50);
-  color: var(--color-neutral-900);
-  border: var(--color-neutral-800) 2px solid;
-  font-weight: 600;
-}
-
-.input-dark {
-  color: var(--color-primary-100);
-  background-color: var(--color-neutral-800);
-  border: var(--color-primary-200) 2px solid;
-}
-
-.input-light:focus {
+.input:focus {
   transform: scale(1.15);
-  border: var(--color-primary-600) 2px solid;
-}
-
-.input-dark:focus {
-  transform: scale(1.15);
-  border: var(--color-primary-700) 2px solid;
-  border: var(--color-primary-700) 2px solid;
+  border-color: var(--input-border-color-focus);
 }
 
 .input.error {
   border: 3px solid var(--color-warning);
   animation: inputError 0.3s forwards;
+}
+
+.input-tooltip {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 200px;
+  transform: translate(-45%, 16%);
 }
 
 @keyframes inputError {
@@ -82,5 +82,23 @@
   }
   100% {
     transform: translateX(0px);
+  }
+}
+
+@media (hover: none) {
+  .input-tooltip {
+    display: flex;
+  }
+}
+
+@media (hover: hover) {
+  .input-tooltip {
+    display: flex;
+  }
+}
+
+@media (min-width: 750px) {
+  .input {
+    place-self: auto;
   }
 }

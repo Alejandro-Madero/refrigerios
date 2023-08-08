@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 
 :root {
   font-family: "Montserrat", sans-serif;
@@ -39,18 +39,124 @@
   --color-primary-900: #341bab;
 
   --color-warning: #e24444;
+}
 
-  --color-success-25: #f6fef9;
-  --color-success-50: #ecfdf3;
-  --color-success-100: #d1fadf;
-  --color-success-200: #a6f4c5;
-  --color-success-300: #6ce9a6;
-  --color-success-400: #32d583;
-  --color-success-500: #12b76a;
-  --color-success-600: #039855;
-  --color-success-700: #027a48;
-  --color-success-800: #05603a;
-  --color-success-900: #054f31;
+.light-theme {
+  /* FONT */
+  --font-color: var(--color-neutral-900);
+  --fw-normal: 500;
+  --fw-light-bold: 600;
+  --fw-bold: 700;
+
+  /* BACKGROUND */
+  --bg-gradient: linear-gradient(
+    to bottom,
+    var(--color-neutral-150),
+    var(--color-neutral-50)
+  );
+
+  /* TITLE */
+  --title-gradient: linear-gradient(
+    to right,
+    var(--color-neutral-700),
+    var(--color-neutral-1000)
+  );
+
+  /* CARD */
+  --card-bgcolor: var(--color-neutral-50);
+  --card-shadow: rgba(0, 0, 0, 0.15);
+
+  /* BUTTONS */
+  --btn-primary-fcolor: var(--color-neutral-50);
+  --btn-primary-bgcolor: var(--color-neutral-600);
+  --btn-primary-border-color: var(--color-neutral-900);
+  --btn-secondary-fcolor: var(--color-neutral-900);
+  --btn-secondary-bgcolor: var(--color-neutral-50);
+  --btn-secondary-border-color: var(--color-neutral-900);
+  --btn-details-fcolor: var(--color-neutral-900);
+  --btn-details-bgcolor: var(--color-neutral-50);
+  --btn-details-border-color: var(--color-neutral-900);
+
+  /* BUTTONS-HOVER */
+  --btn-fcolor-hover: var(--color-neutral-50);
+  --btn-bgcolor-hover: var(--color-primary-700);
+  --btn-border-color-hover: var(--color-primary-800);
+
+  /*  INPUTS */
+  --input-bgcolor: var(--color-neutral-50);
+  --input-border-color: var(--color-neutral-800);
+  --input-border-color-focus: var(--color-primary-700);
+  --inputsvg-info-fill: var(--color-primary-800);
+  --tooltip-bgcolor: var(--color-neutral-600);
+  --tooltip-fcolor: var(--color-neutral-50);
+
+  /* OPTION */
+  --month-option-bgcolor: var(--color-neutral-50);
+
+  /* LOGO */
+  --logo-fill-color: var(--color-neutral-900);
+
+  /* FORM SEPARATOR */
+  --form-separator: rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme {
+  /* FONT */
+  --font-color: var(--color-primary-100);
+  --fw-normal: 400;
+  --fw-light-bold: 500;
+  --fw-bold: 600;
+
+  /* BACKGROUND */
+  --bg-gradient: linear-gradient(
+    to bottom,
+    var(--color-neutral-1000),
+    var(--color-neutral-800)
+  );
+
+  /* TITLE */
+  --title-gradient: linear-gradient(
+    to right,
+    var(--color-primary-300),
+    var(--color-primary-600)
+  );
+
+  /* CARD */
+  --card-bgcolor: rgba(var(--color-neutral-700-rgb), 0.7);
+  --card-shadow: rgba(0, 0, 0, 0.8);
+
+  /* BUTTONS */
+  --btn-primary-fcolor: var(--color-neutral-900);
+  --btn-primary-bgcolor: var(--color-primary-300);
+  --btn-primary-border-color: var(--color-neutral-900);
+  --btn-secondary-fcolor: var(--color-primary-200);
+  --btn-secondary-bgcolor: var(--color-neutral-800);
+  --btn-secondary-border-color: var(--color-primary-200);
+  --btn-details-fcolor: var(--color-neutral-900);
+  --btn-details-bgcolor: var(--color-primary-300);
+  --btn-details-border-color: var(--color-neutral-900);
+
+  /* BUTTONS-HOVER */
+  --btn-fcolor-hover: var(--color-primary-600);
+  --btn-bgcolor-hover: var(--color-neutral-800);
+  --btn-border-color-hover: var(--color-primary-600);
+
+  /*  INPUTS */
+  --input-bgcolor: var(--color-neutral-800);
+  --input-border-color: var(--color-primary-200);
+  --input-border-color-focus: var(--color-primary-600);
+  --inputsvg-info-fill: var(--color-primary-200);
+  --tooltip-bgcolor: var(--color-neutral-50);
+  --tooltip-fcolor: var(--color-neutral-900);
+
+  /* OPTION */
+  --month-option-bgcolor: var(--color-neutral-900);
+
+  /* LOGO */
+  --logo-fill-color: var(--color-primary-400);
+
+  /* FORM SEPARATOR */
+  --form-separator: rgba(255, 255, 255, 0.15);
 }
 
 /* makes sizing simpler */
