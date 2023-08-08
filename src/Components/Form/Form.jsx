@@ -121,7 +121,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
             Quiero calcular el refrigerio compuesto del mes de :
           </p>
           <Months id="months" onSelectMonth={handleFormChange} />
-          <span>
+          <span className={styles["form-question"]}>
             que se cobra en{" "}
             {formValues.paymentMonth && (
               <span className={styles["months-payment"]}>

@@ -26,8 +26,8 @@
   padding: 0 0.25rem;
 }
 
-span > .months-payment {
-  font-weight: 700;
+.months-payment {
+  font-weight: var(--fw-bold);
 }
 
 .months-container::after {

@@ -21,6 +21,7 @@ const Input = (props) => {
             onTouchEnd={handleHideTooltip}
           />
         )}
+
         {showTooltip && (
           <Tooltip classes={styles["input-tooltip"]} type={props.id}></Tooltip>
         )}

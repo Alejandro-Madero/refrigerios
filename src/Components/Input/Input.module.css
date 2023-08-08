@@ -12,8 +12,8 @@
 
 .info {
   fill: var(--inputsvg-info-fill);
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   cursor: pointer;
   opacity: 0.9;
 }
@@ -27,6 +27,7 @@
   text-align: center;
   background-color: var(--input-bgcolor);
   width: 100%;
+  min-width: 50px;
   max-width: 80px;
   outline: none;
   border: 2px solid var(--input-border-color);
@@ -47,11 +48,12 @@
 
 .input-tooltip {
   display: none;
+  border: 2px solid var(--btn-primary-border-color);
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 200px;
-  transform: translate(-45%, 16%);
+  min-width: 275px;
+  transform: translate(-35%, 17%);
 }
 
 @keyframes inputError {
@@ -99,6 +101,6 @@
 
 @media (min-width: 750px) {
   .input {
-    place-self: auto;
+    place-self: center;
   }
 }
