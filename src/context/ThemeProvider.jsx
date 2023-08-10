@@ -6,7 +6,8 @@ export default function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
 
   const toggleTheme = () => {
-    localStorage.setItem("theme", theme === "dark" ? "light" : "dark");
+    const newTheme = theme === "dark" ? "light" : "dark";
+    localStorage.setItem("theme", newTheme);
     setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
   };
 
