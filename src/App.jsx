@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Header from "./Components/Header/Header";
 import Wrapper from "./Components/UI/Wrapper";
 import Form from "./Components/Form/Form";
@@ -10,14 +10,6 @@ import Navigation from "./Components/Navigation/Navigation";
 const App = () => {
   const [calculationDone, setCalculationDone] = useState(false);
   const [result, setResult] = useState();
-
-  useEffect(() => {
-    const preloaderEl = document.querySelector(".preloader-container");
-    preloaderEl.classList.add("hidden");
-    setTimeout(() => {
-      preloaderEl.remove();
-    }, 2000);
-  }, []);
 
   const handleFormSubmission = (form) => {
     const totalPayment = calculatePayment(form);

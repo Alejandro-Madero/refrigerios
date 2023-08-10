@@ -118,7 +118,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
       <form className={styles.form} onSubmit={handleForm}>
         <div className={styles["months-container"]}>
           <p className={styles["form-question"]}>
-            Calcular el refrigerio compuesto del mes de :
+            Quiero calcular el refrigerio compuesto del mes de :
           </p>
           <Months id="months" onSelectMonth={handleFormChange} />
           <span className={styles["form-question"]}>
