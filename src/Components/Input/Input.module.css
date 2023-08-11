@@ -54,6 +54,7 @@
   left: 50%;
   min-width: 275px;
   transform: translate(-35%, 17%);
+  text-align: left;
 }
 
 @keyframes inputError {
