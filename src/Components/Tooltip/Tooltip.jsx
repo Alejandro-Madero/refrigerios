@@ -1,4 +1,6 @@
 import styles from "./Tooltip.module.css";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeProvider";
 
 const tooltips = new Map([
   [
@@ -12,8 +14,14 @@ const tooltips = new Map([
 ]);
 
 const Tooltip = ({ children, classes, onClick, type }) => {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className={`${styles.tooltip} ${classes ?? ""}`} onClick={onClick}>
+    <div
+      className={`${styles.tooltip} ${classes ?? ""}`}
+      style={theme === "dark" ? { fontWeight: 600 } : { fontWeight: 500 }}
+      onClick={onClick}
+    >
       {children}
       <p>{tooltips.get(type)}</p>
     </div>

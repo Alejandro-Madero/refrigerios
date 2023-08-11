@@ -13,10 +13,15 @@ const App = () => {
 
   useEffect(() => {
     const preloaderEl = document.querySelector(".preloader-container");
-    preloaderEl.classList.add("hidden");
+    const spinnerEl = document.querySelector(".spinner");
+    spinnerEl.classList.add("hidden");
+
     setTimeout(() => {
-      preloaderEl.remove();
-    }, 2000);
+      preloaderEl.classList.add("hidden");
+      setTimeout(() => {
+        preloaderEl.remove();
+      }, 2000);
+    }, 800);
   }, []);
 
   const handleFormSubmission = (form) => {
