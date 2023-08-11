@@ -24,7 +24,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-80%, 80%);
-  min-width: 110px;
+  min-width: 120px;
+  text-align: center;
 }
 
 .theme-svg {
