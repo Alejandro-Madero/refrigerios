@@ -1,0 +1,38 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  place-self: center;
+  gap: 2.5rem;
+  width: 95%;
+  max-width: 750px;
+  padding: 1rem 0 1rem 0;
+  margin-top: 1.5rem;
+  color: var(--font-color);
+  border-top: 1px solid var(--form-separator);
+}
+
+@media (min-width: 750px) {
+  .footer {
+    width: 80%;
+    line-height: 1.4;
+  }
+}
+
+@media (min-width: 1000px) {
+  .footer {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1250px) {
+  .footer {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .footer {
+    width: 50%;
+  }
+}

@@ -9,6 +9,7 @@ const Months = ({ onSelectMonth, id }) => {
       name={id}
       id={id}
       onChange={(e) => onSelectMonth(e)}
+      aria-label="Selecciona un mes"
     >
       <option value="" className={styles.option}>
         Seleccioná un mes
