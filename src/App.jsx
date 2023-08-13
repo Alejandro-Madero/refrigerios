@@ -1,18 +1,28 @@
-import { useState } from "react";
-import usePreloader from "./hooks/usePreloader";
+import { useState, useEffect } from "react";
 import Header from "./Components/Header/Header";
 import Wrapper from "./Components/UI/Wrapper";
 import Form from "./Components/Form/Form";
 import Result from "./Components/Result/Result";
-import Footer from "./Components/Footer/Footer";
-import { calculatePayment } from "./utils/logic";
+import Disclaimer from "./Components/Disclaimer/Disclaimer";
+import { calculatePayment } from "./Utils/logic";
 import Navigation from "./Components/Navigation/Navigation";
 
 const App = () => {
   const [calculationDone, setCalculationDone] = useState(false);
   const [result, setResult] = useState();
 
-  usePreloader();
+  useEffect(() => {
+    const preloaderEl = document.querySelector(".preloader-container");
+    const spinnerEl = document.querySelector(".spinner");
+    spinnerEl.classList.add("hidden");
+
+    setTimeout(() => {
+      preloaderEl.classList.add("hidden");
+      setTimeout(() => {
+        preloaderEl.remove();
+      }, 2000);
+    }, 800);
+  }, []);
 
   const handleFormSubmission = (form) => {
     const totalPayment = calculatePayment(form);
@@ -34,7 +44,7 @@ const App = () => {
       <Header />
       <Form onSubmmitedForm={handleFormSubmission} onReset={handleReset} />
       {calculationDone && <Result results={result} />}
-      <Footer />
+      <Disclaimer />
     </Wrapper>
   );
 };
