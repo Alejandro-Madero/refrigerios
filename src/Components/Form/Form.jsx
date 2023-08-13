@@ -1,8 +1,8 @@
 import styles from "./Form.module.css";
 import { useState } from "react";
-import { getPaymentMonth } from "../../Utils/logic";
-import { validateForm } from "../../Utils/validateForm";
-import { fixNumber } from "../../Utils/fixNumber";
+import { getPaymentMonth } from "../../utils/logic";
+import { validateForm } from "../../utils/validateForm";
+import { fixNumber } from "../../utils/fixNumber";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import Months from "../Months/Months";
