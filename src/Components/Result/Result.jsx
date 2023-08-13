@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { formatNumber } from "../../utils/formatNumber";
+import { formatNumber } from "../../Utils/formatNumber";
 
 import styles from "./Result.module.css";
 import ResultDetails from "./ResultsDetails";
