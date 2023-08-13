@@ -127,13 +127,13 @@
 
   /* BUTTONS */
   --btn-primary-fcolor: var(--color-neutral-900);
-  --btn-primary-bgcolor: var(--color-primary-300);
+  --btn-primary-bgcolor: var(--color-primary-100);
   --btn-primary-border-color: var(--color-neutral-900);
   --btn-secondary-fcolor: var(--color-primary-200);
   --btn-secondary-bgcolor: var(--color-neutral-800);
   --btn-secondary-border-color: var(--color-primary-200);
   --btn-details-fcolor: var(--color-neutral-900);
-  --btn-details-bgcolor: var(--color-primary-300);
+  --btn-details-bgcolor: var(--color-primary-100);
   --btn-details-border-color: var(--color-neutral-900);
 
   /* BUTTONS-HOVER */
@@ -217,6 +217,7 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+  appearance: texfield;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */

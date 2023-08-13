@@ -1,13 +1,12 @@
 .label {
   position: relative;
   font-style: italic;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--font-color);
   font-weight: var(--fw-light-bold);
   display: flex;
   gap: 10px;
   align-items: center;
-  min-width: 155px;
 }
 
 .info {
@@ -28,7 +27,7 @@
   background-color: var(--input-bgcolor);
   width: 100%;
   min-width: 50px;
-  max-width: 80px;
+  max-width: 70px;
   outline: none;
   border: 2px solid var(--input-border-color);
   border-radius: 5px;
@@ -101,7 +100,12 @@
 }
 
 @media (min-width: 750px) {
+  .label {
+    font-size: 1rem;
+  }
+
   .input {
     place-self: center;
+    max-width: 80px;
   }
 }
