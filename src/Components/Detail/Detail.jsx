@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeProvider";
-import { formatNumber } from "../../utils/formatNumber";
+import { formatNumber } from "../../Utils/formatNumber";
 import styles from "./Detail.module.css";
 
 const concepts = new Map([
