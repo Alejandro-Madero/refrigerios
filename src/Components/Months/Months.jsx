@@ -1,5 +1,5 @@
 import styles from "./Months.module.css";
-import { MONTHS } from "../../Utils/constants";
+import { MONTHS } from "../../utils/constants";
 import Month from "./Month";
 
 const Months = ({ onSelectMonth, id }) => {
@@ -9,6 +9,7 @@ const Months = ({ onSelectMonth, id }) => {
       name={id}
       id={id}
       onChange={(e) => onSelectMonth(e)}
+      aria-label="Selecciona un mes"
     >
       <option value="" className={styles.option}>
         Seleccioná un mes
