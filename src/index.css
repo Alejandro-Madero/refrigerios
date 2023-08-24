@@ -55,6 +55,9 @@
     var(--color-neutral-50)
   );
 
+  /*NAV BAR*/
+  --nav-bgcolor: var(--color-neutral-150);
+
   /* TITLE */
   --title-gradient: linear-gradient(
     to right,
@@ -114,6 +117,9 @@
     var(--color-neutral-800)
   );
 
+  /*NAV BAR*/
+  --nav-bgcolor: var(--color-neutral-1000);
+
   /* TITLE */
   --title-gradient: linear-gradient(
     to right,
@@ -145,7 +151,7 @@
   --input-bgcolor: var(--color-neutral-800);
   --input-border-color: var(--color-primary-200);
   --input-border-color-focus: var(--color-primary-600);
-  --inputsvg-info-fill: var(--color-primary-200);
+  --inputsvg-info-fill: var(--color-primary-400);
   --tooltip-bgcolor: var(--color-neutral-50);
   --tooltip-fcolor: var(--color-neutral-900);
 
