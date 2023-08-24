@@ -1,4 +1,7 @@
 .nav-header {
+  position: fixed;
+  background-color: var(--nav-bgcolor);
+  z-index: 99;
   height: 4.5rem;
   width: 100%;
   display: flex;
@@ -81,6 +84,10 @@
 }
 
 @media (min-width: 450px) {
+  .nav-header {
+    position: relative;
+  }
+
   .nav {
     width: 90%;
   }

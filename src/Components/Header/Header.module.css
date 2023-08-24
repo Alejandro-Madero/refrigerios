@@ -7,6 +7,7 @@
   max-width: 750px;
   justify-self: center;
   margin: 2rem 0 1.5rem 0;
+  padding-top: 4.5rem;
 }
 
 .title {
@@ -60,6 +61,7 @@
     justify-content: space-around;
     justify-content: center;
     gap: 1.5rem;
+    padding-top: 0;
   }
   .title {
     font-size: 1.35rem;
