@@ -1,14 +1,14 @@
-import { useContext } from "react";
-import { ThemeContext } from "../../context/ThemeProvider";
-import { formatNumber } from "../../Utils/formatNumber";
-import styles from "./Detail.module.css";
+import { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeProvider';
+import { formatNumber } from '../../Utils/formatNumber';
+import styles from './Detail.module.css';
 
 const concepts = new Map([
-  ["shifts", "Refrigerio simple"],
-  ["movility", "Movilidad"],
-  ["nights", "Nocturnidad"],
-  ["holiday", "Feriados"],
-  ["sundays", "Domingos"],
+  ['shifts', 'Refrigerio simple'],
+  ['movility', 'Movilidad'],
+  ['nights', 'Nocturnidad'],
+  ['holiday', 'Feriados'],
+  ['sundays', 'Domingos'],
 ]);
 
 const Detail = ({ total, units, type, refrigerio, movility }) => {
@@ -17,13 +17,13 @@ const Detail = ({ total, units, type, refrigerio, movility }) => {
   const [formattedTotal] = formatNumber(total);
 
   return (
-    <li className={styles["detail-title"]}>
+    <li className={styles['detail-title']}>
       ✅ {concept}: {formattedTotal}
-      <span className={styles["detail-description"]}>
-        {theme === "dark" ? "⚪" : "🔵"} ( {units}{" "}
-        {units > 1 ? "unidades " : "unidad"} x{" "}
-        {concept === "Movilidad" ? movility : refrigerio}
-        {units > 1 ? " c/u " : ""} )
+      <span className={styles['detail-description']}>
+        {theme === 'dark' ? '⚪' : '🔵'} ( {units}{' '}
+        {units > 1 ? 'unidades ' : 'unidad'} x{' '}
+        {concept === 'Movilidad' ? movility : refrigerio}
+        {units > 1 ? ' c/u ' : ''} )
       </span>
     </li>
   );

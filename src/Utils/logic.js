@@ -1,8 +1,8 @@
-import { MONTHS } from "./constants";
-import { PRICES2023 } from "./prices";
+import { MONTHS } from './constants';
+import { PRICES2023 } from './prices';
 
 export const getPaymentMonth = function (month) {
-  if (month === "diciembre") return MONTHS[0];
+  if (month === 'diciembre') return MONTHS[0];
   const index = MONTHS.indexOf(month);
   const nextMonth = MONTHS.at(index + 1);
 
@@ -18,27 +18,41 @@ export const calculatePayment = function (form) {
   const saturdays = Number(form.saturdays);
   const sundays = Number(form.sundays);
   const holidays = Number(form.holidays);
-  const totalShifts = nights + mornings;
+  const virtual = Number(form.virtual);
+  const live = Number(form.live);
+  const CMA = Number(form.CMA);
+  const totalShiftsMovility = mornings + nights + live + CMA;
+  const totalShiftsRefrigerioSimple = mornings + nights + live + virtual + CMA;
 
-  const movilityPayment = MOVILIDAD * totalShifts;
-  const sundayPayment = REFRIGERIO * sundays + REFRIGERIO * saturdays;
-  const holidayPayment = REFRIGERIO * holidays;
+  // Pago refrigerio simple + Movilidad
+  const movilityPayment = MOVILIDAD * totalShiftsMovility;
+  const refrigerioSimplePayment = REFRIGERIO * totalShiftsRefrigerioSimple;
+
+  // Pago nocturnidad
   const nightsPayment = REFRIGERIO * nights;
-  const daytimePayment = REFRIGERIO * mornings;
-  const shiftsPayment = daytimePayment + nightsPayment;
+
+  // Pago domingos
+  const sundayPayment = REFRIGERIO * sundays + REFRIGERIO * saturdays;
+
+  // Pago feriados
+  const holidayPayment = REFRIGERIO * holidays;
+
   const totalPayment =
-    shiftsPayment +
     movilityPayment +
+    refrigerioSimplePayment +
+    nightsPayment +
     sundayPayment +
-    holidayPayment +
-    nightsPayment;
+    holidayPayment;
 
   return {
     month: form.month,
     paymentMonth: form.paymentMonth,
     total: totalPayment,
-    shifts: { total: shiftsPayment, units: totalShifts },
-    movility: { total: movilityPayment, units: totalShifts },
+    shifts: {
+      total: refrigerioSimplePayment,
+      units: totalShiftsRefrigerioSimple,
+    },
+    movility: { total: movilityPayment, units: totalShiftsMovility },
     nights: { total: nightsPayment, units: nights },
     sundays: { total: sundayPayment, units: sundays + saturdays },
     holiday: { total: holidayPayment, units: holidays },

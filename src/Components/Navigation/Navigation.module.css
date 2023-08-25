@@ -2,7 +2,8 @@
   position: fixed;
   background-color: var(--nav-bgcolor);
   z-index: 99;
-  height: 4.5rem;
+  height: 4rem;
+  opacity: 0.97;
   width: 100%;
   display: flex;
   justify-content: center;

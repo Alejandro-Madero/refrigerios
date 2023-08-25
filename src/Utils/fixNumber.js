@@ -1,1 +1,1 @@
-export const fixNumber = (num) => num.slice(1);
+export const fixNumber = num => num.slice(1);
