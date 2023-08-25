@@ -241,12 +241,6 @@ const Form = ({ onSubmmitedForm, onReset }) => {
           </div>
           {errors.holidays.length !== 0 && errors.holidays.map(err => err)}
         </div>
-        {/* <div className={styles['input-container']}>
-          <p className={styles['form-question']}>
-            ¿Tuviste cursos virtuales, presenciales o renovaste el CMA?
-          </p>
-          <div className={styles.shifts}></div>
-        </div> */}
         <div className={styles['button-container']}>
           <Button
             type='reset'
