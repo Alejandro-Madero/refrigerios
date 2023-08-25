@@ -81,7 +81,7 @@
   }
 
   .header {
-    width: 80%;
+    width: 85%;
     margin-bottom: 2.5rem;
   }
 
@@ -93,6 +93,6 @@
 
 @media (min-width: 1000px) {
   .header {
-    width: 70%;
+    width: 75%;
   }
 }

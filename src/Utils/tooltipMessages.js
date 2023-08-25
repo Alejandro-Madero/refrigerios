@@ -17,6 +17,6 @@ export const tooltipMessages = new Map([
   ],
   [
     'CMA',
-    'Por la renovación del CMA se abona un refrigerio compuesto (refrigerio simple + movilidad).',
+    'Por la renovación del CMA se abona un refrigerio compuesto (refrigerio simple + movilidad). Ingresá 1 si lo renovaste este mes.',
   ],
 ]);
