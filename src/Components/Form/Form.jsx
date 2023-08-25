@@ -136,8 +136,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
         </div>
         <div className={styles['input-container']}>
           <p className={styles['form-question']}>
-            Completá los siguientes campos con la cantidad de días
-            correspondiente:
+            Completá los campos con la cantidad de días correspondiente:
           </p>
           <div className={styles.shifts}>
             <Input
