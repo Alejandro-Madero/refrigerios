@@ -1,5 +1,5 @@
-import styles from "./Header.module.css";
-import { ReactComponent as Fingers } from "../../assets/fingers.svg";
+import styles from './Header.module.css';
+import { ReactComponent as Fingers } from '../../assets/fingers.svg';
 const Header = () => {
   return (
     <header className={styles.header}>

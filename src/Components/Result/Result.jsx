@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from "react";
-import { formatNumber } from "../../Utils/formatNumber";
+import { useState, useEffect, useRef } from 'react';
+import { formatNumber } from '../../Utils/formatNumber';
 
-import styles from "./Result.module.css";
-import ResultDetails from "./ResultsDetails";
-import Button from "../UI/Button";
-import Card from "../UI/Card";
+import styles from './Result.module.css';
+import ResultDetails from './ResultsDetails';
+import Button from '../UI/Button';
+import Card from '../UI/Card';
 
 const Result = ({ results }) => {
   const [showDetails, setShowDetails] = useState(false);
@@ -12,22 +12,22 @@ const Result = ({ results }) => {
   const resultRef = useRef(null);
 
   useEffect(() => {
-    resultRef.current.scrollIntoView({ behavior: "smooth" });
+    resultRef.current.scrollIntoView({ behavior: 'smooth' });
   }, [resultRef]);
 
   return (
     <>
-      <Card classes={styles["result-container"]}>
+      <Card classes={styles['result-container']}>
         <div className={styles.result} ref={resultRef}>
-          <h3 className={styles["result-header"]}>
+          <h3 className={styles['result-header']}>
             En {results.paymentMonth} vas a cobrar un refrigerio de
           </h3>
-          <p className={styles["result-payment"]}>{formattedMoney}</p>
+          <p className={styles['result-payment']}>{formattedMoney}</p>
         </div>
 
         <ResultDetails
-          classes={`${styles["result-details"]} ${
-            showDetails ? styles.visible : ""
+          classes={`${styles['result-details']} ${
+            showDetails ? styles.visible : ''
           }`}
           details={results}
           refrigerio={results.REFRIGERIO}
@@ -35,10 +35,10 @@ const Result = ({ results }) => {
         />
       </Card>
       <Button
-        onClick={() => setShowDetails((prev) => !prev)}
-        classes={styles["details-btn"]}
+        onClick={() => setShowDetails(prev => !prev)}
+        classes={styles['details-btn']}
       >
-        {showDetails ? "Cerrar detalles" : "Ver detalles"}
+        {showDetails ? 'Cerrar detalles' : 'Ver detalles'}
       </Button>
     </>
   );

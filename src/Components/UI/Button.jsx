@@ -1,4 +1,4 @@
-import styles from "./Button.module.css";
+import styles from './Button.module.css';
 
 const Button = ({ children, type, onClick, classes }) => {
   return (

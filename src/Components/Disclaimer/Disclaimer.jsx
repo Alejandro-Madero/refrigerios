@@ -1,4 +1,4 @@
-import styles from "./Disclaimer.module.css";
+import styles from './Disclaimer.module.css';
 
 const Disclaimer = () => {
   return (

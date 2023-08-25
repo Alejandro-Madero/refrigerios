@@ -1,10 +1,10 @@
-import styles from "./Navigation.module.css";
-import { useContext, useState } from "react";
-import { ThemeContext } from "../../context/ThemeProvider";
-import { ReactComponent as Sun } from "../../assets/sun.svg";
-import { ReactComponent as Moon } from "../../assets/moon.svg";
-import Logo from "../Logo/Logo";
-import Tooltip from "../Tooltip/Tooltip";
+import styles from './Navigation.module.css';
+import { useContext, useState } from 'react';
+import { ThemeContext } from '../../context/ThemeProvider';
+import { ReactComponent as Sun } from '../../assets/sun.svg';
+import { ReactComponent as Moon } from '../../assets/moon.svg';
+import Logo from '../Logo/Logo';
+import Tooltip from '../Tooltip/Tooltip';
 
 export default function Navigation() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -14,29 +14,29 @@ export default function Navigation() {
   const handleHideTooltip = () => setShowTooltip(false);
 
   return (
-    <header className={styles["nav-header"]}>
+    <header className={styles['nav-header']}>
       <nav className={styles.nav}>
         <Logo classes={styles.logo} />
         <div
-          className={styles["theme-container"]}
+          className={styles['theme-container']}
           onMouseEnter={handleShowTooltip}
           onMouseLeave={handleHideTooltip}
         >
-          {theme === "dark" && (
+          {theme === 'dark' && (
             <Sun
-              className={`${styles.sun} ${styles["theme-svg"]}`}
+              className={`${styles.sun} ${styles['theme-svg']}`}
               onClick={toggleTheme}
             />
           )}
-          {theme === "light" && (
+          {theme === 'light' && (
             <Moon
-              className={`${styles.moon} ${styles["theme-svg"]}`}
+              className={`${styles.moon} ${styles['theme-svg']}`}
               onClick={toggleTheme}
             />
           )}
           {showTooltip && (
-            <Tooltip classes={styles["theme-tooltip"]}>
-              <p>Modo {theme === "dark" ? "claro" : "oscuro"}</p>
+            <Tooltip classes={styles['theme-tooltip']}>
+              <p>Modo {theme === 'dark' ? 'claro' : 'oscuro'}</p>
             </Tooltip>
           )}
         </div>

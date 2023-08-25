@@ -1,9 +1,9 @@
-import styles from "./Input.module.css";
-import { useState } from "react";
-import { ReactComponent as Info } from "../../assets/info.svg";
-import Tooltip from "../Tooltip/Tooltip";
+import styles from './Input.module.css';
+import { useState } from 'react';
+import { ReactComponent as Info } from '../../assets/info.svg';
+import Tooltip from '../Tooltip/Tooltip';
 
-const Input = (props) => {
+const Input = props => {
   const [showTooltip, setShowTooltip] = useState(false);
   const handleShowTooltip = () => setShowTooltip(true);
   const handleHideTooltip = () => setShowTooltip(false);
@@ -23,13 +23,13 @@ const Input = (props) => {
         )}
 
         {showTooltip && (
-          <Tooltip classes={styles["input-tooltip"]} type={props.id}></Tooltip>
+          <Tooltip classes={styles['input-tooltip']} id={props.id}></Tooltip>
         )}
       </label>
       <input
         type={props.type}
         className={`${styles.input} ${
-          props.errors.length > 0 ? styles.error : ""
+          props.errors?.length > 0 && props.value !== '' ? styles.error : ''
         } `}
         id={props.id}
         name={props.id}
