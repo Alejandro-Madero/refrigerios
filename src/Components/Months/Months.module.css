@@ -1,9 +1,10 @@
 .months {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: var(--fw-light-bold);
   outline: transparent;
   border-radius: 5px;
   padding: 0.2rem 0.5rem;
+  max-width: 220px;
   cursor: pointer;
   color: var(--font-color);
   background-color: var(--input-bgcolor);

@@ -23,7 +23,7 @@ const Input = props => {
         )}
 
         {showTooltip && (
-          <Tooltip classes={styles['input-tooltip']} id={props.id}></Tooltip>
+          <Tooltip classes={styles['input-tooltip']} id={props.id} />
         )}
       </label>
       <input

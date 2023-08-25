@@ -75,6 +75,7 @@ export const validateForm = function (form) {
             </ErrorMessage>
           );
         }
+        totalShifts += Number(value);
         totalCourses += Number(value);
         break;
       }
@@ -99,6 +100,7 @@ export const validateForm = function (form) {
               ⛔ El CMA no puede ser un número negativo.
             </ErrorMessage>
           );
+        totalShifts += Number(value);
         break;
 
       default:

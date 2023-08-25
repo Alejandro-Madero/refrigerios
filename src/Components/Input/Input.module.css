@@ -1,7 +1,7 @@
 .label {
   position: relative;
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--font-color);
   font-weight: var(--fw-light-bold);
   display: flex;
@@ -106,7 +106,7 @@
   }
 
   .label {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .input {
