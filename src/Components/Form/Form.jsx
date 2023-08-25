@@ -202,7 +202,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
 
         <div className={styles['input-container']}>
           <p className={styles['form-question']}>
-            De los días ingresados anteriormente: ¿Cúantos fueron sabadós noche,
+            De los días ingresados anteriormente: ¿Cúantos fueron sábados noche,
             domingos o feriados?
           </p>
           <div className={styles.shifts}>
