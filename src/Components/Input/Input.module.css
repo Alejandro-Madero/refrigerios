@@ -106,11 +106,17 @@
   }
 
   .label {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   .input {
     place-self: center;
     max-width: 80px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .label {
+    font-size: 1rem;
   }
 }
