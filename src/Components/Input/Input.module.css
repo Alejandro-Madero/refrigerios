@@ -52,7 +52,7 @@
   top: 50%;
   left: 50%;
   min-width: 275px;
-  transform: translate(-35%, 17%);
+  transform: translate(-30%, -115%);
   text-align: left;
 }
 
@@ -105,6 +105,11 @@
   }
 }
 
+@media (min-width: 450px) {
+  .input-tooltip {
+    transform: translate(-35%, 17%);
+  }
+}
 @media (min-width: 750px) {
   .info {
     width: 22px;
