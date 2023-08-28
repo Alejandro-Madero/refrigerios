@@ -15,7 +15,7 @@ export default function Navigation() {
 
   return (
     <header className={styles['nav-header']}>
-      <nav className={styles.nav}>
+      <nav className={styles.nav} role='navigation'>
         <Logo classes={styles.logo} />
         <div
           className={styles['theme-container']}

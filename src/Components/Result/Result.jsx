@@ -1,6 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { formatNumber } from '../../Utils/formatNumber';
-
 import styles from './Result.module.css';
 import ResultDetails from './ResultsDetails';
 import Button from '../UI/Button';
@@ -12,12 +11,17 @@ const Result = ({ results }) => {
   const resultRef = useRef(null);
 
   useEffect(() => {
-    resultRef.current.scrollIntoView({ behavior: 'smooth' });
+    const targetPosition = resultRef.current.getBoundingClientRect().top;
+
+    window.scrollTo({
+      top: targetPosition + window.scrollY - 96,
+      behavior: 'smooth',
+    });
   }, [resultRef]);
 
   return (
     <>
-      <Card classes={styles['result-container']}>
+      <Card id='result' classes={styles['result-container']}>
         <div className={styles.result} ref={resultRef}>
           <h3 className={styles['result-header']}>
             En {results.paymentMonth} vas a cobrar un refrigerio de

@@ -114,7 +114,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
   };
 
   return (
-    <Card>
+    <Card classes={styles['form-card']}>
       <form className={styles.form} onSubmit={handleForm}>
         <div className={styles['input-container']}>
           <div className={styles['months-container']}>

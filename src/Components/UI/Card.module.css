@@ -2,7 +2,7 @@
   width: 95%;
   max-width: 800px;
   justify-self: center;
-  border-radius: 10px;
+  border-radius: 7px;
   padding: 0.25rem;
   display: grid;
   background-color: var(--card-bgcolor);
