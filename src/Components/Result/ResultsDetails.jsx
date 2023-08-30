@@ -1,5 +1,5 @@
 import styles from './ResultDetails.module.css';
-import Detail from '../Detail/Detail';
+import Detail from './Detail';
 import { formatNumber } from '../../Utils/formatNumber';
 
 const ResultDetails = ({ details, classes }) => {
@@ -22,6 +22,7 @@ const ResultDetails = ({ details, classes }) => {
               type={detail[0]}
               total={detail[1].total}
               units={detail[1].units}
+              emoji={detail[1].emoji}
               refrigerio={formattedRefrigerio}
               movility={formattedMovility}
             />

@@ -3,9 +3,8 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: var(--fw-bold);
+  font-size: 1.1rem;
+  font-weight: var(--fw-600);
   text-align: center;
-  font-style: normal;
-  color: var(--font-color);
+  min-width: 300px;
 }

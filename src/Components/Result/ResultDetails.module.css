@@ -21,18 +21,17 @@
 }
 
 .detail-values {
-  font-size: 1.05rem;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
-  font-style: italic;
   margin-top: 0.5rem;
   color: var(--font-color);
-  font-weight: var(--fw-light-bold);
+  font-weight: var(--fw-500);
 }
 
 .detail-values > span {
-  font-size: 0.8rem;
-  font-style: italic;
+  font-size: 0.9rem;
+  font-weight: var(--fw-400);
 }
 
 @media (min-width: 550px) {

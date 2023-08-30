@@ -1,6 +1,5 @@
 .month-option {
-  font-weight: 500;
   cursor: pointer;
   background-color: var(--month-option-bgcolor);
-  font-weight: var(--fw-light-bold);
+  font-weight: var(--fw-500);
 }

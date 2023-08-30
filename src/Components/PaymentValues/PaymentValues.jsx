@@ -30,8 +30,6 @@ const PaymentValues = () => {
     })
     .filter(month => month !== null);
 
-  console.log(nextIncreases);
-
   return (
     <section className={styles['payment-section']}>
       <h3 className={styles['payment-section__header']}>
@@ -41,7 +39,7 @@ const PaymentValues = () => {
         <Card classes={styles['payment-container__card']}>
           <div className={styles['values-container']}>
             <div className={styles.values}>
-              <h4>Refrigerio Simple</h4>
+              <h4>☕ Refrigerio Simple</h4>
               <p>{curRefrigerio}</p>
             </div>
           </div>
@@ -49,7 +47,7 @@ const PaymentValues = () => {
         <Card classes={styles['payment-container__card']}>
           <div className={styles['values-container']}>
             <div className={styles.values}>
-              <h4>Movilidad</h4>
+              <h4>🚗 Movilidad</h4>
               <p>{curMovility}</p>
             </div>
           </div>
@@ -59,7 +57,6 @@ const PaymentValues = () => {
       <h3 className={styles['payment-section__header']}>Próximos aumentos</h3>
       <article className={styles['payment-container']}>
         {nextIncreases.map(month => {
-          console.log(month);
           return (
             <Increases
               key={month.month}

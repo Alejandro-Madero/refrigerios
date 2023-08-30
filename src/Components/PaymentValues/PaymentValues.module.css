@@ -1,7 +1,7 @@
 .payment-section__header {
   color: var(--font-color);
   font-size: 1.2rem;
-  font-weight: var(--fw-light-bold);
+  font-weight: var(--fw-700);
   justify-self: center;
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -15,6 +15,7 @@
   max-width: 800px;
   place-self: center;
 }
+
 .payment-container {
   width: 100%;
   place-self: center;
@@ -31,10 +32,10 @@
 
 .increase-month {
   font-size: 1rem;
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-600);
   color: var(--font-color);
   text-align: center;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   padding: 0.5rem 0;
   width: 70%;
   justify-self: center;
@@ -53,18 +54,18 @@
 }
 
 .values h4 {
-  font-weight: var(--fw-bold);
-  font-size: 0.9rem;
+  font-weight: var(--fw-500);
+  font-size: 0.95rem;
 }
 
 .values h5 {
-  font-weight: var(--fw-bold);
-  font-size: 0.9rem;
+  font-weight: var(--fw-500);
+  font-size: 0.95rem;
 }
 
 .values p {
   font-size: 1rem;
-  font-weight: var(--fw-normal);
+  font-weight: var(--fw-300);
 }
 
 @media (min-width: 335px) {
@@ -82,6 +83,26 @@
 @media (min-width: 750px) {
   .payment-section {
     width: 85%;
+  }
+
+  .values-container {
+    gap: 1rem;
+  }
+
+  .increase-month {
+    font-size: 1.2rem;
+  }
+
+  .values h4 {
+    font-size: 1.05rem;
+  }
+
+  .values h5 {
+    font-size: 1.05rem;
+  }
+
+  .values p {
+    font-size: 1.05rem;
   }
 }
 
