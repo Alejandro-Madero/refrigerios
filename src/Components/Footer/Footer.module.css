@@ -3,7 +3,6 @@
   justify-content: center;
   width: 100%;
   color: var(--color-primary-1000);
-  background-color: var(--color-neutral-400);
   background-color: var(--color-primary-400);
 }
 
@@ -18,7 +17,6 @@
 
 .wave {
   margin-top: 5rem;
-  fill: var(--color-neutral-400);
   fill: var(--color-primary-400);
   width: 100vw;
   max-height: 175px;
