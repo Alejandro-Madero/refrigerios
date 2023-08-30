@@ -12,7 +12,7 @@
 
 .form-question {
   color: var(--font-color);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: var(--fw-500);
   margin-bottom: 0.5rem;
 }
