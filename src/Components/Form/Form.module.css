@@ -3,7 +3,6 @@
 .form {
   place-self: center;
   width: 95%;
-  font-size: 1rem;
   gap: 1rem;
   display: flex;
   flex-direction: column;
@@ -13,8 +12,9 @@
 
 .form-question {
   color: var(--font-color);
-  font-size: 1.05rem;
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: var(--fw-500);
+  margin-bottom: 0.5rem;
 }
 
 .months-container {
@@ -25,14 +25,14 @@
 }
 
 .months-payment {
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-700);
 }
 
 .input-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   padding: 0 0.25rem;
 }
 
@@ -41,7 +41,8 @@
   width: 100%;
   margin: 0 auto;
   height: 1px;
-  transform: translateY(0.5rem);
+  transform: translateY(0.25rem);
+
   background-color: var(--form-separator);
 }
 
@@ -54,7 +55,7 @@
 /*BUTTONS*/
 
 .button-container {
-  padding-top: 0.5rem;
+  padding-top: 0.25rem;
   display: flex;
   justify-content: space-around;
   gap: 1rem;
@@ -63,8 +64,8 @@
 }
 
 .form-btns {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-weight: var(--fw-600);
   padding: 0.5rem 0.25rem;
   width: 50%;
   min-width: 100px;
@@ -96,6 +97,10 @@
     margin-top: 0.5rem;
     width: 80%;
   }
+
+  .form-question {
+    font-size: 1.05rem;
+  }
 }
 
 @media (min-width: 700px) {
@@ -106,11 +111,10 @@
 
 @media (min-width: 850px) {
   .shifts {
-    gap: 0.75rem 1.5rem;
+    gap: 0.5rem 1.5rem;
   }
   .form {
     padding: 1rem 1rem;
-    font-size: 1.15rem;
     gap: 1.5rem;
   }
 

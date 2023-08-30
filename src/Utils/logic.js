@@ -37,6 +37,7 @@ export const calculatePayment = function (form) {
   // Pago feriados
   const holidayPayment = REFRIGERIO * holidays;
 
+  // Suma pago total
   const totalPayment =
     movilityPayment +
     refrigerioSimplePayment +
@@ -51,11 +52,16 @@ export const calculatePayment = function (form) {
     shifts: {
       total: refrigerioSimplePayment,
       units: totalShiftsRefrigerioSimple,
+      emoji: '☕',
     },
-    movility: { total: movilityPayment, units: totalShiftsMovility },
-    nights: { total: nightsPayment, units: nights },
-    sundays: { total: sundayPayment, units: sundays + saturdays },
-    holiday: { total: holidayPayment, units: holidays },
+    movility: {
+      total: movilityPayment,
+      units: totalShiftsMovility,
+      emoji: '🚗',
+    },
+    nights: { total: nightsPayment, units: nights, emoji: '🌛' },
+    sundays: { total: sundayPayment, units: sundays + saturdays, emoji: '🌞' },
+    holiday: { total: holidayPayment, units: holidays, emoji: '🎉' },
     REFRIGERIO,
     MOVILIDAD,
   };

@@ -1,0 +1,21 @@
+.title-emoji {
+  font-size: 1.25rem;
+}
+
+.description-emoji {
+  font-size: 1.1rem;
+}
+
+.detail-title {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: var(--font-color);
+  font-weight: var(--fw-500);
+}
+
+.detail-description {
+  font-size: 0.9rem;
+  color: var(--font-color);
+  font-weight: var(--fw-400);
+}
