@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  color: var(--color-primary-1000);
   background-color: var(--color-primary-400);
 }
 
