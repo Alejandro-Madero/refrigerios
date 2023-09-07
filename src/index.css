@@ -234,6 +234,31 @@ ol[role='list'] {
   list-style: none;
 }
 
+/* Scroll-bar */
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-primary-400);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    var(--color-primary-900),
+    var(--color-primary-800)
+  );
+  cursor: pointer;
+}
+
+/* Checks if browser supports the property --> Firefox */
+@supports (scrollbar-color: red blue) {
+  * {
+    scrollbar-color: var(--color-primary-800) var(--color-primary-400);
+    scrollbar-width: thin;
+  }
+}
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
