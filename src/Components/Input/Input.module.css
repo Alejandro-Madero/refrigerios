@@ -45,14 +45,22 @@
 }
 
 .input-tooltip {
-  display: none;
+  display: flex;
+  visibility: hidden;
   border: 2px solid var(--btn-primary-border-color);
   position: absolute;
   top: 50%;
   left: 50%;
   min-width: 275px;
-  transform: translate(-30%, -115%);
+  transform: translate(-30%, -122%);
   text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.tooltip-visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 @keyframes inputError {
@@ -86,7 +94,12 @@
   }
 }
 
-@media (hover: none) {
+/* TODO:
+
+CHECKEAR para que sirve los dos selectores debajo, estimo que puedo poner directamente display flex en el input-tooltip
+
+*/
+/* @media (hover: none) {
   .input-tooltip {
     display: flex;
   }
@@ -96,7 +109,7 @@
   .input-tooltip {
     display: flex;
   }
-}
+} */
 
 @media (min-width: 370px) {
   .label {
@@ -106,7 +119,7 @@
 
 @media (min-width: 450px) {
   .input-tooltip {
-    transform: translate(-35%, 17%);
+    transform: translate(-40%, -117%);
   }
 }
 @media (min-width: 750px) {

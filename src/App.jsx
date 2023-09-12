@@ -8,6 +8,8 @@ import Footer from './Components/Footer/Footer';
 import { calculatePayment } from './Utils/logic';
 import Navigation from './Components/Navigation/Navigation';
 import PaymentValues from './Components/PaymentValues/PaymentValues';
+import LineChart from './Components/Chart/Chart';
+import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 
 const App = () => {
   const [calculationDone, setCalculationDone] = useState(false);
@@ -36,6 +38,8 @@ const App = () => {
       <Form onSubmmitedForm={handleFormSubmission} onReset={handleReset} />
       {calculationDone && <Result results={result} />}
       <PaymentValues />
+      <LineChart />
+      <ScrollToTop />
       <Footer />
     </Wrapper>
   );
