@@ -5,6 +5,7 @@ import Tooltip from '../Tooltip/Tooltip';
 
 const Input = props => {
   const [showTooltip, setShowTooltip] = useState(false);
+
   const handleShowTooltip = () => setShowTooltip(true);
   const handleHideTooltip = () => setShowTooltip(false);
 
@@ -13,18 +14,24 @@ const Input = props => {
       <label htmlFor={props.id} className={styles.label}>
         {props.label}
         {props.hasTooltip && (
-          <Info
-            className={styles.info}
-            onMouseEnter={handleShowTooltip}
-            onMouseLeave={handleHideTooltip}
-            onTouchStart={handleShowTooltip}
-            onTouchEnd={handleHideTooltip}
-          />
+          <>
+            <Info
+              className={styles.info}
+              onMouseEnter={handleShowTooltip}
+              onMouseLeave={handleHideTooltip}
+              onTouchStart={handleShowTooltip}
+              onTouchEnd={handleHideTooltip}
+            />
+            <Tooltip
+              classes={`${styles['input-tooltip']} ${
+                showTooltip ? styles['tooltip-visible'] : null
+              }`}
+              id={props.id}
+            />
+          </>
         )}
 
-        {showTooltip && (
-          <Tooltip classes={styles['input-tooltip']} id={props.id} />
-        )}
+        {/* {showTooltip && ( )} */}
       </label>
       <input
         type={props.type}

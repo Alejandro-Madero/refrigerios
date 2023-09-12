@@ -1,0 +1,51 @@
+.chart-section {
+  width: 95%;
+  max-width: 900px;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  display: flex;
+  place-self: center;
+  align-items: center;
+  gap: 0;
+  border-top: 1px solid var(--form-separator);
+}
+
+.chart-container {
+  height: 450px;
+  width: 100%;
+  position: relative;
+}
+
+.chart-section p {
+  display: none;
+  color: var(--font-color);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 450px) {
+  .chart-section {
+    width: 90%;
+    gap: 0.5rem;
+  }
+
+  .chart-section p {
+    display: block;
+  }
+}
+
+@media (min-width: 750px) {
+  .chart-section {
+    width: 85%;
+    gap: 1rem;
+  }
+
+  .chart-container {
+    height: 600px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .chart-section {
+    width: 75%;
+  }
+}

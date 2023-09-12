@@ -7,5 +7,10 @@
   border-radius: 5px;
   padding: 0.3rem 0.75rem;
   width: 100%;
-  z-index: 10;
+}
+
+@media (min-width: 450px) {
+  .tooltip {
+    font-size: 0.9rem;
+  }
 }
