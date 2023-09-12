@@ -33,9 +33,14 @@ const LineChart = () => {
 
   return (
     <section className={styles['chart-section']}>
-      <p>$</p>
-      <div className={styles['chart-container']}>
-        <Line data={data} options={options} />
+      <h3 className={styles['chart-header']}>
+        Evolución anual de los valores del refrigerio y movilidad
+      </h3>
+      <div className={styles['chart-wrapper']}>
+        <p>$</p>
+        <div className={styles['chart-container']}>
+          <Line data={data} options={options} />
+        </div>
       </div>
     </section>
   );

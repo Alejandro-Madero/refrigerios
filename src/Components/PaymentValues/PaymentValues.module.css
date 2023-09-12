@@ -14,9 +14,12 @@
   color: var(--font-color);
   font-size: 1.2rem;
   font-weight: var(--fw-700);
-  justify-self: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.payment-section__header:nth-child(3) {
+  margin-top: 3rem;
 }
 
 .payment-container {
