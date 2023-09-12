@@ -101,8 +101,9 @@ export const useChartConfig = theme => {
         label: 'Refrigerio simple ($)',
         data: refrigerioSimple,
         fill: false,
-        borderColor: 'rgb(50,255,150)',
-        backgroundColor: 'rgb(50,255,150)',
+        borderColor: 'rgb(50,220,150)',
+        backgroundColor: 'rgb(50,220,150)',
+        pointRadius: 4.5,
       },
       {
         label: 'Movilidad ($)',
@@ -110,6 +111,7 @@ export const useChartConfig = theme => {
         fill: true,
         borderColor: 'rgb(160, 160, 245)',
         backgroundColor: 'rgb(160, 160, 245)',
+        pointRadius: 4.5,
       },
       {
         label: 'Refrigerio compuesto ($)',
@@ -117,6 +119,7 @@ export const useChartConfig = theme => {
         fill: true,
         borderColor: 'rgb(255, 100, 145)',
         backgroundColor: 'rgb(255, 100, 145)',
+        pointRadius: 4.5,
       },
     ],
   };

@@ -3,11 +3,25 @@
   max-width: 900px;
   margin-top: 3rem;
   padding-top: 2rem;
-  display: flex;
+
   place-self: center;
+
+  border-top: 1px solid var(--form-separator);
+}
+
+.chart-header {
+  text-align: center;
+  color: var(--font-color);
+  font-size: 1.2rem;
+  font-weight: var(--fw-700);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.chart-wrapper {
+  display: flex;
   align-items: center;
   gap: 0;
-  border-top: 1px solid var(--form-separator);
 }
 
 .chart-container {
@@ -25,6 +39,9 @@
 @media (min-width: 450px) {
   .chart-section {
     width: 90%;
+  }
+
+  .chart-wrapper {
     gap: 0.5rem;
   }
 
@@ -36,6 +53,9 @@
 @media (min-width: 750px) {
   .chart-section {
     width: 85%;
+  }
+
+  .chart-wrapper {
     gap: 1rem;
   }
 
@@ -47,5 +67,9 @@
 @media (min-width: 1000px) {
   .chart-section {
     width: 75%;
+  }
+
+  .chart-header {
+    font-size: 1.4rem;
   }
 }
