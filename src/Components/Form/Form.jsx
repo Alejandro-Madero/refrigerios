@@ -114,147 +114,149 @@ const Form = ({ onSubmmitedForm, onReset }) => {
   };
 
   return (
-    <Card classes={styles['form-card']}>
-      <form className={styles.form} onSubmit={handleForm}>
-        <div className={styles['input-container']}>
-          <div className={styles['months-container']}>
+    <main className={styles['form-section']}>
+      <Card classes={styles['form-card']}>
+        <form className={styles.form} onSubmit={handleForm}>
+          <div className={styles['input-container']}>
+            <div className={styles['months-container']}>
+              <p className={styles['form-question']}>
+                Calcular el refrigerio compuesto del mes de:
+              </p>
+              <Months id='months' onSelectMonth={handleFormChange} />
+            </div>
+
+            <span className={styles['form-question']}>
+              que se cobra en{' '}
+              {formValues.paymentMonth && (
+                <span className={styles['months-payment']}>
+                  {formValues.paymentMonth}.
+                </span>
+              )}
+            </span>
+            {errors.month?.length !== 0 && errors.month?.map(err => err)}
+          </div>
+          <div className={styles['input-container']}>
             <p className={styles['form-question']}>
-              Calcular el refrigerio compuesto del mes de:
+              Completá los campos con la cantidad de días correspondiente:
             </p>
-            <Months id='months' onSelectMonth={handleFormChange} />
+            <div className={styles.shifts}>
+              <Input
+                type='number'
+                id='morning'
+                label='Turnos mañana - tarde'
+                value={formValues.morning}
+                min={0}
+                onChange={handleFormChange}
+                placeholder='0'
+                errors={errors.shifts}
+              />
+              <Input
+                type='number'
+                id='night'
+                label='Turnos noche'
+                value={formValues.night}
+                min={0}
+                onChange={handleFormChange}
+                placeholder='0'
+                errors={errors.shifts}
+              />
+              <Input
+                type='number'
+                id='virtual'
+                label='Curso virtual'
+                value={formValues.virtual}
+                min={0}
+                onChange={handleFormChange}
+                placeholder='0'
+                hasTooltip
+                errors={errors.courses}
+              />
+              <Input
+                type='number'
+                id='live'
+                label='Curso presencial'
+                value={formValues.live}
+                min={0}
+                onChange={handleFormChange}
+                placeholder='0'
+                hasTooltip
+                errors={errors.courses}
+              />
+              <Input
+                type='number'
+                id='CMA'
+                label='CMA'
+                value={formValues.CMA}
+                min={0}
+                max={1}
+                onChange={handleFormChange}
+                placeholder='0'
+                hasTooltip
+                errors={errors.CMA}
+              />
+            </div>
+
+            {errors.shifts?.length !== 0 && errors.shifts?.map(err => err)}
+            {errors.CMA.length !== 0 && errors.CMA.map(err => err)}
+            {errors.courses.length !== 0 && errors.courses.map(err => err)}
           </div>
 
-          <span className={styles['form-question']}>
-            que se cobra en{' '}
-            {formValues.paymentMonth && (
-              <span className={styles['months-payment']}>
-                {formValues.paymentMonth}.
-              </span>
-            )}
-          </span>
-          {errors.month?.length !== 0 && errors.month?.map(err => err)}
-        </div>
-        <div className={styles['input-container']}>
-          <p className={styles['form-question']}>
-            Completá los campos con la cantidad de días correspondiente:
-          </p>
-          <div className={styles.shifts}>
-            <Input
-              type='number'
-              id='morning'
-              label='Turnos mañana - tarde'
-              value={formValues.morning}
-              min={0}
-              onChange={handleFormChange}
-              placeholder='0'
-              errors={errors.shifts}
-            />
-            <Input
-              type='number'
-              id='night'
-              label='Turnos noche'
-              value={formValues.night}
-              min={0}
-              onChange={handleFormChange}
-              placeholder='0'
-              errors={errors.shifts}
-            />
-            <Input
-              type='number'
-              id='virtual'
-              label='Curso virtual'
-              value={formValues.virtual}
-              min={0}
-              onChange={handleFormChange}
-              placeholder='0'
-              hasTooltip
-              errors={errors.courses}
-            />
-            <Input
-              type='number'
-              id='live'
-              label='Curso presencial'
-              value={formValues.live}
-              min={0}
-              onChange={handleFormChange}
-              placeholder='0'
-              hasTooltip
-              errors={errors.courses}
-            />
-            <Input
-              type='number'
-              id='CMA'
-              label='CMA'
-              value={formValues.CMA}
-              min={0}
-              max={1}
-              onChange={handleFormChange}
-              placeholder='0'
-              hasTooltip
-              errors={errors.CMA}
-            />
+          <div className={styles['input-container']}>
+            <p className={styles['form-question']}>
+              De los días ingresados anteriormente: ¿Cúantos fueron sábados
+              noche, domingos o feriados?
+            </p>
+            <div className={styles.shifts}>
+              <Input
+                type='number'
+                id='saturdays'
+                label='Sábados noche '
+                value={formValues.saturdays}
+                min={0}
+                onChange={handleFormChange}
+                placeholder='0'
+                hasTooltip
+                errors={errors.holidays}
+              />
+              <Input
+                type='number'
+                id='sundays'
+                label='Domingos'
+                value={formValues.sundays}
+                min={0}
+                onChange={handleFormChange}
+                placeholder='0'
+                errors={errors.holidays}
+              />
+              <Input
+                type='number'
+                id='holidays'
+                label='Feriados'
+                value={formValues.holidays}
+                min={0}
+                onChange={handleFormChange}
+                placeholder='0'
+                hasTooltip
+                errors={errors.holidays}
+              />
+            </div>
+            {errors.holidays.length !== 0 && errors.holidays.map(err => err)}
           </div>
-
-          {errors.shifts?.length !== 0 && errors.shifts?.map(err => err)}
-          {errors.CMA.length !== 0 && errors.CMA.map(err => err)}
-          {errors.courses.length !== 0 && errors.courses.map(err => err)}
-        </div>
-
-        <div className={styles['input-container']}>
-          <p className={styles['form-question']}>
-            De los días ingresados anteriormente: ¿Cúantos fueron sábados noche,
-            domingos o feriados?
-          </p>
-          <div className={styles.shifts}>
-            <Input
-              type='number'
-              id='saturdays'
-              label='Sábados noche '
-              value={formValues.saturdays}
-              min={0}
-              onChange={handleFormChange}
-              placeholder='0'
-              hasTooltip
-              errors={errors.holidays}
-            />
-            <Input
-              type='number'
-              id='sundays'
-              label='Domingos'
-              value={formValues.sundays}
-              min={0}
-              onChange={handleFormChange}
-              placeholder='0'
-              errors={errors.holidays}
-            />
-            <Input
-              type='number'
-              id='holidays'
-              label='Feriados'
-              value={formValues.holidays}
-              min={0}
-              onChange={handleFormChange}
-              placeholder='0'
-              hasTooltip
-              errors={errors.holidays}
-            />
+          <div className={styles['button-container']}>
+            <Button
+              type='reset'
+              classes={`${styles['form-btns']} ${styles['reset-btn']}`}
+              onClick={handleFormReset}
+            >
+              Reset
+            </Button>
+            <Button type='submit' classes={styles['form-btns']}>
+              Calcular!
+            </Button>
           </div>
-          {errors.holidays.length !== 0 && errors.holidays.map(err => err)}
-        </div>
-        <div className={styles['button-container']}>
-          <Button
-            type='reset'
-            classes={`${styles['form-btns']} ${styles['reset-btn']}`}
-            onClick={handleFormReset}
-          >
-            Reset
-          </Button>
-          <Button type='submit' classes={styles['form-btns']}>
-            Calcular!
-          </Button>
-        </div>
-      </form>
-    </Card>
+        </form>
+      </Card>
+    </main>
   );
 };
 
