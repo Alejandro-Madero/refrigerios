@@ -80,6 +80,7 @@
 
   /* CARD */
   --card-bgcolor: var(--color-neutral-50);
+  --card-secondary-bgcolor: var(--color-primary-300);
   --card-shadow: rgba(0, 0, 0, 0.15);
 
   /* BUTTONS */
@@ -114,6 +115,10 @@
 
   /* FORM SEPARATOR */
   --form-separator: rgba(0, 0, 0, 0.1);
+
+  /*CIRCLE DECORATION*/
+  --circle1-bgcolor: var(--color-primary-800);
+  --circle2-bgcolor: var(--color-primary-600);
 }
 
 .dark-theme {
@@ -139,7 +144,7 @@
 
   /* CARD */
   --card-bgcolor: rgba(var(--color-neutral-700-rgb), 0.7);
-
+  --card-secondary-bgcolor: var(--color-neutral-800);
   --card-shadow: rgba(0, 0, 0, 0.8);
 
   /* BUTTONS */
@@ -174,6 +179,10 @@
 
   /* FORM SEPARATOR */
   --form-separator: rgba(255, 255, 255, 0.15);
+
+  /*CIRCLE DECORATION*/
+  --circle1-bgcolor: var(--color-primary-500);
+  --circle2-bgcolor: var(--color-primary-600);
 }
 
 /* makes sizing simpler */

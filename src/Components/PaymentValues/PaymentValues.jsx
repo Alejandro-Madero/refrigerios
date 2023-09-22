@@ -31,42 +31,44 @@ const PaymentValues = () => {
     .filter(month => month !== null);
 
   return (
-    <section className={styles['payment-section']}>
-      <h3 className={styles['payment-section__header']}>
-        Valores vigentes ({curMonthName})
-      </h3>
-      <article className={styles['payment-container']}>
-        <Card classes={styles['payment-container__card']}>
-          <div className={styles['values-container']}>
-            <div className={styles.values}>
-              <h4>☕ Refrigerio Simple</h4>
-              <p>{curRefrigerio}</p>
+    <section className={styles['payment-wrapper']}>
+      <div className={styles['payment-section']}>
+        <h3 className={styles['payment-section__header']}>
+          Valores vigentes ({curMonthName})
+        </h3>
+        <article className={styles['payment-container']}>
+          <Card classes={styles['payment-container__card']}>
+            <div className={styles['values-container']}>
+              <div className={styles.values}>
+                <h4>☕ Refrigerio Simple</h4>
+                <p>{curRefrigerio}</p>
+              </div>
             </div>
-          </div>
-        </Card>
-        <Card classes={styles['payment-container__card']}>
-          <div className={styles['values-container']}>
-            <div className={styles.values}>
-              <h4>🚗 Movilidad</h4>
-              <p>{curMovility}</p>
+          </Card>
+          <Card classes={styles['payment-container__card']}>
+            <div className={styles['values-container']}>
+              <div className={styles.values}>
+                <h4>🚗 Movilidad</h4>
+                <p>{curMovility}</p>
+              </div>
             </div>
-          </div>
-        </Card>
-      </article>
+          </Card>
+        </article>
 
-      <h3 className={styles['payment-section__header']}>Próximos aumentos</h3>
-      <article className={styles['payment-container']}>
-        {nextIncreases.map(month => {
-          return (
-            <Increases
-              key={month.month}
-              month={month.month}
-              refrigerio={month.refrigerio}
-              movility={month.movilidad}
-            />
-          );
-        })}
-      </article>
+        <h3 className={styles['payment-section__header']}>Próximos aumentos</h3>
+        <article className={styles['payment-container']}>
+          {nextIncreases.map(month => {
+            return (
+              <Increases
+                key={month.month}
+                month={month.month}
+                refrigerio={month.refrigerio}
+                movility={month.movilidad}
+              />
+            );
+          })}
+        </article>
+      </div>
     </section>
   );
 };
