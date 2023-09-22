@@ -90,14 +90,14 @@
   --btn-secondary-fcolor: var(--color-neutral-900);
   --btn-secondary-bgcolor: var(--color-neutral-50);
   --btn-secondary-border-color: var(--color-neutral-900);
-  --btn-details-fcolor: var(--color-neutral-900);
-  --btn-details-bgcolor: var(--color-neutral-50);
-  --btn-details-border-color: var(--color-neutral-900);
 
   /* BUTTONS-HOVER */
   --btn-fcolor-hover: var(--color-neutral-50);
   --btn-bgcolor-hover: var(--color-primary-700);
   --btn-border-color-hover: var(--color-primary-800);
+
+  /*ARROW DOWN-UP*/
+  --arrow-stroke-color: var(--color-primary-800);
 
   /*  INPUTS */
   --input-bgcolor: var(--color-neutral-50);
@@ -154,14 +154,14 @@
   --btn-secondary-fcolor: var(--color-primary-200);
   --btn-secondary-bgcolor: var(--color-neutral-800);
   --btn-secondary-border-color: var(--color-primary-200);
-  --btn-details-fcolor: var(--color-neutral-900);
-  --btn-details-bgcolor: var(--color-primary-100);
-  --btn-details-border-color: var(--color-neutral-900);
 
   /* BUTTONS-HOVER */
   --btn-fcolor-hover: var(--color-primary-600);
   --btn-bgcolor-hover: var(--color-neutral-800);
   --btn-border-color-hover: var(--color-primary-600);
+
+  /*ARROW DOWN-UP*/
+  --arrow-stroke-color: var(--color-primary-400);
 
   /*  INPUTS */
   --input-bgcolor: var(--color-neutral-800);

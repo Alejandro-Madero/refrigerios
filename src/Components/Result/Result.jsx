@@ -2,8 +2,9 @@ import { useState, useRef, useEffect } from 'react';
 import { formatNumber } from '../../Utils/formatNumber';
 import styles from './Result.module.css';
 import ResultDetails from './ResultsDetails';
-import Button from '../UI/Button';
 import Card from '../UI/Card';
+import { ReactComponent as DoubleArrowDown } from '../../assets/double-arrow-down.svg';
+import { ReactComponent as DoubleArrowUp } from '../../assets/double-arrow-up.svg';
 
 const Result = ({ results }) => {
   const [showDetails, setShowDetails] = useState(false);
@@ -20,31 +21,34 @@ const Result = ({ results }) => {
   }, [resultRef]);
 
   return (
-    <>
-      <Card id='result' classes={styles['result-container']}>
-        <div className={styles.result} ref={resultRef}>
-          <h3 className={styles['result-header']}>
-            En {results.paymentMonth} vas a cobrar un refrigerio de
-          </h3>
-          <p className={styles['result-payment']}>{formattedMoney}</p>
-        </div>
+    <Card id='result' classes={styles['result-container']}>
+      <div className={styles.result} ref={resultRef}>
+        <h3 className={styles['result-header']}>
+          En {results.paymentMonth} vas a cobrar un refrigerio de
+        </h3>
+        <p className={styles['result-payment']}>{formattedMoney}</p>
+      </div>
 
-        <ResultDetails
-          classes={`${styles['result-details']} ${
-            showDetails ? styles.visible : ''
-          }`}
-          details={results}
-          refrigerio={results.REFRIGERIO}
-          movility={results.MOVILIDAD}
+      <ResultDetails
+        classes={`${styles['result-details']} ${
+          showDetails ? styles.visible : ''
+        }`}
+        details={results}
+        refrigerio={results.REFRIGERIO}
+        movility={results.MOVILIDAD}
+      />
+      {showDetails ? (
+        <DoubleArrowUp
+          className={`${styles.arrow} ${styles['arrow-up']}`}
+          onClick={() => setShowDetails(s => !s)}
         />
-      </Card>
-      <Button
-        onClick={() => setShowDetails(prev => !prev)}
-        classes={styles['details-btn']}
-      >
-        {showDetails ? 'Cerrar detalles' : 'Ver detalles'}
-      </Button>
-    </>
+      ) : (
+        <DoubleArrowDown
+          className={`${styles.arrow} ${styles['arrow-down']}`}
+          onClick={() => setShowDetails(s => !s)}
+        />
+      )}
+    </Card>
   );
 };
 
