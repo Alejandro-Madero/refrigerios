@@ -1,7 +1,8 @@
 import styles from './Chart.module.css';
 import { useContextTheme } from '../../hooks/useContextTheme';
 import { useChartConfig } from '../../hooks/useChartConfig';
-
+import { useEffect, useState, useRef } from 'react';
+import useObserver from '../../hooks/useObserver';
 import {
   Chart,
   LineController,
@@ -30,9 +31,29 @@ Chart.register(
 const LineChart = () => {
   const { theme } = useContextTheme();
   const { data, options } = useChartConfig(theme);
+  const chartSectionRef = useRef(null);
+  const [isIntersected, setIsIntersected] = useState(false);
+
+  const [setElement] = useObserver({
+    options: {
+      root: null,
+      rootMargin: '150px',
+      threshold: 0.1,
+    },
+    setIsIntersected,
+  });
+
+  useEffect(() => {
+    setElement(chartSectionRef.current);
+  }, [chartSectionRef, setElement]);
 
   return (
-    <section className={styles['chart-section']}>
+    <section
+      ref={chartSectionRef}
+      className={`${styles['chart-section']} ${
+        isIntersected ? styles.active : ''
+      }`}
+    >
       <h3 className={styles['chart-header']}>
         Evolución anual de los valores del refrigerio y movilidad
       </h3>

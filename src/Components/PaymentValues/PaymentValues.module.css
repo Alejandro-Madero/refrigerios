@@ -64,21 +64,15 @@
   column-gap: 0.75rem;
 }
 
-.payment-container__card {
+.payment-section__card {
   width: 100%;
   min-width: 150px;
+  opacity: 0;
+  transition: opacity 1.5s;
 }
 
-.increase-month {
-  font-size: 1rem;
-  font-weight: var(--fw-600);
-  color: var(--font-color);
-  text-align: center;
-  letter-spacing: 1.2px;
-  padding: 0.5rem 0;
-  width: 70%;
-  justify-self: center;
-  border-bottom: 1px solid var(--form-separator);
+.payment-section__card.visible {
+  opacity: 1;
 }
 
 .values-container {
@@ -87,24 +81,10 @@
   gap: 0.5rem;
   padding: 0.5rem 0rem;
 }
+
 .values {
   text-align: center;
   color: var(--font-color);
-}
-
-.values h4 {
-  font-weight: var(--fw-500);
-  font-size: 0.95rem;
-}
-
-.values h5 {
-  font-weight: var(--fw-500);
-  font-size: 0.95rem;
-}
-
-.values p {
-  font-size: 1rem;
-  font-weight: var(--fw-300);
 }
 
 @media (min-width: 335px) {
@@ -134,26 +114,6 @@
     width: 100px;
     height: 100px;
     bottom: -50px;
-  }
-
-  .values-container {
-    gap: 1rem;
-  }
-
-  .increase-month {
-    font-size: 1.2rem;
-  }
-
-  .values h4 {
-    font-size: 1.05rem;
-  }
-
-  .values h5 {
-    font-size: 1.05rem;
-  }
-
-  .values p {
-    font-size: 1.05rem;
   }
 }
 

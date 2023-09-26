@@ -3,8 +3,17 @@
   max-width: 900px;
   margin-top: 6rem;
   place-self: center;
+  translate: 0 150px;
+  scale: 0.5;
+  opacity: 0.5;
+  transition: translate 0.7s, scale 0.7s, opacity 0.7s;
 }
 
+.chart-section.active {
+  translate: 0 0;
+  scale: 1;
+  opacity: 1;
+}
 .chart-header {
   text-align: center;
   color: var(--font-color);
@@ -57,13 +66,17 @@
   }
 
   .chart-container {
-    height: 600px;
+    height: 500px;
   }
 }
 
 @media (min-width: 1000px) {
   .chart-section {
     width: 75%;
+  }
+
+  .chart-container {
+    height: 600px;
   }
 
   .chart-header {

@@ -17,7 +17,7 @@ const ScrollToTop = () => {
 
   return (
     <ArrowUp
-      className={`${styles['scroll-icon']} ${showBtn ? styles.visible : null}`}
+      className={`${styles['scroll-icon']} ${showBtn ? styles.visible : ''}`}
       onClick={handleScrollToTop}
     />
   );
