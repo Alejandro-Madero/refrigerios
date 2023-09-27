@@ -21,14 +21,24 @@
   position: relative;
 }
 
+/* El tooltip del theme solo se muestra en dispositivos que tienen la posibilidad de hacer hover*/
+
 .theme-tooltip {
   display: none;
+  visibility: hidden;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-80%, 80%);
   min-width: 120px;
   text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.theme-tooltip.visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 .theme-svg {

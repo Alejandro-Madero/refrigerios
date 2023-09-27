@@ -34,11 +34,14 @@ export default function Navigation() {
               onClick={toggleTheme}
             />
           )}
-          {showTooltip && (
-            <Tooltip classes={styles['theme-tooltip']}>
-              <p>Modo {theme === 'dark' ? 'claro' : 'oscuro'}</p>
-            </Tooltip>
-          )}
+
+          <Tooltip
+            classes={`${styles['theme-tooltip']} ${
+              showTooltip ? styles.visible : ''
+            }`}
+          >
+            <p>Modo {theme === 'dark' ? 'claro' : 'oscuro'}</p>
+          </Tooltip>
         </div>
       </nav>
     </header>

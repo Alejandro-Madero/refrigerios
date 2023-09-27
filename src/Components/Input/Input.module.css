@@ -47,7 +47,6 @@
 .input-tooltip {
   display: flex;
   visibility: hidden;
-  border: 2px solid var(--btn-primary-border-color);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -58,7 +57,7 @@
   transition: opacity 0.3s, visibility 0.3s;
 }
 
-.tooltip-visible {
+.input-tooltip.visible {
   visibility: visible;
   opacity: 1;
 }

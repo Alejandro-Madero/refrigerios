@@ -24,7 +24,7 @@ const Input = props => {
             />
             <Tooltip
               classes={`${styles['input-tooltip']} ${
-                showTooltip ? styles['tooltip-visible'] : null
+                showTooltip ? styles.visible : null
               }`}
               id={props.id}
             />
