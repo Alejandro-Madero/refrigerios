@@ -1,7 +1,7 @@
 export const tooltipMessages = new Map([
   [
     'holidays',
-    'Si el turno es feriado y además es domingo (o sábado noche en el caso de que aplique a tu dependencia), débes sumar una unidad a cada uno de los casilleros',
+    'Si el turno es feriado y además es domingo (o sábado noche en el caso de que aplique a tu dependencia), débes sumar una unidad a cada uno de los casilleros. Incluye feriados puente.',
   ],
   [
     'saturdays',

@@ -2,8 +2,14 @@
   font-size: 0.85rem;
   font-weight: var(--fw-600);
   justify-content: center;
-  color: var(--tooltip-fcolor);
-  background-color: var(--tooltip-bgcolor);
+  color: var(--color-primary-100);
+  /* background-color: var(--tooltip-bgcolor); */
+  background: linear-gradient(
+    360deg,
+    var(--color-primary-700),
+    var(--color-primary-800)
+  );
+  box-shadow: 0 1px 10px var(--color-primary-700);
   border-radius: 5px;
   padding: 0.3rem 0.75rem;
   width: 100%;
