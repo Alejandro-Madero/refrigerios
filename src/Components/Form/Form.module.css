@@ -78,21 +78,24 @@
 
 .form-btns {
   font-size: 1.15rem;
-  font-weight: var(--fw-600);
   padding: 0.5rem 0.25rem;
   width: 50%;
   min-width: 100px;
-  transition: border-color 0.2s ease, color 0.2s ease,
-    background-color 0.2s ease;
   color: var(--btn-primary-fcolor);
-  background-color: var(--btn-primary-bgcolor);
-  border: 2px solid var(--btn-primary-border-color);
+  border: transparent;
+  background: linear-gradient(
+    360deg,
+    var(--color-primary-700),
+    var(--color-primary-800)
+  );
+  transition: border-color 0.2s ease, color 0.2s ease,
+    background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .reset-btn {
   color: var(--btn-secondary-fcolor);
-  background-color: var(--btn-secondary-bgcolor);
-  border: 2px solid var(--btn-secondary-border-color);
+  background: transparent;
+  border: 3px solid var(--color-primary-700);
 }
 
 /* MEDIA QUERIES */
@@ -151,15 +154,7 @@
 
 @media (hover: hover) {
   .form-btns:hover {
-    color: var(--btn-fcolor-hover);
-    background-color: var(--btn-bgcolor-hover);
-    border: 2px solid var(--btn-border-color-hover);
-  }
-
-  .reset-btn:hover {
-    color: var(--btn-fcolor-hover);
-    background-color: var(--btn-bgcolor-hover);
-    border: 2px solid var(--btn-border-color-hover);
+    box-shadow: var(--btn-shadow);
   }
 }
 
