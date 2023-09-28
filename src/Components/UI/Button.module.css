@@ -1,5 +1,7 @@
 .btn {
-  border-radius: 10px;
+  letter-spacing: 1.2px;
+  border-radius: 50px;
   outline: transparent;
   cursor: pointer;
+  font-weight: var(--fw-800);
 }

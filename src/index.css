@@ -42,6 +42,7 @@
   --color-primary-700: #6358d4;
   --color-primary-800: #4b32c3;
   --color-primary-900: #341bab;
+  --color-primary-1000: #2d1b88;
 
   --color-warning: #e24444;
 
@@ -84,17 +85,11 @@
   --card-shadow: rgba(0, 0, 0, 0.15);
 
   /* BUTTONS */
-  --btn-primary-fcolor: var(--color-neutral-50);
-  --btn-primary-bgcolor: var(--color-neutral-600);
-  --btn-primary-border-color: var(--color-neutral-900);
-  --btn-secondary-fcolor: var(--color-neutral-900);
-  --btn-secondary-bgcolor: var(--color-neutral-50);
-  --btn-secondary-border-color: var(--color-neutral-900);
+  --btn-primary-fcolor: var(--color-primary-100);
+  --btn-secondary-fcolor: var(--color-primary-800);
 
   /* BUTTONS-HOVER */
-  --btn-fcolor-hover: var(--color-neutral-50);
-  --btn-bgcolor-hover: var(--color-primary-700);
-  --btn-border-color-hover: var(--color-primary-800);
+  --btn-shadow: 0 0 20px var(--color-primary-1000);
 
   /*ARROW DOWN-UP*/
   --arrow-stroke-color: var(--color-primary-800);
@@ -148,17 +143,11 @@
   --card-shadow: rgba(0, 0, 0, 0.8);
 
   /* BUTTONS */
-  --btn-primary-fcolor: var(--color-neutral-900);
-  --btn-primary-bgcolor: var(--color-primary-100);
-  --btn-primary-border-color: var(--color-neutral-900);
-  --btn-secondary-fcolor: var(--color-primary-200);
-  --btn-secondary-bgcolor: var(--color-neutral-800);
-  --btn-secondary-border-color: var(--color-primary-200);
+  --btn-primary-fcolor: var(--color-primary-100);
+  --btn-secondary-fcolor: var(--color-primary-600);
 
   /* BUTTONS-HOVER */
-  --btn-fcolor-hover: var(--color-primary-600);
-  --btn-bgcolor-hover: var(--color-neutral-800);
-  --btn-border-color-hover: var(--color-primary-600);
+  --btn-shadow: 0 0 15px var(--color-primary-200);
 
   /*ARROW DOWN-UP*/
   --arrow-stroke-color: var(--color-primary-400);
