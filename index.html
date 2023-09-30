@@ -39,38 +39,25 @@
       }
 
       .preloader {
+        place-self: center;
+        width: 250px;
+        height: 80px;
         fill: #b7b7ff;
-        width: 244px;
-        height: 65px;
+        animation: load 2s infinite ease;
       }
 
-      .logo-container {
-        margin-inline: 2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-      }
-
-      .spinner {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        border: 3px solid #b7b7ff;
-        border-left-color: transparent;
-        animation: spin 1s infinite linear;
-        transition: opacity cubic-bezier(0.4, 0, 0.2, 1) 200ms;
-      }
-
-      @keyframes spin {
+      @keyframes load {
         0% {
-          transform: rotate(0deg) scale(1);
+          opacity: 0.2;
+          transform: scale(1);
         }
         50% {
-          transform: rotate(180deg) scale(1.2);
+          opacity: 1;
+          transform: scale(1.1);
         }
         100% {
-          transform: rotate(360deg) scale(1);
+          opacity: 0.2;
+          transform: scale(1);
         }
       }
     </style>
@@ -127,12 +114,9 @@
     </noscript>
 
     <div class="preloader-container" aria-live="polite">
-      <div class="logo-container">
-        <svg class="preloader">
-          <use class="preloader" href="/preloader.svg#refrigerios"></use>
-        </svg>
-        <div class="spinner"></div>
-      </div>
+      <svg class="preloader">
+        <use href="/preloader.svg#refrigerios"></use>
+      </svg>
     </div>
 
     <div id="root"></div>
