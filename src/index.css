@@ -63,12 +63,8 @@
   --font-color: var(--color-neutral-900);
 
   /* BACKGROUND */
-  --bg-gradient: linear-gradient(
-    to bottom,
-    var(--color-neutral-150),
-    var(--color-neutral-50)
-  );
 
+  --bg-color: var(--color-neutral-100);
   /*NAV BAR*/
   --nav-bgcolor: var(--color-neutral-150);
 
@@ -108,6 +104,10 @@
   /* LOGO */
   --logo-fill-color: var(--color-neutral-900);
 
+  /*THEME TOGGLE*/
+  --theme-containerbg: var(--color-neutral-300);
+  --theme-container-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1) inset;
+
   /* FORM SEPARATOR */
   --form-separator: rgba(0, 0, 0, 0.1);
 
@@ -121,11 +121,7 @@
   --font-color: var(--color-primary-100);
 
   /* BACKGROUND */
-  --bg-gradient: linear-gradient(
-    to bottom,
-    var(--color-neutral-1000),
-    var(--color-neutral-800)
-  );
+  --bg-color: var(--color-neutral-900);
 
   /*NAV BAR*/
   --nav-bgcolor: var(--color-neutral-1000);
@@ -165,6 +161,10 @@
 
   /* LOGO */
   --logo-fill-color: var(--color-primary-400);
+
+  /*THEME TOGGLE*/
+  --theme-containerbg: var(--color-neutral-800);
+  --theme-container-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.1) inset;
 
   /* FORM SEPARATOR */
   --form-separator: rgba(255, 255, 255, 0.15);

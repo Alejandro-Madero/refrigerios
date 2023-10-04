@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   box-shadow: 0 0 5px 1.75px var(--card-shadow);
+  transition: background 0.2s;
 }
 
 .nav {
@@ -19,42 +20,55 @@
 
 .theme-container {
   position: relative;
+  display: flex;
+  gap: 1.25rem;
+  background-color: var(--theme-containerbg);
+  border-radius: 50px;
+  box-shadow: var(--theme-container-shadow);
+  width: 6.5rem;
+  height: 3rem;
+  transition: background-color 0.2s, box-shadow 0.2s;
 }
 
-/* El tooltip del theme solo se muestra en dispositivos que tienen la posibilidad de hacer hover*/
-
-.theme-tooltip {
-  display: none;
-  visibility: hidden;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-80%, 80%);
-  min-width: 120px;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s, visibility 0.3s;
+.switch {
+  display: grid;
+  place-items: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 30px;
+  background: linear-gradient(
+    360deg,
+    var(--color-primary-700),
+    var(--color-primary-800)
+  );
+  transition: transform 0.5s;
 }
 
-.theme-tooltip.visible {
-  visibility: visible;
-  opacity: 1;
+.switch.left {
+  transform: translateX(0.25rem) translateY(0.15rem);
+}
+
+.switch.right {
+  transform: translateX(3.55rem) translateY(0.15rem);
 }
 
 .theme-svg {
-  width: 2.3rem;
-  height: 2.3rem;
+  width: 2rem;
+  height: 2rem;
   cursor: pointer;
+  z-index: 100;
 }
 
 .sun {
-  stroke: var(--color-primary-400);
+  stroke: var(--color-neutral-900);
+  stroke: var(--color-primary-200);
   opacity: 1;
   animation: solcito 0.5s;
 }
 
 .moon {
   fill: var(--color-neutral-900);
+  fill: var(--color-neutral-100);
   opacity: 0.9;
   animation: lunita 0.5s;
 }
@@ -85,6 +99,26 @@
   100% {
     transform: rotate(0deg);
   }
+}
+
+/* El tooltip del theme solo se muestra en dispositivos que tienen la posibilidad de hacer hover*/
+
+.theme-tooltip {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-80%, 80%);
+  min-width: 120px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.theme-tooltip.visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 @media (hover: hover) {
