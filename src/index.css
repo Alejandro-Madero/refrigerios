@@ -39,6 +39,7 @@
   --color-primary-500: #a0a0f5;
   --color-primary-600: #8080f2;
   --color-primary-600-rgb: 160, 160, 245;
+  --color-primary-650: #7373f5;
   --color-primary-700: #6358d4;
   --color-primary-800: #4b32c3;
   --color-primary-900: #341bab;
@@ -102,11 +103,13 @@
   --month-option-bgcolor: var(--color-neutral-50);
 
   /* LOGO */
+  --aircraft-fill-color: var(--color-neutral-800);
   --logo-fill-color: var(--color-neutral-900);
 
   /*THEME TOGGLE*/
   --theme-containerbg: var(--color-neutral-300);
-  --theme-container-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1) inset;
+  --theme-container-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1) inset,
+    0 0 2px 0px rgba(0, 0, 0, 0.5);
 
   /* FORM SEPARATOR */
   --form-separator: rgba(0, 0, 0, 0.1);
@@ -124,7 +127,7 @@
   --bg-color: var(--color-neutral-900);
 
   /*NAV BAR*/
-  --nav-bgcolor: var(--color-neutral-1000);
+  --nav-bgcolor: var(--color-neutral-900);
 
   /* TITLE */
   --title-gradient: linear-gradient(
@@ -136,7 +139,7 @@
   /* CARD */
   --card-bgcolor: rgba(var(--color-neutral-700-rgb), 0.7);
   --card-secondary-bgcolor: var(--color-neutral-800);
-  --card-shadow: rgba(0, 0, 0, 0.8);
+  --card-shadow: rgba(0, 0, 0, 0.6);
 
   /* BUTTONS */
   --btn-primary-fcolor: var(--color-primary-100);
@@ -160,11 +163,13 @@
   --month-option-bgcolor: var(--color-neutral-900);
 
   /* LOGO */
+  --aircraft-fill-color: var(--color-primary-650);
   --logo-fill-color: var(--color-primary-400);
 
   /*THEME TOGGLE*/
   --theme-containerbg: var(--color-neutral-800);
-  --theme-container-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.1) inset;
+  --theme-container-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.1) inset,
+    0 0 2px 0px rgba(255, 255, 255, 0.4);
 
   /* FORM SEPARATOR */
   --form-separator: rgba(255, 255, 255, 0.15);

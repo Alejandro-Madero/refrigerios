@@ -5,7 +5,7 @@ const Tooltip = ({ children, classes, onClick, id }) => {
   return (
     <div className={`${styles.tooltip} ${classes ?? ''}`} onClick={onClick}>
       {children}
-      <p>{tooltipMessages.get(id)}</p>
+      {id ? <p>{tooltipMessages.get(id)}</p> : null}
     </div>
   );
 };

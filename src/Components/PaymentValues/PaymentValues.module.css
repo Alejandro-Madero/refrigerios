@@ -40,7 +40,7 @@
   justify-self: center;
   display: flex;
   flex-direction: column;
-  width: 95%;
+  width: 90%;
   max-width: 900px;
 }
 
@@ -86,11 +86,16 @@
 }
 
 .values {
+  font-size: 0.95rem;
   text-align: center;
   color: var(--font-color);
 }
 
-@media (min-width: 360px) {
+.values h4 {
+  font-weight: var(--fw-600);
+}
+
+@media (min-width: 380px) {
   .payment-container {
     grid-template-columns: repeat(2, minmax(150px, 1fr));
   }

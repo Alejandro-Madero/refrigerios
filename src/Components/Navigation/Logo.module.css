@@ -5,16 +5,26 @@
   height: 100%;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  gap: 1.5rem;
 }
 
 /*width="381.4" height="100" viewBox="0 0 381.4 100"*/
 /*26.21%* --> height / width */
 
 .logo {
+  display: none;
   --width: 10;
   width: calc(1rem * var(--width));
   height: calc(1rem * (var(--width) * 0.2621));
   fill: var(--logo-fill-color);
+  transition: fill 0.2s;
+}
+
+.aircraft {
+  fill: var(--aircraft-fill-color);
+  width: 2.7rem;
+  margin-left: 0.25rem;
+  transition: fill 0.2s;
 }
 
 @media (min-width: 450px) {
@@ -24,7 +34,12 @@
 }
 
 @media (min-width: 750px) {
+  .aircraft {
+    display: none;
+  }
+
   .logo {
+    display: block;
     --width: 11.5;
   }
 }
