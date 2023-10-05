@@ -43,7 +43,6 @@
 }
 
 .moon {
-  fill: var(--color-neutral-900);
   fill: var(--color-neutral-100);
   opacity: 0.9;
   animation: lunita 0.5s;
