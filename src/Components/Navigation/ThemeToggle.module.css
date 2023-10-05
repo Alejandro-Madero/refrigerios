@@ -17,11 +17,7 @@
   width: 2.7rem;
   height: 2.7rem;
   border-radius: 50%;
-  background: linear-gradient(
-    220deg,
-    var(--color-primary-700),
-    var(--color-primary-800)
-  );
+  background: var(--switch-bgcolor);
   transition: transform 0.5s;
 }
 
@@ -41,8 +37,7 @@
 }
 
 .sun {
-  stroke: var(--color-neutral-900);
-  stroke: var(--color-primary-200);
+  stroke: var(--color-neutral-1000);
   opacity: 1;
   animation: solcito 0.5s;
 }
