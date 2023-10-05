@@ -47,6 +47,9 @@
 
   --color-warning: #e24444;
 
+  --color-switch-500: #ffd900;
+  --color-switch-800: #f37703;
+
   /* FONT WEIGHTS */
 
   --fw-300: 300;
@@ -110,6 +113,11 @@
   --theme-containerbg: var(--color-neutral-300);
   --theme-container-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1) inset,
     0 0 2px 0px rgba(0, 0, 0, 0.5);
+  --switch-bgcolor: linear-gradient(
+    220deg,
+    var(--color-switch-500),
+    var(--color-switch-800)
+  );
 
   /* FORM SEPARATOR */
   --form-separator: rgba(0, 0, 0, 0.1);
@@ -170,6 +178,11 @@
   --theme-containerbg: var(--color-neutral-800);
   --theme-container-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.1) inset,
     0 0 2px 0px rgba(255, 255, 255, 0.4);
+  --switch-bgcolor: linear-gradient(
+    220deg,
+    var(--color-primary-700),
+    var(--color-primary-800)
+  );
 
   /* FORM SEPARATOR */
   --form-separator: rgba(255, 255, 255, 0.15);
