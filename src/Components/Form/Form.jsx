@@ -1,32 +1,38 @@
 import styles from './Form.module.css';
 import { useState } from 'react';
-import { getPaymentMonth } from '../../Utils/logic';
 import { validateForm } from '../../Utils/validateForm';
-import { fixNumber } from '../../Utils/fixNumber';
+import formUpdate from '../../Utils/formUpdate';
 import Card from '../UI/Card';
 import Button from '../UI/Button';
-import Months from '../Months/Months';
 import Input from '../Input/Input';
+import Years from '../Date selection/Years';
+import Months from '../Date selection/Months';
 
 const initialFormValues = {
   month: '',
+  year: '',
+  paymentMonth: '',
+  paymentYear: '',
+  isPaymentNextYear: '',
   morning: '',
   night: '',
-  paymentMonth: '',
   saturdays: '',
   sundays: '',
   holidays: '',
   virtual: '',
   live: '',
   CMA: '',
+  opening: '',
 };
 
 const initialErrors = {
+  year: [],
   month: [],
   shifts: [],
   holidays: [],
   courses: [],
   CMA: [],
+  opening: [],
 };
 
 const Form = ({ onSubmmitedForm, onReset }) => {
@@ -46,65 +52,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
   };
 
   const handleFormChange = e => {
-    const value =
-      e.target.value.startsWith('0') && e.target.value.length > 1
-        ? fixNumber(e.target.value)
-        : e.target.value;
-
-    const updateValues = () =>
-      setFormValues(prevValues => {
-        return { ...prevValues, [e.target.name]: value };
-      });
-
-    switch (e.target.name) {
-      case 'months': {
-        const month = value;
-        if (!month) {
-          return setFormValues(prevValues => {
-            return {
-              ...prevValues,
-              paymentMonth: '',
-              month: '',
-            };
-          });
-        }
-        setErrors(prevErr => {
-          return { ...prevErr, month: [] };
-        });
-        const nextMonth = getPaymentMonth(month);
-        return setFormValues(prevValues => {
-          return { ...prevValues, paymentMonth: nextMonth, month };
-        });
-      }
-
-      case 'morning':
-      case 'night':
-        setErrors(prevErr => {
-          return { ...prevErr, shifts: [] };
-        });
-        return updateValues();
-
-      case 'saturdays':
-      case 'sundays':
-      case 'holidays':
-        setErrors(prevErr => {
-          return { ...prevErr, holidays: [] };
-        });
-        return updateValues();
-
-      case 'virtual':
-      case 'live':
-        setErrors(prevErr => {
-          return { ...prevErr, courses: [] };
-        });
-        return updateValues();
-
-      case 'CMA':
-        setErrors(prevErr => {
-          return { ...prevErr, CMA: [] };
-        });
-        return updateValues();
-    }
+    formUpdate(e, formValues, setFormValues, setErrors);
   };
 
   const handleFormReset = () => {
@@ -118,22 +66,34 @@ const Form = ({ onSubmmitedForm, onReset }) => {
       <Card classes={styles['form-card']}>
         <form className={styles.form} onSubmit={handleForm}>
           <div className={styles['input-container']}>
-            <div className={styles['months-container']}>
-              <p className={styles['form-question']}>
-                Calcular el refrigerio compuesto del mes de:
-              </p>
-              <Months id='months' onSelectMonth={handleFormChange} />
+            <p className={styles['form-question']}>
+              Calcular el refrigerio compuesto de:
+            </p>
+            <div className={styles['time-selector']}>
+              <Months
+                onSelect={handleFormChange}
+                classes={errors.month.length > 0 ? styles['has-errors'] : ''}
+              />
+              <Years
+                onSelect={handleFormChange}
+                classes={errors.year.length > 0 ? styles['has-errors'] : ''}
+              />
             </div>
 
-            <span className={styles['form-question']}>
+            <p>
               que se cobra en{' '}
-              {formValues.paymentMonth && (
-                <span className={styles['months-payment']}>
-                  {formValues.paymentMonth}.
-                </span>
+              {formValues.month && formValues.year && (
+                <strong style={{ fontWeight: 'var(--fw-800)' }}>
+                  {formValues.paymentMonth} de{' '}
+                  {formValues.isPaymentNextYear
+                    ? Number(formValues.year) + 1
+                    : formValues.year}
+                </strong>
               )}
-            </span>
-            {errors.month?.length !== 0 && errors.month?.map(err => err)}
+            </p>
+
+            {errors?.month?.length !== 0 && errors?.month.map(err => err)}
+            {errors?.year?.length !== 0 && errors?.year.map(err => err)}
           </div>
           <div className={styles['input-container']}>
             <p className={styles['form-question']}>
@@ -194,11 +154,23 @@ const Form = ({ onSubmmitedForm, onReset }) => {
                 hasTooltip
                 errors={errors.CMA}
               />
+              <Input
+                type='number'
+                id='opening'
+                label='Extensión de servicio'
+                value={formValues.opening}
+                min={0}
+                onChange={handleFormChange}
+                placeholder='0'
+                hasTooltip
+                errors={errors.opening}
+              />
             </div>
 
             {errors.shifts?.length !== 0 && errors.shifts?.map(err => err)}
-            {errors.CMA.length !== 0 && errors.CMA.map(err => err)}
-            {errors.courses.length !== 0 && errors.courses.map(err => err)}
+            {errors.CMA?.length !== 0 && errors.CMA.map(err => err)}
+            {errors.courses?.length !== 0 && errors.courses.map(err => err)}
+            {errors.opening?.length !== 0 && errors.opening.map(err => err)}
           </div>
 
           <div className={styles['input-container']}>
@@ -240,7 +212,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
                 errors={errors.holidays}
               />
             </div>
-            {errors.holidays.length !== 0 && errors.holidays.map(err => err)}
+            {errors.holidays?.length !== 0 && errors.holidays.map(err => err)}
           </div>
           <div className={styles['button-container']}>
             <Button

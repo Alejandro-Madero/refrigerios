@@ -1,9 +1,9 @@
-.months {
-  font-size: 0.95rem;
+.selection {
+  font-size: 0.9rem;
   font-weight: var(--fw-500);
   outline: transparent;
   border-radius: 5px;
-  padding: 0.2rem 0.2rem;
+  padding: 0.1rem 0.2rem;
   max-width: 220px;
   cursor: pointer;
   color: var(--font-color);
@@ -18,7 +18,7 @@
 }
 
 @media (min-width: 600px) {
-  .months {
+  .selection {
     font-size: 1.05rem;
   }
 }

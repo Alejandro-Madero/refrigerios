@@ -30,8 +30,6 @@ const Input = props => {
             />
           </>
         )}
-
-        {/* {showTooltip && ( )} */}
       </label>
       <input
         type={props.type}
