@@ -9,6 +9,7 @@ const concepts = new Map([
   ['nights', 'Nocturnidad'],
   ['holiday', 'Feriados'],
   ['sundays', 'Domingos'],
+  ['opening', 'Extensiones de servicio'],
 ]);
 
 const Detail = ({ total, units, type, refrigerio, movility, emoji }) => {

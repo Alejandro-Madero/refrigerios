@@ -9,14 +9,18 @@ export const tooltipMessages = new Map([
   ],
   [
     'virtual',
-    'Capacitaciones virtuales que realizas desde tu casa, por ejemplo: inglés, rete, etc. Por cada unidad se abona un refrigerio simple.',
+    'Capacitaciones virtuales que realizas desde tu casa, por ejemplo: inglés, rete, etc. Por cada unidad se abona un refrigerio simple adicional.',
   ],
   [
     'live',
-    'Por cada unidad se abona un refrigerio compuesto (refrigerio simple + movilidad).',
+    'Por cada unidad se abona un refrigerio compuesto adicional (refrigerio simple + movilidad).',
   ],
   [
     'CMA',
-    'Por la renovación del CMA se abona un refrigerio compuesto (refrigerio simple + movilidad). Ingresá 1 si lo renovaste este mes.',
+    'Por la renovación del CMA se abona un refrigerio compuesto adicional (refrigerio simple + movilidad). Ingresá 1 si lo renovaste este mes.',
+  ],
+  [
+    'opening',
+    'Por cada extensión de servicio o apertura anticipada se abona un refrigerio simple adicional.',
   ],
 ]);

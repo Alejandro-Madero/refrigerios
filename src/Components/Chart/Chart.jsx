@@ -29,11 +29,11 @@ Chart.register(
 );
 
 const LineChart = () => {
+  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
   const { theme } = useContextTheme();
-  const { data, options } = useChartConfig(theme);
+  const { data, options } = useChartConfig(theme, selectedYear);
   const chartSectionRef = useRef(null);
   const [isIntersected, setIsIntersected] = useState(false);
-
   const [setElement] = useObserver({
     options: {
       root: null,
@@ -47,6 +47,10 @@ const LineChart = () => {
     setElement(chartSectionRef.current);
   }, [chartSectionRef, setElement]);
 
+  const handleYearChange = e => {
+    setSelectedYear(Number(e.target.value));
+  };
+
   return (
     <section
       ref={chartSectionRef}
@@ -57,6 +61,27 @@ const LineChart = () => {
       <h3 className={styles['chart-header']}>
         Evolución anual de los valores del refrigerio y movilidad
       </h3>
+
+      <div className={styles['chart-year']}>
+        <button
+          className={`${styles['year-btn']}  ${
+            selectedYear === 2023 ? styles['year-btn-active'] : ''
+          }`}
+          value={2023}
+          onClick={handleYearChange}
+        >
+          2023
+        </button>
+        <button
+          className={`${styles['year-btn']}  ${
+            selectedYear === 2024 ? styles['year-btn-active'] : ''
+          }`}
+          value={2024}
+          onClick={handleYearChange}
+        >
+          2024
+        </button>
+      </div>
       <div className={styles['chart-wrapper']}>
         <p>$</p>
         <div className={styles['chart-container']}>

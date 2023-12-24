@@ -10,7 +10,6 @@ const ThemeToggle = () => {
   const [showTooltip, setShowTooltip] = useState(false);
   const switchPosition = theme === 'dark' ? styles.left : styles.right;
   const handleShowTooltip = () => {
-    console.log('hola');
     setShowTooltip(true);
   };
   const handleHideTooltip = () => setShowTooltip(false);

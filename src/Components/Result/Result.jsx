@@ -24,7 +24,8 @@ const Result = ({ results }) => {
     <Card id='result' classes={styles['result-container']}>
       <div className={styles.result} ref={resultRef}>
         <h3 className={styles['result-header']}>
-          En {results.paymentMonth} vas a cobrar un refrigerio de
+          En {results.paymentMonth} de {results.paymentYear} vas a cobrar un
+          refrigerio de
         </h3>
         <p className={styles['result-payment']}>{formattedMoney}</p>
       </div>

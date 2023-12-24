@@ -13,7 +13,7 @@ import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 
 const App = () => {
   const [calculationDone, setCalculationDone] = useState(false);
-  const [result, setResult] = useState();
+  const [result, setResult] = useState(null);
 
   usePreloader();
 

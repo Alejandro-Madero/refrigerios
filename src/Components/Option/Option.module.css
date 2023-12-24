@@ -1,4 +1,4 @@
-.month-option {
+.option {
   cursor: pointer;
   background-color: var(--month-option-bgcolor);
   font-weight: var(--fw-500);

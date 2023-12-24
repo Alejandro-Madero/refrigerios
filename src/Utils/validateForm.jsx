@@ -2,11 +2,13 @@ import ErrorMessage from '../Components/ErrorMessage/ErrorMessage';
 
 export const validateForm = function (form) {
   const errors = {
+    year: [],
     month: [],
     shifts: [],
     holidays: [],
     courses: [],
     CMA: [],
+    opening: [],
   };
 
   let totalShifts = 0;
@@ -17,6 +19,15 @@ export const validateForm = function (form) {
     const value = form[key];
 
     switch (key) {
+      case 'year':
+        if (value === '')
+          errors.year.push(
+            <ErrorMessage key='no year selected'>
+              ⛔ Debés seleccionar un año.
+            </ErrorMessage>
+          );
+        break;
+
       case 'month': {
         if (value === '')
           errors.month.push(
@@ -44,7 +55,7 @@ export const validateForm = function (form) {
           errors.shifts.push(
             <ErrorMessage key={key}>
               ⛔ No se puede trabajar {+value} turnos{' '}
-              {key === 'morning' ? 'Mañana / tarde ' : 'noche'} en un mes.
+              {key === 'morning' ? 'mañana / tarde ' : 'noche'} en un mes.
             </ErrorMessage>
           );
         }
@@ -101,6 +112,17 @@ export const validateForm = function (form) {
             </ErrorMessage>
           );
         totalShifts += Number(value);
+        break;
+
+      case 'opening':
+        if (value > totalShifts) {
+          errors.opening.push(
+            <ErrorMessage key={key}>
+              ⛔ La cantidad de aperturas anticipadas y extensiones de servicio
+              no puede ser mayor a la cantidad total de turnos trabajados
+            </ErrorMessage>
+          );
+        }
         break;
 
       default:

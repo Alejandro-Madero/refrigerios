@@ -38,8 +38,13 @@
   justify-self: center;
   stroke: var(--arrow-stroke-color);
   width: 40px;
+  border-radius: 50%;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.arrow:hover {
+  background-color: var(--form-separator);
 }
 
 .arrow-down {
@@ -73,10 +78,6 @@
     transform: translateY(0) rotate(180deg);
   }
 }
-
-/* @media (hover: hover) {
- 
-} */
 
 @media (min-width: 375px) {
   .result-header {

@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import useObserver from '../../hooks/useObserver';
 import Card from '../UI/Card';
 
-const Increases = ({ month, refrigerio, movility, idx }) => {
+const Increases = ({ year, month, refrigerio, movility, idx }) => {
   const increaseRef = useRef(null);
   const [isIntersected, setIsIntersected] = useState(false);
 
@@ -25,7 +25,9 @@ const Increases = ({ month, refrigerio, movility, idx }) => {
         isIntersected ? styles.active : styles.hide
       } `}
     >
-      <h4 className={styles['increase-month']}>{month}</h4>
+      <h4 className={styles['increase-month']}>
+        {month} {year}
+      </h4>
       <div ref={increaseRef} className={styles['values-container']}>
         <div className={styles.values}>
           <h5>Refrigerio simple</h5>

@@ -1,11 +1,11 @@
-import { PRICES2023 } from '../Utils/prices';
+import { PRICES } from '../Utils/prices';
 import { MONTHS } from '../Utils/constants';
 
-export const useChartConfig = theme => {
+export const useChartConfig = (theme, selectedYear) => {
   const fontFamily = 'Nunito, sans-serif';
 
   const { refrigerioSimple, movility, refrigerioCompuesto } = Object.entries(
-    PRICES2023
+    PRICES[selectedYear] ?? PRICES[new Date().getFullYear()]
   ).reduce(
     (acc, month) => {
       return {
@@ -76,6 +76,7 @@ export const useChartConfig = theme => {
       },
 
       y: {
+        beginAtZero: true,
         grid: {
           color:
             theme === 'dark'

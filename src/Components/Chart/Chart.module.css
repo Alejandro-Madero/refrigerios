@@ -1,4 +1,6 @@
 .chart-section {
+  display: flex;
+  flex-direction: column;
   width: 95%;
   max-width: 900px;
   margin-top: 6rem;
@@ -21,6 +23,29 @@
   font-weight: var(--fw-700);
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.chart-year {
+  align-self: center;
+  display: flex;
+  gap: 1rem;
+  margin-block: 1.5rem;
+}
+
+.year-btn {
+  font-size: 1.5rem;
+  color: var(--font-color);
+  padding: 0.5rem;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  transition: box-shadow 0.5s;
+  cursor: pointer;
+}
+
+.year-btn-active {
+  box-shadow: 0 0 4px 2px #6358d4;
 }
 
 .chart-wrapper {

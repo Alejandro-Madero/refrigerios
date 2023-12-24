@@ -1,6 +1,6 @@
 import styles from './PaymentValues.module.css';
 import { useEffect, useRef, useState } from 'react';
-import { PRICES2023 } from '../../Utils/prices';
+import { PRICES } from '../../Utils/prices';
 import { MONTHS } from '../../Utils/constants';
 import { formatNumber } from '../../Utils/formatNumber';
 import useObserver from '../../hooks/useObserver';
@@ -8,9 +8,11 @@ import Card from '../UI/Card';
 import Increases from './Increases';
 
 const PaymentValues = () => {
-  const curMonthNum = new Date().getMonth();
+  const curDate = new Date();
+  const curYear = curDate.getFullYear();
+  const curMonthNum = curDate.getMonth();
   const curMonthName = MONTHS[curMonthNum];
-  const curValues = PRICES2023[curMonthName];
+  const curValues = PRICES[curYear][curMonthName];
   const [curRefrigerio] = formatNumber(curValues.refrigerio);
   const [curMovility] = formatNumber(curValues.movilidad);
   const paymentRef = useRef(null);
@@ -33,14 +35,15 @@ const PaymentValues = () => {
   const nextIncreases = MONTHS.slice(curMonthNum + 1)
     .map(month => {
       if (
-        PRICES2023[month].refrigerio > curMax.refrigerio ||
-        PRICES2023[month].movilidad > curMax.movilidad
+        PRICES[curYear][month].refrigerio > curMax.refrigerio ||
+        PRICES[curYear][month].movilidad > curMax.movilidad
       ) {
-        curMax = { ...PRICES2023[month] };
+        curMax = { ...PRICES[curYear][month] };
         return {
           month,
-          refrigerio: formatNumber(PRICES2023[month].refrigerio),
-          movilidad: formatNumber(PRICES2023[month].movilidad),
+          year: curYear,
+          refrigerio: formatNumber(PRICES[curYear][month].refrigerio),
+          movilidad: formatNumber(PRICES[curYear][month].movilidad),
         };
       }
       return null;
@@ -51,7 +54,7 @@ const PaymentValues = () => {
     <section className={styles['payment-wrapper']}>
       <div className={styles['payment-section']}>
         <h3 className={styles['payment-section__header']}>
-          Valores vigentes ({curMonthName})
+          Valores vigentes ( {curMonthName} {curYear} )
         </h3>
         <article ref={paymentRef} className={`${styles['payment-container']}`}>
           <Card
@@ -90,6 +93,7 @@ const PaymentValues = () => {
                 return (
                   <Increases
                     key={month.month}
+                    year={month.year}
                     month={month.month}
                     refrigerio={month.refrigerio}
                     movility={month.movilidad}

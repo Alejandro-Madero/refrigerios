@@ -30,7 +30,7 @@ const ResultDetails = ({ details, classes }) => {
         })}
         <div className={styles['detail-values-container']}>
           <li className={styles['detail-values']}>
-            Valores de referencia {details.month}
+            Valores de referencia {details.month} {details.year}
             <span>Refrigerio simple: {formattedRefrigerio}</span>
             <span>Movilidad: {formattedMovility}</span>
           </li>
