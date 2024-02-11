@@ -35,6 +35,9 @@ export const useChartConfig = (theme, selectedYear) => {
       },
       legend: {
         labels: {
+          borderRadius: 4,
+          useBorderRadius: true,
+          boxWidth: 45,
           font: {
             size: 16,
             family: fontFamily,
@@ -105,6 +108,7 @@ export const useChartConfig = (theme, selectedYear) => {
         borderColor: 'rgb(50,220,150)',
         backgroundColor: 'rgb(50,220,150)',
         pointRadius: 4.5,
+        pointHoverRadius: 9,
       },
       {
         label: 'Movilidad ($)',
@@ -113,6 +117,7 @@ export const useChartConfig = (theme, selectedYear) => {
         borderColor: 'rgb(160, 160, 245)',
         backgroundColor: 'rgb(160, 160, 245)',
         pointRadius: 4.5,
+        pointHoverRadius: 9,
       },
       {
         label: 'Refrigerio compuesto ($)',
@@ -121,6 +126,7 @@ export const useChartConfig = (theme, selectedYear) => {
         borderColor: 'rgb(255, 100, 145)',
         backgroundColor: 'rgb(255, 100, 145)',
         pointRadius: 4.5,
+        pointHoverRadius: 9,
       },
     ],
   };
