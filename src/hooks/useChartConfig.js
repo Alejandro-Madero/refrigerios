@@ -1,28 +1,31 @@
 import { PRICES } from '../Utils/prices';
 import { MONTHS } from '../Utils/constants';
 
+const date = new Date();
+const curYear = date.getFullYear();
+const curMonth = date.getMonth();
+const refrigerioSimple = { 2023: [], 2024: [], full: [] };
+const refrigerioCompuesto = { 2023: [], 2024: [], full: [] };
+const movility = { 2023: [], 2024: [], full: [] };
+
+Object.entries(PRICES).forEach(year => {
+  const months = Object.entries(year[1]);
+
+  months.forEach((month, i) => {
+    if (Number(year[0]) === curYear && i > curMonth) return;
+
+    const refrigerio = month[1].refrigerio;
+    const movilidad = month[1].movilidad;
+    const sum = refrigerio + movilidad;
+
+    refrigerioSimple[year[0]].push(refrigerio);
+    movility[year[0]].push(movilidad);
+    refrigerioCompuesto[year[0]].push(sum);
+  });
+});
+
 export const useChartConfig = (theme, selectedYear) => {
   const fontFamily = 'Nunito, sans-serif';
-
-  const { refrigerioSimple, movility, refrigerioCompuesto } = Object.entries(
-    PRICES[selectedYear] ?? PRICES[new Date().getFullYear()]
-  ).reduce(
-    (acc, month) => {
-      return {
-        refrigerioSimple: [...acc.refrigerioSimple, month[1].refrigerio],
-        movility: [...acc.movility, month[1].movilidad],
-        refrigerioCompuesto: [
-          ...acc.refrigerioCompuesto,
-          month[1].refrigerio + month[1].movilidad,
-        ],
-      };
-    },
-    {
-      refrigerioSimple: [],
-      movility: [],
-      refrigerioCompuesto: [],
-    }
-  );
 
   const options = {
     responsive: true,
@@ -103,7 +106,7 @@ export const useChartConfig = (theme, selectedYear) => {
     datasets: [
       {
         label: 'Refrigerio simple ($)',
-        data: refrigerioSimple,
+        data: refrigerioSimple[selectedYear],
         fill: false,
         borderColor: 'rgb(50,220,150)',
         backgroundColor: 'rgb(50,220,150)',
@@ -112,7 +115,7 @@ export const useChartConfig = (theme, selectedYear) => {
       },
       {
         label: 'Movilidad ($)',
-        data: movility,
+        data: movility[selectedYear],
         fill: true,
         borderColor: 'rgb(160, 160, 245)',
         backgroundColor: 'rgb(160, 160, 245)',
@@ -121,7 +124,7 @@ export const useChartConfig = (theme, selectedYear) => {
       },
       {
         label: 'Refrigerio compuesto ($)',
-        data: refrigerioCompuesto,
+        data: refrigerioCompuesto[selectedYear],
         fill: true,
         borderColor: 'rgb(255, 100, 145)',
         backgroundColor: 'rgb(255, 100, 145)',
