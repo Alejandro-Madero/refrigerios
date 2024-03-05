@@ -110,7 +110,7 @@
   --logo-fill-color: var(--color-neutral-900);
 
   /*THEME TOGGLE*/
-  --theme-containerbg: var(--color-neutral-300);
+  --theme-containerbg: rgba(243, 119, 3, 0.2);
   --theme-container-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1) inset,
     0 0 2px 0px rgba(0, 0, 0, 0.5);
   --switch-bgcolor: linear-gradient(
@@ -175,7 +175,7 @@
   --logo-fill-color: var(--color-primary-400);
 
   /*THEME TOGGLE*/
-  --theme-containerbg: var(--color-neutral-800);
+  --theme-containerbg: rgba(75, 50, 195, 0.2);
   --theme-container-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.1) inset,
     0 0 2px 0px rgba(255, 255, 255, 0.4);
   --switch-bgcolor: linear-gradient(
