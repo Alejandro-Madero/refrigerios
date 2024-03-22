@@ -35,7 +35,7 @@
 .year-btn {
   font-size: 1.5rem;
   color: var(--font-color);
-  padding: 0.5rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 10px;
   outline: none;
   border: none;
@@ -45,7 +45,7 @@
 }
 
 .year-btn-active {
-  box-shadow: 0 0 4px 2px #6358d4;
+  box-shadow: 0 0 4px 1.5px #6358d4;
 }
 
 .chart-wrapper {
