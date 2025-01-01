@@ -81,6 +81,15 @@ const LineChart = () => {
         >
           2024
         </button>
+        <button
+          className={`${styles['year-btn']}  ${
+            selectedYear === 2025 ? styles['year-btn-active'] : ''
+          }`}
+          value={2025}
+          onClick={handleYearChange}
+        >
+          2025
+        </button>
       </div>
       <div className={styles['chart-wrapper']}>
         <p>$</p>
