@@ -13,6 +13,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  Filler,
 } from 'chart.js';
 
 import { Line } from 'react-chartjs-2';
@@ -25,7 +26,8 @@ Chart.register(
   LinearScale,
   Tooltip,
   Title,
-  Legend
+  Legend,
+  Filler
 );
 
 const LineChart = () => {
