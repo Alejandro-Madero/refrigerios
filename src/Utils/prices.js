@@ -27,6 +27,7 @@ export const PRICES = {
     noviembre: { refrigerio: 9000, movilidad: 8000 },
     diciembre: { refrigerio: 10500, movilidad: 10000 },
   },
+  //nuevos valores
   2025: {
     enero: { refrigerio: 10500, movilidad: 10000 },
     febrero: { refrigerio: 10500, movilidad: 10000 },
