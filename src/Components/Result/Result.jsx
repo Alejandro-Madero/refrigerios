@@ -32,7 +32,7 @@ const Result = ({ results }) => {
         </h3>
         {unknownValues ? (
           <div className={`${styles['no-results']}`}>
-            🔴 Todavía no se conocen los valores para el mes seleccionado
+            🔴 No se conocen los valores para el mes seleccionado
           </div>
         ) : (
           <p className={styles['result-payment']}>{formattedMoney}</p>
