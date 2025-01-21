@@ -21,8 +21,8 @@
 }
 
 .no-results {
-  padding: 0.5rem 0.5rem 1rem 0.5rem;
-  font-size: 1.35rem;
+  padding: 0.5rem;
+  font-size: 0.9rem;
   color: var(--color-warning);
   font-weight: var(--fw-700);
 }
@@ -90,6 +90,10 @@
   .result-header {
     font-size: 0.95rem;
   }
+
+  .no-results {
+    font-size: 0.95rem;
+  }
 }
 
 @media (min-width: 750px) {
@@ -99,6 +103,10 @@
 
   .details-btn {
     width: 100%;
+  }
+
+  .no-results {
+    font-size: 1.1rem;
   }
 }
 
