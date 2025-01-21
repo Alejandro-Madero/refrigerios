@@ -20,6 +20,13 @@
   font-weight: var(--fw-500);
 }
 
+.no-results {
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+  font-size: 1.35rem;
+  color: var(--color-warning);
+  font-weight: var(--fw-700);
+}
+
 .result-details {
   max-height: 0;
   overflow: hidden;

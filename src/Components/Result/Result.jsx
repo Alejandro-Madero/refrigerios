@@ -10,6 +10,9 @@ const Result = ({ results }) => {
   const [showDetails, setShowDetails] = useState(false);
   const [formattedMoney] = formatNumber(results.total);
   const resultRef = useRef(null);
+  const REFRIGERIO = results.REFRIGERIO;
+  const MOVILIDAD = results.MOVILIDAD;
+  const unknownValues = results.REFRIGERIO === 0 && results.MOVILIDAD === 0;
 
   useEffect(() => {
     const targetPosition = resultRef.current.getBoundingClientRect().top;
@@ -27,27 +30,39 @@ const Result = ({ results }) => {
           En {results.paymentMonth} de {results.paymentYear} vas a cobrar un
           refrigerio de
         </h3>
-        <p className={styles['result-payment']}>{formattedMoney}</p>
+        {unknownValues ? (
+          <div className={`${styles['no-results']}`}>
+            🔴 Todavía no se conocen los valores para el mes seleccionado
+          </div>
+        ) : (
+          <p className={styles['result-payment']}>{formattedMoney}</p>
+        )}
       </div>
-
-      <ResultDetails
-        classes={`${styles['result-details']} ${
-          showDetails ? styles.visible : ''
-        }`}
-        details={results}
-        refrigerio={results.REFRIGERIO}
-        movility={results.MOVILIDAD}
-      />
-      {showDetails ? (
+      {unknownValues ? (
+        ''
+      ) : (
+        <ResultDetails
+          classes={`${styles['result-details']} ${
+            showDetails ? styles.visible : ''
+          }`}
+          details={results}
+          refrigerio={results.REFRIGERIO}
+          movility={results.MOVILIDAD}
+        />
+      )}
+      {showDetails && !unknownValues ? (
         <DoubleArrowUp
           className={`${styles.arrow} ${styles['arrow-up']}`}
           onClick={() => setShowDetails(s => !s)}
         />
       ) : (
-        <DoubleArrowDown
-          className={`${styles.arrow} ${styles['arrow-down']}`}
-          onClick={() => setShowDetails(s => !s)}
-        />
+        !showDetails &&
+        !unknownValues && (
+          <DoubleArrowDown
+            className={`${styles.arrow} ${styles['arrow-down']}`}
+            onClick={() => setShowDetails(s => !s)}
+          />
+        )
       )}
     </Card>
   );
