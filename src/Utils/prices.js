@@ -33,7 +33,7 @@ export const PRICES = {
     febrero: { refrigerio: 10500, movilidad: 10000 },
     marzo: { refrigerio: 10500, movilidad: 10000 },
     abril: { refrigerio: 10500, movilidad: 10000 },
-    mayo: { refrigerio: 0, movilidad: 0 },
+    mayo: { refrigerio: 10500, movilidad: 10000 },
     junio: { refrigerio: 0, movilidad: 0 },
     julio: { refrigerio: 0, movilidad: 0 },
     agosto: { refrigerio: 0, movilidad: 0 },
