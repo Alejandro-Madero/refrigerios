@@ -1,5 +1,11 @@
 import { MONTHS } from './constants';
-import { PRICES } from './prices';
+import {
+  PRICES,
+  INITIAL_REFRIGERIO_VALUE,
+  INITIAL_REFRIGERIO_COMPUESTO_VALUE,
+  INFLATION_FACTOR,
+  INITIAL_MOVILITY_VALUE,
+} from './prices';
 
 export const getPaymentMonth = function (month) {
   if (month === 'diciembre') {
@@ -14,6 +20,7 @@ export const getPaymentMonth = function (month) {
 export const calculatePayment = function (form) {
   const REFRIGERIO = PRICES[form.year][form.month]?.refrigerio;
   const MOVILIDAD = PRICES[form.year][form.month]?.movilidad;
+  const inflationFactor = INFLATION_FACTOR[form.year][form.month];
 
   const mornings = Number(form.morning);
   const nights = Number(form.night);
@@ -53,12 +60,24 @@ export const calculatePayment = function (form) {
     holidayPayment +
     openingPayment;
 
+  // Suma pago total ajustada por IPC
+  // Pago refrigerio simple y movilidad ajustado por IPC
+  const totalPaymentAdjusted =
+    INITIAL_REFRIGERIO_VALUE * inflationFactor * totalShiftsRefrigerioSimple +
+    INITIAL_MOVILITY_VALUE * inflationFactor * totalShiftsMovility +
+    INITIAL_REFRIGERIO_VALUE * nights * inflationFactor +
+    (INITIAL_REFRIGERIO_VALUE * sundays * inflationFactor +
+      INITIAL_REFRIGERIO_VALUE * saturdays * inflationFactor) +
+    INITIAL_REFRIGERIO_VALUE * holidays * inflationFactor +
+    INITIAL_REFRIGERIO_VALUE * opening * inflationFactor;
+
   return {
     year: form.year,
     paymentYear: form.paymentYear,
     month: form.month,
     paymentMonth: form.paymentMonth,
     total: totalPayment,
+    totalAdjusted: totalPaymentAdjusted,
     shifts: {
       total: refrigerioSimplePayment,
       units: totalShiftsRefrigerioSimple,

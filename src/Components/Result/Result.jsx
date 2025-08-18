@@ -8,7 +8,12 @@ import { ReactComponent as DoubleArrowUp } from '../../assets/double-arrow-up.sv
 
 const Result = ({ results }) => {
   const [showDetails, setShowDetails] = useState(false);
-  const [formattedMoney] = formatNumber(results.total);
+  const [formattedTotal] = formatNumber(results.total);
+  const [formattedTotalAdjusted] = formatNumber(results.totalAdjusted);
+  const [formattedTotalDiference] = formatNumber(
+    results.total - results.totalAdjusted
+  );
+  console.log(formattedTotal, formattedTotalAdjusted, formattedTotalDiference);
   const resultRef = useRef(null);
   const REFRIGERIO = results.REFRIGERIO;
   const MOVILIDAD = results.MOVILIDAD;
@@ -35,8 +40,43 @@ const Result = ({ results }) => {
             🔴 No se conocen los valores para el mes seleccionado
           </div>
         ) : (
-          <p className={styles['result-payment']}>{formattedMoney}</p>
+          <p className={styles['result-payment']}>{formattedTotal}</p>
+        )}{' '}
+        {results.year === '2023' ? (
+          ''
+        ) : (
+          <div>
+            <p className={styles['result-header']}>
+              Si el refrigerio hubiera ajustado por IPC cobrarías*
+            </p>
+            <p className={styles['result-payment']}>{formattedTotalAdjusted}</p>
+            {results.total < results.totalAdjusted ? (
+              <div>
+                <p className={styles['result-header']}>La pérdida es de</p>
+                <p
+                  className={`${styles['result-payment']} ${styles['result-payment-difference']}`}
+                >
+                  {formattedTotalDiference}
+                </p>
+              </div>
+            ) : (
+              <div>
+                <p className={styles['result-header']}>La ganancia es de</p>
+                <p
+                  className={`${styles['result-payment']} ${styles['result-payment-difference-plus']}`}
+                >
+                  {formattedTotalDiference}
+                </p>
+              </div>
+            )}
+          </div>
         )}
+        <p
+          className={`${styles['result-header']} ${styles['result-header-small']}`}
+        >
+          *El cálculo es realizado tomando como base el valor del refrigerio y
+          movilidad de diciembre de 2023 y ajustadolo por IPC.
+        </p>
       </div>
       {unknownValues ? (
         ''
@@ -46,8 +86,8 @@ const Result = ({ results }) => {
             showDetails ? styles.visible : ''
           }`}
           details={results}
-          refrigerio={results.REFRIGERIO}
-          movility={results.MOVILIDAD}
+          refrigerio={REFRIGERIO}
+          movility={MOVILIDAD}
         />
       )}
       {showDetails && !unknownValues ? (

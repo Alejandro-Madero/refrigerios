@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const useObserver = ({ options, setIsIntersected }) => {
-  const [element, setElement] = useState(null);
+  const [ element, setElement ] = useState(null);
 
   useEffect(() => {
     const handleIntersect = (entries, observer) => {
@@ -18,8 +18,8 @@ const useObserver = ({ options, setIsIntersected }) => {
     }
 
     return () => observer.disconnect();
-  }, [element, options, setIsIntersected]);
+  }, [ element, options, setIsIntersected ]);
 
-  return [setElement];
+  return [ setElement ];
 };
 export default useObserver;

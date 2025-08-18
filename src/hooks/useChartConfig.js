@@ -1,28 +1,37 @@
-import { PRICES } from '../Utils/prices';
+import { PRICES, PRICES_ADJUSTED_IPC } from '../Utils/prices';
 import { MONTHS } from '../Utils/constants';
-
 const date = new Date();
 const curYear = date.getFullYear();
 const curMonth = date.getMonth();
 const refrigerioSimple = { 2023: [], 2024: [], 2025: [] };
 const refrigerioCompuesto = { 2023: [], 2024: [], 2025: [] };
+const refrigerioCompuestoAjustado = { 2023: [], 2024: [], 2025: [] };
 const movility = { 2023: [], 2024: [], 2025: [] };
 
 Object.entries(PRICES).forEach(year => {
   const months = Object.entries(year[1]);
-
   months.forEach((month, i) => {
     if (Number(year[0]) === curYear && i > curMonth) return;
-
     const refrigerio = month[1].refrigerio;
     const movilidad = month[1].movilidad;
     const sum = refrigerio + movilidad;
-
     refrigerioSimple[year[0]].push(refrigerio);
     movility[year[0]].push(movilidad);
     refrigerioCompuesto[year[0]].push(sum);
   });
 });
+
+Object.entries(PRICES_ADJUSTED_IPC).forEach(year => {
+  const months = Object.entries(year[1]);
+  months.forEach((month, i) => {
+    if (Number(year[0]) === curYear && i > curMonth) return;
+    if (Number(year[0]) === 2023) return;
+    const adjustedPrice = month[1].inflation;
+    refrigerioCompuestoAjustado[year[0]].push(adjustedPrice);
+  });
+});
+
+console.log(refrigerioCompuesto);
 
 export const useChartConfig = (theme, selectedYear) => {
   const fontFamily = 'Nunito, sans-serif';
@@ -128,6 +137,15 @@ export const useChartConfig = (theme, selectedYear) => {
         fill: false,
         borderColor: 'rgb(255, 100, 145)',
         backgroundColor: 'rgb(255, 100, 145)',
+        pointRadius: 4.5,
+        pointHoverRadius: 9,
+      },
+      {
+        label: 'Refrigerio compuesto ajustado por IPC($)',
+        data: refrigerioCompuestoAjustado[selectedYear],
+        fill: false,
+        borderColor: 'rgb(236, 183, 8)',
+        backgroundColor: 'rgb(236,183,8)',
         pointRadius: 4.5,
         pointHoverRadius: 9,
       },

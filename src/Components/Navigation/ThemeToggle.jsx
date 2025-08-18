@@ -7,7 +7,7 @@ import Tooltip from '../Tooltip/Tooltip';
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const [showTooltip, setShowTooltip] = useState(false);
+  const [ showTooltip, setShowTooltip ] = useState(false);
   const switchPosition = theme === 'dark' ? styles.left : styles.right;
   const handleShowTooltip = () => {
     setShowTooltip(true);

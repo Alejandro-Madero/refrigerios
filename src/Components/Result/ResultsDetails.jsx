@@ -7,7 +7,7 @@ const ResultDetails = ({ details, classes }) => {
     return detail[1].total > 0;
   });
 
-  const [formattedRefrigerio, formattedMovility] = formatNumber(
+  const [ formattedRefrigerio, formattedMovility ] = formatNumber(
     details.REFRIGERIO,
     details.MOVILIDAD
   );

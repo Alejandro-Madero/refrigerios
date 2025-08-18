@@ -29,12 +29,12 @@ Chart.register(
 );
 
 const LineChart = () => {
-  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
+  const [ selectedYear, setSelectedYear ] = useState(new Date().getFullYear());
   const { theme } = useContextTheme();
   const { data, options } = useChartConfig(theme, selectedYear);
   const chartSectionRef = useRef(null);
-  const [isIntersected, setIsIntersected] = useState(false);
-  const [setElement] = useObserver({
+  const [ isIntersected, setIsIntersected ] = useState(false);
+  const [ setElement ] = useObserver({
     options: {
       root: null,
       rootMargin: '150px',
@@ -45,7 +45,7 @@ const LineChart = () => {
 
   useEffect(() => {
     setElement(chartSectionRef.current);
-  }, [chartSectionRef, setElement]);
+  }, [ chartSectionRef, setElement ]);
 
   const handleYearChange = e => {
     setSelectedYear(Number(e.target.value));
