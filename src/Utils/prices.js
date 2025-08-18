@@ -44,9 +44,10 @@ export const PRICES = {
   },
 };
 
-export const INITIAL_REFRIGERIO_COMPUESTO_VALUE = 9000;
-export const INITIAL_REFRIGERIO_VALUE = 4000;
-export const INITIAL_MOVILITY_VALUE = 5000;
+export const INITIAL_REFRIGERIO_COMPUESTO_VALUE = 12000;
+export const INITIAL_REFRIGERIO_VALUE = 6000;
+export const INITIAL_MOVILITY_VALUE = 6000;
+
 export const INFLATION_FACTOR = {
   2023: {
     enero: 1,
@@ -63,28 +64,28 @@ export const INFLATION_FACTOR = {
     diciembre: 1,
   },
   2024: {
-    enero: 1.255,
-    febrero: 1.5135,
-    marzo: 1.7133,
-    abril: 1.9017,
-    mayo: 2.0691,
-    junio: 2.156,
-    julio: 2.2552,
-    agosto: 2.3454,
-    septiembre: 2.4439,
-    octubre: 2.5294,
-    noviembre: 2.5977,
-    diciembre: 2.6608,
+    enero: 1,
+    febrero: 1.206,
+    marzo: 1.36519,
+    abril: 1.51536,
+    mayo: 1.64871,
+    junio: 1.71796,
+    julio: 1.79698,
+    agosto: 1.86886,
+    septiembre: 1.94735,
+    octubre: 2.01551,
+    noviembre: 2.06993,
+    diciembre: 2.11961,
   },
   2025: {
-    enero: 2.7319,
-    febrero: 2.792,
-    marzo: 2.859,
-    abril: 2.9648,
-    mayo: 3.0478,
-    junio: 3.0935,
-    julio: 3.143,
-    agosto: 3.2027,
+    enero: 2.1726,
+    febrero: 2.2204,
+    marzo: 2.27369,
+    abril: 2.35781,
+    mayo: 2.42383,
+    junio: 2.46019,
+    julio: 2.49955,
+    agosto: 2.54704,
     septiembre: 0,
     octubre: 0,
     noviembre: 0,

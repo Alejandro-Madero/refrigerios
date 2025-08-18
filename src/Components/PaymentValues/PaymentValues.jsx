@@ -13,12 +13,12 @@ const PaymentValues = () => {
   const curMonthNum = curDate.getMonth();
   const curMonthName = MONTHS[curMonthNum];
   const curValues = PRICES[curYear][curMonthName];
-  const [ curRefrigerio ] = formatNumber(curValues.refrigerio);
-  const [ curMovility ] = formatNumber(curValues.movilidad);
+  const [curRefrigerio] = formatNumber(curValues.refrigerio);
+  const [curMovility] = formatNumber(curValues.movilidad);
   const paymentRef = useRef(null);
-  const [ paymentIntersected, setPaymentIntersected ] = useState(false);
+  const [paymentIntersected, setPaymentIntersected] = useState(false);
 
-  const [ setElement ] = useObserver({
+  const [setElement] = useObserver({
     options: {
       root: null,
       threshold: 0.25,
@@ -28,7 +28,7 @@ const PaymentValues = () => {
 
   useEffect(() => {
     setElement(paymentRef.current);
-  }, [ paymentRef, setElement ]);
+  }, [paymentRef, setElement]);
 
   let curMax = { ...curValues };
 

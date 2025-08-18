@@ -1,12 +1,20 @@
-import { PRICES, PRICES_ADJUSTED_IPC } from '../Utils/prices';
+import {
+  PRICES,
+  PRICES_ADJUSTED_IPC,
+  INFLATION_FACTOR,
+  INITIAL_REFRIGERIO_VALUE,
+  INITIAL_MOVILITY_VALUE,
+} from '../Utils/prices';
 import { MONTHS } from '../Utils/constants';
 const date = new Date();
 const curYear = date.getFullYear();
 const curMonth = date.getMonth();
 const refrigerioSimple = { 2023: [], 2024: [], 2025: [] };
+const refrigerioSimpleAdjusted = { 2023: [], 2024: [], 2025: [] };
 const refrigerioCompuesto = { 2023: [], 2024: [], 2025: [] };
-const refrigerioCompuestoAjustado = { 2023: [], 2024: [], 2025: [] };
+const refrigerioCompuestoAdjusted = { 2023: [], 2024: [], 2025: [] };
 const movility = { 2023: [], 2024: [], 2025: [] };
+const movilityAdjusted = { 2023: [], 2024: [], 2025: [] };
 
 Object.entries(PRICES).forEach(year => {
   const months = Object.entries(year[1]);
@@ -27,11 +35,18 @@ Object.entries(PRICES_ADJUSTED_IPC).forEach(year => {
     if (Number(year[0]) === curYear && i > curMonth) return;
     if (Number(year[0]) === 2023) return;
     const adjustedPrice = month[1].inflation;
-    refrigerioCompuestoAjustado[year[0]].push(adjustedPrice);
+    const refrigerioSimpleValueAdjusted =
+      INFLATION_FACTOR[year[0]][month[0]] * INITIAL_REFRIGERIO_VALUE;
+    const movilityValueAdjusted =
+      INFLATION_FACTOR[year[0]][month[0]] * INITIAL_MOVILITY_VALUE;
+    console.log(year[0], month[0]);
+    refrigerioSimpleAdjusted[year[0]].push(refrigerioSimpleValueAdjusted);
+    movilityAdjusted[year[0]].push(movilityValueAdjusted);
+    refrigerioCompuestoAdjusted[year[0]].push(adjustedPrice);
   });
 });
 
-console.log(refrigerioCompuesto);
+console.log(refrigerioSimpleAdjusted, movilityAdjusted);
 
 export const useChartConfig = (theme, selectedYear) => {
   const fontFamily = 'Nunito, sans-serif';
@@ -141,8 +156,26 @@ export const useChartConfig = (theme, selectedYear) => {
         pointHoverRadius: 9,
       },
       {
+        label: 'Refrigerio simple ajustado por IPC($)',
+        data: refrigerioSimpleAdjusted[selectedYear],
+        fill: false,
+        borderColor: 'rgb(236, 8, 8)',
+        backgroundColor: 'rgb(236, 8, 8)',
+        pointRadius: 4.5,
+        pointHoverRadius: 9,
+      },
+      {
+        label: 'Movilidad ajustada por IPC($)',
+        data: movilityAdjusted[selectedYear],
+        fill: false,
+        borderColor: 'rgb(130, 1, 250)',
+        backgroundColor: 'rgb(130, 1, 250)',
+        pointRadius: 4.5,
+        pointHoverRadius: 9,
+      },
+      {
         label: 'Refrigerio compuesto ajustado por IPC($)',
-        data: refrigerioCompuestoAjustado[selectedYear],
+        data: refrigerioCompuestoAdjusted[selectedYear],
         fill: false,
         borderColor: 'rgb(236, 183, 8)',
         backgroundColor: 'rgb(236,183,8)',
