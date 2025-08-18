@@ -55,7 +55,7 @@
 }
 
 .chart-container {
-  height: 450px;
+  height: 480px;
   width: 100%;
   position: relative;
 }
@@ -101,7 +101,7 @@
   }
 
   .chart-container {
-    height: 600px;
+    height: 650px;
   }
 
   .chart-header {
