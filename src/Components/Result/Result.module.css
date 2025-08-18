@@ -16,10 +16,20 @@
   text-align: center;
 }
 
+.result-header-small {
+  font-size: 0.85rem;
+  font-weight: var(--fw-700);
+}
 .result-payment {
   font-weight: var(--fw-500);
+  text-align: center;
 }
-
+.result-payment-difference {
+  color: var(--color-warning);
+}
+.result-payment-difference-plus {
+  color: var(--color-success);
+}
 .no-results {
   padding: 0.5rem;
   font-size: 0.9rem;
@@ -91,6 +101,10 @@
     font-size: 0.95rem;
   }
 
+  .result-header-small {
+    font-size: 0.75rem;
+  }
+
   .no-results {
     font-size: 0.95rem;
   }
@@ -100,7 +114,9 @@
   .result-header {
     font-size: 1rem;
   }
-
+  .result-header-small {
+    font-size: 0.8rem;
+  }
   .details-btn {
     width: 100%;
   }

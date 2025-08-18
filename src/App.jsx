@@ -12,8 +12,8 @@ import LineChart from './Components/Chart/Chart';
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 
 const App = () => {
-  const [calculationDone, setCalculationDone] = useState(false);
-  const [result, setResult] = useState(null);
+  const [ calculationDone, setCalculationDone ] = useState(false);
+  const [ result, setResult ] = useState(null);
 
   usePreloader();
 

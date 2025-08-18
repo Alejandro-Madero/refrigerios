@@ -4,7 +4,7 @@ import { ReactComponent as Info } from '../../assets/info.svg';
 import Tooltip from '../Tooltip/Tooltip';
 
 const Input = props => {
-  const [showTooltip, setShowTooltip] = useState(false);
+  const [ showTooltip, setShowTooltip ] = useState(false);
 
   const handleShowTooltip = () => setShowTooltip(true);
   const handleHideTooltip = () => setShowTooltip(false);

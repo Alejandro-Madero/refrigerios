@@ -12,7 +12,7 @@ const useScroll = (showBtn, setShowBtn) => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [showBtn, setShowBtn]);
+  }, [ showBtn, setShowBtn ]);
 };
 
 export default useScroll;

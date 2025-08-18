@@ -36,8 +36,8 @@ const initialErrors = {
 };
 
 const Form = ({ onSubmmitedForm, onReset }) => {
-  const [formValues, setFormValues] = useState(initialFormValues);
-  const [errors, setErrors] = useState(initialErrors);
+  const [ formValues, setFormValues ] = useState(initialFormValues);
+  const [ errors, setErrors ] = useState(initialErrors);
 
   const handleForm = e => {
     e.preventDefault();

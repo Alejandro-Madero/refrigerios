@@ -4,7 +4,7 @@ import { ReactComponent as ArrowUp } from '../../assets/up-arrow.svg';
 import useScroll from '../../hooks/useScroll';
 
 const ScrollToTop = () => {
-  const [showBtn, setShowBtn] = useState(false);
+  const [ showBtn, setShowBtn ] = useState(false);
 
   useScroll(showBtn, setShowBtn);
 
