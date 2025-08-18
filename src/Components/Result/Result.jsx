@@ -75,7 +75,7 @@ const Result = ({ results }) => {
           className={`${styles['result-header']} ${styles['result-header-small']}`}
         >
           *El cálculo es realizado tomando como base el valor del refrigerio y
-          movilidad de diciembre de 2023 y ajustadolo por IPC.
+          movilidad de enero de 2024 y ajustadolo por IPC.
         </p>
       </div>
       {unknownValues ? (

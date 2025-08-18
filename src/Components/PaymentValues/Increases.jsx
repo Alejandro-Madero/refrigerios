@@ -5,9 +5,9 @@ import Card from '../UI/Card';
 
 const Increases = ({ year, month, refrigerio, movility, idx }) => {
   const increaseRef = useRef(null);
-  const [ isIntersected, setIsIntersected ] = useState(false);
+  const [isIntersected, setIsIntersected] = useState(false);
 
-  const [ setElement ] = useObserver({
+  const [setElement] = useObserver({
     options: {
       root: null,
       threshold: idx % 2 === 0 ? 0.8 : 0.1,
@@ -17,7 +17,7 @@ const Increases = ({ year, month, refrigerio, movility, idx }) => {
 
   useEffect(() => {
     setElement(increaseRef.current);
-  }, [ increaseRef, setElement ]);
+  }, [increaseRef, setElement]);
 
   return (
     <Card
