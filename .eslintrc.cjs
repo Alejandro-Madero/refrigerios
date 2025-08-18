@@ -8,7 +8,7 @@ module.exports = {
     'standard-jsx',
     'prettier',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],pnpm add --save-dev eslint-plugin-react@latest
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],
