@@ -37,7 +37,7 @@ export const PRICES = {
     junio: { refrigerio: 10500, movilidad: 10000 },
     julio: { refrigerio: 10500, movilidad: 10000 },
     agosto: { refrigerio: 10500, movilidad: 10000 },
-    septiembre: { refrigerio: 0, movilidad: 0 },
+    septiembre: { refrigerio: 10500, movilidad: 10000 },
     octubre: { refrigerio: 0, movilidad: 0 },
     noviembre: { refrigerio: 0, movilidad: 0 },
     diciembre: { refrigerio: 0, movilidad: 0 },
@@ -65,28 +65,28 @@ export const INFLATION_FACTOR = {
   },
   2024: {
     enero: 1,
-    febrero: 1.206,
-    marzo: 1.36519,
-    abril: 1.51536,
-    mayo: 1.64871,
-    junio: 1.71796,
-    julio: 1.79698,
-    agosto: 1.86886,
-    septiembre: 1.94735,
-    octubre: 2.01551,
-    noviembre: 2.06993,
-    diciembre: 2.11961,
+    febrero: 1.206, // 20,6% inflacion enero
+    marzo: 1.36519, // 13,2% inflacion febrero
+    abril: 1.51536, // 11% inflacion marzo
+    mayo: 1.64871, // 8,8% inflacion abril
+    junio: 1.71796, // 4,2% inflacion mayo
+    julio: 1.79698, // 4.6% inflacion junio
+    agosto: 1.86886, // 4% inflacion julio
+    septiembre: 1.94735, // 4,2% inflacion agosto
+    octubre: 2.01551, // 3,5% inflacion septiembre
+    noviembre: 2.06993, // 2,7% inflacion octubre
+    diciembre: 2.11961, // 2,4% inflacion noviembre
   },
   2025: {
-    enero: 2.1726,
-    febrero: 2.2204,
-    marzo: 2.27369,
-    abril: 2.35781,
-    mayo: 2.42383,
-    junio: 2.46019,
-    julio: 2.49955,
-    agosto: 2.54704,
-    septiembre: 0,
+    enero: 2.17683, // 2,7% inflacion diciembre 2024
+    febrero: 2.22472, // 2,2% inflacion enero
+    marzo: 2.27812, // 2,4% inflacion febrero
+    abril: 2.36241, // 3,7% inflacion marzo
+    mayo: 2.42856, // 2,8% inflacion abril
+    junio: 2.46499, // 1,5% inflacion mayo
+    julio: 2.50442, // 1,6% inflacion junio
+    agosto: 2.552, // 1,9% inflacion julio
+    septiembre: 2.552,
     octubre: 0,
     noviembre: 0,
     diciembre: 0,
