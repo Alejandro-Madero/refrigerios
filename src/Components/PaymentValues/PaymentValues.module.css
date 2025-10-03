@@ -10,6 +10,8 @@
   background-color: var(--card-secondary-bgcolor);
   border-radius: 70px 10px 70px 10px;
   transition: background-color 0.2s;
+  box-shadow: 0 0 5px 1.75px var(--card-shadow),
+    0 0 100px 10px rgba(222, 222, 222, 0.25);
 }
 
 .payment-wrapper::before {
@@ -22,6 +24,7 @@
   top: -25px;
   right: 0;
   transition: background-color 0.2s;
+  box-shadow: 0 0 15px 3px rgba(136, 6, 201, 0.615);
 }
 
 .payment-wrapper::after {
@@ -34,6 +37,7 @@
   bottom: -25px;
   left: 0;
   transition: background-color 0.2s;
+  box-shadow: 0 0 10px 1px rgba(136, 6, 201, 0.615);
 }
 
 .payment-section {
