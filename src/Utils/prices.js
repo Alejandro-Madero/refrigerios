@@ -39,7 +39,7 @@ export const PRICES = {
     agosto: { refrigerio: 10500, movilidad: 10000 },
     septiembre: { refrigerio: 10500, movilidad: 10000 },
     octubre: { refrigerio: 10500, movilidad: 10000 },
-    noviembre: { refrigerio: 0, movilidad: 0 },
+    noviembre: { refrigerio: 10500, movilidad: 10000 },
     diciembre: { refrigerio: 0, movilidad: 0 },
   },
 };
@@ -86,9 +86,9 @@ export const INFLATION_FACTOR = {
     junio: 2.46499, // 1,5% inflacion mayo
     julio: 2.50442, // 1,6% inflacion junio
     agosto: 2.552, // 1,9% inflacion julio
-    septiembre: 2.552,
-    octubre: 2.552,
-    noviembre: 0,
+    septiembre: 2.600488, // 1,9% inflacion agosto
+    octubre: 2.65509, // 2,1% inflacion septiembre
+    noviembre: 2.716157, // 2,3% inflacion octubre
     diciembre: 0,
   },
 };
