@@ -25,6 +25,12 @@
   animation: what 3s infinite;
 }
 
+.cumple {
+  font-size: 1.5rem;
+  color: var(--font-color);
+  font-weight: var(--fw-900);
+  place-self: center;
+}
 @keyframes what {
   0% {
     transform-origin: bottom left;
