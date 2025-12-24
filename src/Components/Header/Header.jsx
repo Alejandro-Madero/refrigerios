@@ -8,7 +8,7 @@ const Header = () => {
         <Fingers className={styles.fingers} />
       </header>
       <p className={styles.cumple}>
-        🎉🎊🎈 ¡Feliz cumpleaños sin aumento del refrigerio! 🎈🎊🎉
+        🎉🎊 ¡Feliz cumpleaños sin aumento del refrigerio! 🎊🎉
       </p>
     </div>
   );
