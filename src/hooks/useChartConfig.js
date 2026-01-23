@@ -9,12 +9,12 @@ import { MONTHS } from '../Utils/constants';
 const date = new Date();
 const curYear = date.getFullYear();
 const curMonth = date.getMonth();
-const refrigerioSimple = { 2023: [], 2024: [], 2025: [] };
-const refrigerioSimpleAdjusted = { 2023: [], 2024: [], 2025: [] };
-const refrigerioCompuesto = { 2023: [], 2024: [], 2025: [] };
-const refrigerioCompuestoAdjusted = { 2023: [], 2024: [], 2025: [] };
-const movility = { 2023: [], 2024: [], 2025: [] };
-const movilityAdjusted = { 2023: [], 2024: [], 2025: [] };
+const refrigerioSimple = { 2023: [], 2024: [], 2025: [], 2026: [] };
+const refrigerioSimpleAdjusted = { 2023: [], 2024: [], 2025: [], 2026: [] };
+const refrigerioCompuesto = { 2023: [], 2024: [], 2025: [], 2026: [] };
+const refrigerioCompuestoAdjusted = { 2023: [], 2024: [], 2025: [], 2026: [] };
+const movility = { 2023: [], 2024: [], 2025: [], 2026: [] };
+const movilityAdjusted = { 2023: [], 2024: [], 2025: [], 2026: [] };
 
 Object.entries(PRICES).forEach(year => {
   const months = Object.entries(year[1]);
