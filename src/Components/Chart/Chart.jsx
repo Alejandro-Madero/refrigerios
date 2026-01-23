@@ -31,12 +31,12 @@ Chart.register(
 );
 
 const LineChart = () => {
-  const [ selectedYear, setSelectedYear ] = useState(new Date().getFullYear());
+  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
   const { theme } = useContextTheme();
   const { data, options } = useChartConfig(theme, selectedYear);
   const chartSectionRef = useRef(null);
-  const [ isIntersected, setIsIntersected ] = useState(false);
-  const [ setElement ] = useObserver({
+  const [isIntersected, setIsIntersected] = useState(false);
+  const [setElement] = useObserver({
     options: {
       root: null,
       rootMargin: '150px',
@@ -47,7 +47,7 @@ const LineChart = () => {
 
   useEffect(() => {
     setElement(chartSectionRef.current);
-  }, [ chartSectionRef, setElement ]);
+  }, [chartSectionRef, setElement]);
 
   const handleYearChange = e => {
     setSelectedYear(Number(e.target.value));
@@ -91,6 +91,15 @@ const LineChart = () => {
           onClick={handleYearChange}
         >
           2025
+        </button>
+        <button
+          className={`${styles['year-btn']}  ${
+            selectedYear === 2026 ? styles['year-btn-active'] : ''
+          }`}
+          value={2026}
+          onClick={handleYearChange}
+        >
+          2026
         </button>
       </div>
       <div className={styles['chart-wrapper']}>

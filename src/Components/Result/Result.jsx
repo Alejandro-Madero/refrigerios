@@ -42,7 +42,7 @@ const Result = ({ results }) => {
         ) : (
           <p className={styles['result-payment']}>{formattedTotal}</p>
         )}{' '}
-        {results.year === '2023' ? (
+        {results.year === '2023' || unknownValues ? (
           ''
         ) : (
           <div>

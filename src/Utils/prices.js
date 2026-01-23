@@ -42,6 +42,20 @@ export const PRICES = {
     noviembre: { refrigerio: 10500, movilidad: 10000 },
     diciembre: { refrigerio: 10500, movilidad: 10000 },
   },
+  2026: {
+    enero: { refrigerio: 10500, movilidad: 10000 },
+    febrero: { refrigerio: 0, movilidad: 0 },
+    marzo: { refrigerio: 0, movilidad: 0 },
+    abril: { refrigerio: 0, movilidad: 0 },
+    mayo: { refrigerio: 0, movilidad: 0 },
+    junio: { refrigerio: 0, movilidad: 0 },
+    julio: { refrigerio: 0, movilidad: 0 },
+    agosto: { refrigerio: 0, movilidad: 0 },
+    septiembre: { refrigerio: 0, movilidad: 0 },
+    octubre: { refrigerio: 0, movilidad: 0 },
+    noviembre: { refrigerio: 0, movilidad: 0 },
+    diciembre: { refrigerio: 0, movilidad: 0 },
+  },
 };
 
 export const INITIAL_REFRIGERIO_COMPUESTO_VALUE = 12000;
@@ -90,6 +104,20 @@ export const INFLATION_FACTOR = {
     octubre: 2.65509, // 2,1% inflacion septiembre
     noviembre: 2.716157, // 2,3% inflacion octubre
     diciembre: 2.78406, // 2.5% inflacion noviembre
+  },
+  2026: {
+    enero: 2.86201, // 2,8% inflacion diciembre 2025
+    febrero: 2.86201,
+    marzo: 2.86201,
+    abril: 2.86201,
+    mayo: 2.86201,
+    junio: 2.86201,
+    julio: 2.86201,
+    agosto: 2.86201,
+    septiembre: 2.86201,
+    octubre: 2.86201,
+    noviembre: 2.86201,
+    diciembre: 2.86201,
   },
 };
 export const PRICES_ADJUSTED_IPC = {
@@ -214,6 +242,61 @@ export const PRICES_ADJUSTED_IPC = {
     diciembre: {
       inflation:
         INFLATION_FACTOR['2025']['diciembre'] *
+        INITIAL_REFRIGERIO_COMPUESTO_VALUE,
+    },
+  },
+  2026: {
+    enero: {
+      inflation:
+        INFLATION_FACTOR['2026']['enero'] * INITIAL_REFRIGERIO_COMPUESTO_VALUE,
+    },
+    febrero: {
+      inflation:
+        INFLATION_FACTOR['2026']['febrero'] *
+        INITIAL_REFRIGERIO_COMPUESTO_VALUE,
+    },
+    marzo: {
+      inflation:
+        INFLATION_FACTOR['2026']['marzo'] * INITIAL_REFRIGERIO_COMPUESTO_VALUE,
+    },
+    abril: {
+      inflation:
+        INFLATION_FACTOR['2026']['abril'] * INITIAL_REFRIGERIO_COMPUESTO_VALUE,
+    },
+    mayo: {
+      inflation:
+        INFLATION_FACTOR['2026']['mayo'] * INITIAL_REFRIGERIO_COMPUESTO_VALUE,
+    },
+    junio: {
+      inflation:
+        INFLATION_FACTOR['2026']['junio'] * INITIAL_REFRIGERIO_COMPUESTO_VALUE,
+    },
+    julio: {
+      inflation:
+        INFLATION_FACTOR['2026']['julio'] * INITIAL_REFRIGERIO_COMPUESTO_VALUE,
+    },
+    agosto: {
+      inflation:
+        INFLATION_FACTOR['2026']['agosto'] * INITIAL_REFRIGERIO_COMPUESTO_VALUE,
+    },
+    septiembre: {
+      inflation:
+        INFLATION_FACTOR['2026']['septiembre'] *
+        INITIAL_REFRIGERIO_COMPUESTO_VALUE,
+    },
+    octubre: {
+      inflation:
+        INFLATION_FACTOR['2026']['octubre'] *
+        INITIAL_REFRIGERIO_COMPUESTO_VALUE,
+    },
+    noviembre: {
+      inflation:
+        INFLATION_FACTOR['2026']['noviembre'] *
+        INITIAL_REFRIGERIO_COMPUESTO_VALUE,
+    },
+    diciembre: {
+      inflation:
+        INFLATION_FACTOR['2026']['diciembre'] *
         INITIAL_REFRIGERIO_COMPUESTO_VALUE,
     },
   },
