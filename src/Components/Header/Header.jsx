@@ -7,9 +7,6 @@ const Header = () => {
         <h1 className={styles.title}>¿Cúanto voy a cobrar?</h1>
         <Fingers className={styles.fingers} />
       </header>
-      <p className={styles.cumple}>
-        🎉🎊 ¡Feliz cumpleaños sin aumento del refrigerio! 🎊🎉
-      </p>
     </div>
   );
 };
