@@ -45,7 +45,7 @@ export const PRICES = {
   2026: {
     enero: { refrigerio: 15750, movilidad: 15000 },
     febrero: { refrigerio: 15750, movilidad: 15000 },
-    marzo: { refrigerio: 0, movilidad: 0 },
+    marzo: { refrigerio: 15750, movilidad: 15000 },
     abril: { refrigerio: 0, movilidad: 0 },
     mayo: { refrigerio: 0, movilidad: 0 },
     junio: { refrigerio: 0, movilidad: 0 },
