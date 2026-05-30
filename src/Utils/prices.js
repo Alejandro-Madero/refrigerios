@@ -47,8 +47,8 @@ export const PRICES = {
     febrero: { refrigerio: 15750, movilidad: 15000 },
     marzo: { refrigerio: 15750, movilidad: 15000 },
     abril: { refrigerio: 15750, movilidad: 15000 },
-    mayo: { refrigerio: 0, movilidad: 0 },
-    junio: { refrigerio: 0, movilidad: 0 },
+    mayo: { refrigerio: 15750, movilidad: 15000 },
+    junio: { refrigerio: 15750, movilidad: 15000 },
     julio: { refrigerio: 0, movilidad: 0 },
     agosto: { refrigerio: 0, movilidad: 0 },
     septiembre: { refrigerio: 0, movilidad: 0 },
@@ -110,8 +110,8 @@ export const INFLATION_FACTOR = {
     febrero: 2.945, // 2.9% inflacion enero 2026,
     marzo: 3.0304, // 2.9% inflacion febrero 2026
     abril: 3.13343, // 3.4% inflacion marzo 2026
-    mayo: 2.86201,
-    junio: 2.86201,
+    mayo: 3.21489, // 2.6% inflacion abril 2026
+    junio: 3.21489,
     julio: 2.86201,
     agosto: 2.86201,
     septiembre: 2.86201,
