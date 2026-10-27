@@ -5,11 +5,11 @@ export const tooltipMessages = new Map([
   ],
   [
     'fridaysNight',
-    'En dependencias donde el turno inicie un viernes a la noche y finalice un sábado, se abona un refrigerio simple adicional en concepto de sábado.',
+    'En dependencias donde el turno inicie un viernes a la noche y finalice un sábado, se abona un refrigerio simple adicional en concepto de sábado. Válido a partir de los refrigerios de noviembre 2026',
   ],
   [
     'saturdays',
-    'Se abona un refrigerio simple adicional en concepto de sábado.',
+    'Se abona un refrigerio simple adicional en concepto de sábado. Válido a partir de los refrigerios de noviembre 2026',
   ],
   [
     'saturdaysNight',
