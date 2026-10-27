@@ -17,10 +17,9 @@
   align-items: center;
   gap: 0.5rem;
   color: var(--font-color);
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: var(--fw-500);
   padding: 0 0.5rem;
-  margin-left: 0.5rem;
 }
 
 /* Borrá las clases .sub-card-header h2 porque el texto ahora va directo en el legend */
@@ -141,6 +140,11 @@
 @media (min-width: 450px) {
   .form-section {
     width: 90%;
+  }
+
+  .sub-card-header {
+    font-size: 1.15rem;
+    margin-left: 0.5rem;
   }
 }
 
