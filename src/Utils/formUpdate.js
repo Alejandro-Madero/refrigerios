@@ -73,7 +73,9 @@ const formUpdate = function (e, formValues, setFormValues, setErrors) {
       });
       return updateValues();
 
+    case 'fridaysNight':
     case 'saturdays':
+    case 'saturdaysNight':
     case 'sundays':
     case 'holidays':
       setErrors(prevErr => {

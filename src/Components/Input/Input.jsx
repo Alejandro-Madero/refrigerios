@@ -4,7 +4,7 @@ import { ReactComponent as Info } from '../../assets/info.svg';
 import Tooltip from '../Tooltip/Tooltip';
 
 const Input = props => {
-  const [ showTooltip, setShowTooltip ] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
 
   const handleShowTooltip = () => setShowTooltip(true);
   const handleHideTooltip = () => setShowTooltip(false);
@@ -35,13 +35,14 @@ const Input = props => {
         type={props.type}
         className={`${styles.input} ${
           props.errors?.length > 0 && props.value !== '' ? styles.error : ''
-        } `}
+        } ${props.disabled ? styles['input-disabled'] : ''}`}
         id={props.id}
         name={props.id}
         value={props.value}
         min={props.min}
         onChange={props.onChange}
         placeholder={props.placeholder}
+        disabled={props.disabled}
       />
     </>
   );

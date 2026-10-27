@@ -4,18 +4,20 @@ import { formatNumber } from '../../Utils/formatNumber';
 import styles from './Detail.module.css';
 
 const concepts = new Map([
-  [ 'shifts', 'Refrigerio simple' ],
-  [ 'movility', 'Movilidad' ],
-  [ 'nights', 'Nocturnidad' ],
-  [ 'holiday', 'Feriados' ],
-  [ 'sundays', 'Domingos' ],
-  [ 'opening', 'Extensiones de servicio' ],
+  ['shifts', 'Refrigerio simple'],
+  ['movility', 'Movilidad'],
+  ['nights', 'Nocturnidad'],
+  ['holiday', 'Feriados'],
+  ['nights', 'Nocturnidad'],
+  ['sundays', 'Domingos'],
+  ['saturdays', 'Sábados'],
+  ['opening', 'Extensiones de servicio'],
 ]);
 
 const Detail = ({ total, units, type, refrigerio, movility, emoji }) => {
   const { theme } = useContext(ThemeContext);
   const concept = concepts.get(type);
-  const [ formattedTotal ] = formatNumber(total);
+  const [formattedTotal] = formatNumber(total);
 
   return (
     <li className={styles['detail-title']}>
