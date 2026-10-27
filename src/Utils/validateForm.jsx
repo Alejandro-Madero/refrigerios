@@ -91,7 +91,9 @@ export const validateForm = function (form) {
         break;
       }
 
+      case 'fridaysNight':
       case 'saturdays':
+      case 'saturdaysNight':
       case 'sundays': {
         totalHolidays += Number(value);
         break;
@@ -148,8 +150,8 @@ export const validateForm = function (form) {
   if (totalHolidays > totalShifts) {
     errors.holidays.push(
       <ErrorMessage key='holidays sum'>
-        ⛔ La suma de sábados noche, domingos y feriados no puede ser mayor a la
-        cantidad de turnos totales.
+        ⛔ La suma de los viernes noche, sábados, sábados noche, y domingos no
+        puede ser mayor a la cantidad de turnos totales.
       </ErrorMessage>
     );
   }

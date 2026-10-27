@@ -7,6 +7,7 @@ import Button from '../UI/Button';
 import Input from '../Input/Input';
 import Years from '../Date selection/Years';
 import Months from '../Date selection/Months';
+import { MONTHS } from '../../Utils/constants';
 
 const initialFormValues = {
   month: '',
@@ -16,7 +17,9 @@ const initialFormValues = {
   isPaymentNextYear: '',
   morning: '',
   night: '',
+  fridaysNight: '',
   saturdays: '',
+  saturdaysNight: '',
   sundays: '',
   holidays: '',
   virtual: '',
@@ -36,8 +39,8 @@ const initialErrors = {
 };
 
 const Form = ({ onSubmmitedForm, onReset }) => {
-  const [ formValues, setFormValues ] = useState(initialFormValues);
-  const [ errors, setErrors ] = useState(initialErrors);
+  const [formValues, setFormValues] = useState(initialFormValues);
+  const [errors, setErrors] = useState(initialErrors);
 
   const handleForm = e => {
     e.preventDefault();
@@ -65,10 +68,14 @@ const Form = ({ onSubmmitedForm, onReset }) => {
     <main className={styles['form-section']}>
       <Card classes={styles['form-card']}>
         <form className={styles.form} onSubmit={handleForm}>
-          <div className={styles['input-container']}>
+          <fieldset className={styles['sub-card']}>
+            <legend className={styles['sub-card-header']}>
+              <span>📅</span> Período
+            </legend>
             <p className={styles['form-question']}>
               Calcular el refrigerio compuesto de:
             </p>
+
             <div className={styles['time-selector']}>
               <Months
                 onSelect={handleFormChange}
@@ -94,8 +101,12 @@ const Form = ({ onSubmmitedForm, onReset }) => {
 
             {errors?.month?.length !== 0 && errors?.month.map(err => err)}
             {errors?.year?.length !== 0 && errors?.year.map(err => err)}
-          </div>
-          <div className={styles['input-container']}>
+          </fieldset>
+
+          <fieldset className={styles['sub-card']}>
+            <legend className={styles['sub-card-header']}>
+              <span>🕔</span> Días trabajados
+            </legend>
             <p className={styles['form-question']}>
               Completá los campos con la cantidad de días correspondiente:
             </p>
@@ -171,24 +182,60 @@ const Form = ({ onSubmmitedForm, onReset }) => {
             {errors.CMA?.length !== 0 && errors.CMA.map(err => err)}
             {errors.courses?.length !== 0 && errors.courses.map(err => err)}
             {errors.opening?.length !== 0 && errors.opening.map(err => err)}
-          </div>
+          </fieldset>
 
-          <div className={styles['input-container']}>
+          <fieldset className={styles['sub-card']}>
+            <legend className={styles['sub-card-header']}>
+              <span>🌙</span> Adicionales y fines de semana
+            </legend>
             <p className={styles['form-question']}>
-              De los días ingresados anteriormente: ¿Cúantos fueron sábados
-              noche, domingos o feriados?
+              De los días ingresados anteriormente: ¿Cuántos corresponden a
+              estos adicionales?
             </p>
             <div className={styles.shifts}>
               <Input
                 type='number'
+                id='fridaysNight'
+                label='Viernes noche'
+                value={formValues.fridaysNight}
+                min={0}
+                onChange={handleFormChange}
+                placeholder='0'
+                hasTooltip
+                errors={errors.holidays}
+                disabled={
+                  formValues.year < 2026 ||
+                  (formValues.year == 2026 &&
+                    MONTHS.indexOf(formValues.month) < 10)
+                }
+              />
+              <Input
+                type='number'
                 id='saturdays'
-                label='Sábados noche '
+                label='Sábados'
                 value={formValues.saturdays}
                 min={0}
                 onChange={handleFormChange}
                 placeholder='0'
                 hasTooltip
                 errors={errors.holidays}
+                disabled={
+                  formValues.year < 2026 ||
+                  (formValues.year == 2026 &&
+                    MONTHS.indexOf(formValues.month) < 10)
+                }
+              />
+              <Input
+                type='number'
+                id='saturdaysNight'
+                label='Sábados noche '
+                value={formValues.saturdaysNight}
+                min={0}
+                onChange={handleFormChange}
+                placeholder='0'
+                hasTooltip
+                errors={errors.holidays}
+                disabled={false}
               />
               <Input
                 type='number'
@@ -199,6 +246,8 @@ const Form = ({ onSubmmitedForm, onReset }) => {
                 onChange={handleFormChange}
                 placeholder='0'
                 errors={errors.holidays}
+                disabled={false}
+                hasTooltip
               />
               <Input
                 type='number'
@@ -210,10 +259,13 @@ const Form = ({ onSubmmitedForm, onReset }) => {
                 placeholder='0'
                 hasTooltip
                 errors={errors.holidays}
+                disabled={false}
               />
             </div>
             {errors.holidays?.length !== 0 && errors.holidays.map(err => err)}
-          </div>
+          </fieldset>
+
+          <div className={styles['input-container']}></div>
           <div className={styles['button-container']}>
             <Button
               type='reset'

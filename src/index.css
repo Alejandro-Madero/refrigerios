@@ -85,6 +85,9 @@
   --card-secondary-bgcolor: var(--color-primary-300);
   --card-shadow: rgba(0, 0, 0, 0.15);
 
+  /* SUB-CARD */
+  --subcard-bgcolor: var(--color-neutral-100);
+
   /* BUTTONS */
   --btn-primary-fcolor: var(--color-primary-100);
   --btn-secondary-fcolor: var(--color-primary-800);
@@ -149,6 +152,9 @@
   --card-bgcolor: rgba(var(--color-neutral-700-rgb), 0.7);
   --card-secondary-bgcolor: var(--color-neutral-800);
   --card-shadow: rgba(0, 0, 0, 0.6);
+
+  /* SUB-CARD */
+  --subcard-bgcolor: var(--color-neutral-700);
 
   /* BUTTONS */
   --btn-primary-fcolor: var(--color-primary-100);

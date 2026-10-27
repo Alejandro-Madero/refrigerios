@@ -1,5 +1,36 @@
 /*FORM*/
 
+.sub-card {
+  background-color: var(--subcard-bgcolor);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0;
+  min-width: 0;
+}
+
+.sub-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--font-color);
+  font-size: 1.15rem;
+  font-weight: var(--fw-500);
+  padding: 0 0.5rem;
+  margin-left: 0.5rem;
+}
+
+/* Borrá las clases .sub-card-header h2 porque el texto ahora va directo en el legend */
+
+.sub-card-description {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
 .form-section {
   justify-self: center;
   margin-top: 2rem;
