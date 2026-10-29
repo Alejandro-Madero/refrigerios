@@ -86,7 +86,8 @@
   --card-shadow: rgba(0, 0, 0, 0.15);
 
   /* SUB-CARD */
-  --subcard-bgcolor: var(--color-neutral-100);
+  --subcard-bgcolor: var(--color-neutral-150);
+  --subcard-border: 1px solid rgba(0, 0, 0, 0.15);
 
   /* BUTTONS */
   --btn-primary-fcolor: var(--color-primary-100);
@@ -155,6 +156,7 @@
 
   /* SUB-CARD */
   --subcard-bgcolor: var(--color-neutral-700);
+  --subcard-border: 1px solid rgba(255, 255, 255, 0.05);
 
   /* BUTTONS */
   --btn-primary-fcolor: var(--color-primary-100);

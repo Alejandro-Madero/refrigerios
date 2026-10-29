@@ -2,7 +2,7 @@
 
 .sub-card {
   background-color: var(--subcard-bgcolor);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: var(--subcard-border);
   border-radius: 12px;
   padding: 0.5rem 1.5rem 1.5rem 1.5rem;
   display: flex;
