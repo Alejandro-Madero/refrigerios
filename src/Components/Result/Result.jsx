@@ -13,7 +13,6 @@ const Result = ({ results }) => {
   const [formattedTotalDiference] = formatNumber(
     results.total - results.totalAdjusted
   );
-  console.log(formattedTotal, formattedTotalAdjusted, formattedTotalDiference);
   const resultRef = useRef(null);
   const REFRIGERIO = results.REFRIGERIO;
   const MOVILIDAD = results.MOVILIDAD;

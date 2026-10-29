@@ -39,14 +39,11 @@ Object.entries(PRICES_ADJUSTED_IPC).forEach(year => {
       INFLATION_FACTOR[year[0]][month[0]] * INITIAL_REFRIGERIO_VALUE;
     const movilityValueAdjusted =
       INFLATION_FACTOR[year[0]][month[0]] * INITIAL_MOVILITY_VALUE;
-    console.log(year[0], month[0]);
     refrigerioSimpleAdjusted[year[0]].push(refrigerioSimpleValueAdjusted);
     movilityAdjusted[year[0]].push(movilityValueAdjusted);
     refrigerioCompuestoAdjusted[year[0]].push(adjustedPrice);
   });
 });
-
-console.log(refrigerioSimpleAdjusted, movilityAdjusted);
 
 export const useChartConfig = (theme, selectedYear) => {
   const fontFamily = 'Nunito, sans-serif';
