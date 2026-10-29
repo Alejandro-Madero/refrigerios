@@ -111,8 +111,6 @@ export const calculatePaymentAfterNov2026 = function (form) {
   const MOVILIDAD = PRICES[form.year][form.month]?.movilidad;
   const inflationFactor = INFLATION_FACTOR[form.year][form.month];
 
-  console.log('estoy en el calculo nuevo');
-
   const mornings = Number(form.morning);
   const nights = Number(form.night);
   const fridaysNight = Number(form.fridaysNight);

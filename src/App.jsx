@@ -18,8 +18,6 @@ const App = () => {
   usePreloader();
 
   const handleFormSubmission = form => {
-    console.log('estoy aca');
-    console.log(form.year >= 2026, form.month > 10);
     const totalPayment = calculatePayment(form);
 
     setResult({
