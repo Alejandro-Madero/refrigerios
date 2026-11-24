@@ -192,6 +192,7 @@ const Form = ({ onSubmmitedForm, onReset }) => {
               De los días ingresados anteriormente: ¿Cuántos corresponden a
               estos adicionales?
             </p>
+
             <div className={styles.shifts}>
               <Input
                 type='number'
@@ -262,6 +263,10 @@ const Form = ({ onSubmmitedForm, onReset }) => {
                 disabled={false}
               />
             </div>
+            <p className={styles['form-question']}>
+              * Los refrigerios adicionales por viernes noche y sábado son
+              válidos a partir de noviembre 2026
+            </p>
             {errors.holidays?.length !== 0 && errors.holidays.map(err => err)}
           </fieldset>
 

@@ -116,7 +116,7 @@ export const INFLATION_FACTOR = {
     agosto: 3.41501, // 2.1% inflacion julio 2026
     septiembre: 3.47306, // 1.7% inflacion agosto 2026
     octubre: 3.53904, // 1.9% inflacion septiembre 2026
-    noviembre: 3.53904,
+    noviembre: 3.61335, // 2.1% inflacion octubre 2026  ,
     diciembre: 3.53904,
   },
 };
